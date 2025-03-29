@@ -1,22 +1,45 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <div class="inicio-de-sesin">
-      <div class="div">
-        <div class="top">
-          <div class="LOGO-CCP"><img class="img" src="assets/LOGO-CCP.png" /></div>
-        </div>
-        <div class="frame">
-          <div class="div-wrapper"><div class="text-wrapper">Iniciar sesión</div></div>
-          <div class="frame-2">
-            <div class="input-field"><div class="others">Correo electrónico</div></div>
-            <div class="input-field"><div class="others">Contraseña</div></div>
+<!-- Barra superior con logo -->
+<div class="top-bar">
+  <img src="assets/LOGO-CCP.png" alt="Logo CCP" class="logo" />
+</div>
+
+<!-- Formulario centrado -->
+<div class="login-container">
+  <div class="login-card">
+    <h1>Iniciar sesión</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="input-row">
+        <div class="input-group">
+          <input
+            type="email"
+            placeholder="Correo electrónico"
+            formControlName="email"
+          />
+          <div
+            class="error"
+            *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+          >
+            Ingresa un correo válido
           </div>
-          <div class="button-wrapper">
-            <button class="button"><button class="button-2">Ingresar</button></button>
+        </div>
+
+        <div class="input-group">
+          <input
+            type="password"
+            placeholder="Contraseña"
+            formControlName="password"
+          />
+          <div
+            class="error"
+            *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+          >
+            Ingresa una contraseña
           </div>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+</div>
