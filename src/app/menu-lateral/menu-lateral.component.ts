@@ -24,4 +24,8 @@ export class MenuLateralComponent {
     this.router.navigate(['/']);
   }
 
+  productos(){
+    this.router.navigate(['productos']);
+  }
+
 }

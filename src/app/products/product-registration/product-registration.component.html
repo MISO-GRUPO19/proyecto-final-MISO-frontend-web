@@ -1,0 +1,101 @@
+<div class="main-container">
+  <app-barra-superior></app-barra-superior>
+  <div class="content-container">
+    <app-menu-lateral></app-menu-lateral>
+    <div class="content-area">
+      
+
+      <form class="product-form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <h1 class="form-title">Registro de producto individual</h1>
+        <div class="form-grid">
+          
+          <div class="form-group">
+            <div class="label-izq"><label for="name">Nombre producto</label></div>
+            <div><input placeholder="Nombre" id="name" class="form-input" formControlName="name"></div>
+          </div>
+      
+          <div class="form-group">
+            <div class="label-izq"><label for="barcode">Código</label></div>
+            <div><input placeholder="Código" id="barcode" class="form-input" formControlName="barcode"></div>
+          </div>
+      
+          <div class="form-group" style="gap: 30px;">
+            <div>
+              <div><label for="category">Categoría</label></div>
+              <div class="category-selector">
+                <select class="category-dropdown" formControlName="category">
+                  <!-- <option value="" disabled selected>Seleccionar categoría</option>
+                  <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option> -->
+                  <option value="" disabled>Seleccionar categoría</option>
+                  <option value="Electronics">Electrónica</option>
+                  <option value="Clothing">Ropa</option>
+                  <option value="Food">Comida</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <div><label for="provider_id">Proveedor</label></div>
+              <div class="category-selector">
+                <select class="category-dropdown" formControlName="provider_id">
+                  <!-- <option value="" disabled selected>Seleccionar Proveedor</option>
+                  <option *ngFor="let prov of proveedores" [value]="prov.id">{{ prov.name }}</option> -->
+                  <option value="" disabled>Seleccionar proveedor</option>
+                  <option value="f2d4a5cc-503c-4207-9396-352b3beed3cd">Proveedor 1</option>
+                  <option value="f2d4a5cc-503c-4207-9396-352b3beed3cd">Proveedor 2</option>
+                  <option value="f2d4a5cc-503c-4207-9396-352b3beed3cd">Proveedor 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+      
+          <div class="form-group" style="margin-bottom: -20px;">
+            <label for="weight">Peso</label>
+          </div>
+      
+          <div class="form-group" style="gap: 30px;">
+            <div>
+              <input placeholder="Peso" id="weight" class="form-input" formControlName="weight">
+            </div>
+            <div class="category-selector" style="width: auto;">
+              <select class="category-dropdown" formControlName="unidad" style="padding-right: 40px;">
+                <option value="kg" selected>kg</option>
+                <option value="lb">lb</option>
+                <option value="g">g</option>
+              </select>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <div class="label-izq"><label for="price">Precio</label></div>
+            <div><input placeholder="Precio" id="price" class="form-input" formControlName="price"></div>
+          </div>
+      
+          <div class="form-group">
+            <div class="label-izq"><label for="batch">Lote</label></div>
+            <div><input placeholder="Lote" id="batch" class="form-input" formControlName="batch"></div>
+          </div>
+      
+          <div class="form-group">
+            <div class="label-izq"><label for="quantity">Cantidad</label></div>
+            <div><input placeholder="Cantidad" id="quantity" class="form-input" formControlName="quantity"></div>
+          </div>
+      
+          <div class="form-group">
+            <div class="label-izq"><label for="description">Descripción</label></div>
+            <div><input placeholder="Descripción" id="description" class="form-input-2" formControlName="description"></div>
+          </div>
+      
+          <div style="display: flex; flex-direction: column; gap: 18px;">
+            <div><label for="best_before">Fecha de vencimiento</label></div>
+            <div><input type="date" id="best_before" class="form-input" formControlName="best_before"></div>
+          </div>
+          
+        </div>
+      
+        <button type="submit" class="submit-button">Registrar producto</button>
+      </form>
+      
+
+    </div>
+  </div>
+</div>
