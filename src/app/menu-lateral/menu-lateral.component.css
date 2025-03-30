@@ -188,18 +188,10 @@
     line-height: 21px;
     white-space: nowrap;
   }
-  @media screen and (max-width: 768px) {
-    .topbar {
-      left: 0; /* Oculta el espacio del menú lateral */
-      padding: 0 12px;
-    }
-  
-    .box .menu-light {
-      display: none; /* Oculta el menú en móviles */
-    }
-  
-    .search-container {
-      display: none; /* Oculta búsqueda en móviles */
+   @media screen and (max-width: 768px) {
+    .box .menu-light{
+      width: 50%;
+      max-width: 280px;
     }
   }
 
