@@ -48,7 +48,11 @@ export class SupplierRegistrationComponent {
       email: formValue.email
     };
 
-    this.http.post(`${environment.apiUrl}/manufacturers`, payload).subscribe({
+    const headers = {
+      Authorization: `Bearer ${sessionStorage.getItem('access_token')}`
+    };
+
+    this.http.post(`${environment.apiUrl}/manufacturers`, payload, { headers }).subscribe({
       next: () => {
         this.toastr.success('Fabricante registrado exitosamente');
         this.supplierForm.reset();
