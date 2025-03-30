@@ -39,7 +39,7 @@ export class ProductRegistrationComponent {
 
   onSubmit(): void {
     if (this.productForm.invalid) {
-      this.toastr.error('Formulario inválido'); // ✅ esto es lo que espera el test
+      this.toastr.error('Formulario inválido');
       return;
     }
 
