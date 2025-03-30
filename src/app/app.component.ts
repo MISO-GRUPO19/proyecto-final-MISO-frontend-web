@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
   imports: [
-    RouterOutlet,
-    MenuLateralComponent],
+    RouterOutlet
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -8,7 +8,7 @@
     position: fixed;
     width: 280px;
     height: 100%;
-    top: 0;
+    top: 60px;
     left: 0;
     background-color: #fafafa;
   }
@@ -138,7 +138,7 @@
   .box .set-3 {
     width: 115px;
     height: 60px;
-    top: 578px;
+    bottom: 100px;
     position: absolute;
     left: 40px;
   }
@@ -171,6 +171,7 @@
     top: 40px;
     position: absolute;
     left: 0;
+    cursor: pointer;
   }
   
   .box .text-wrapper-4 {
@@ -186,4 +187,74 @@
     line-height: 21px;
     white-space: nowrap;
   }
+  @media screen and (max-width: 768px) {
+    .topbar {
+      left: 0; /* Oculta el espacio del menú lateral */
+      padding: 0 12px;
+    }
   
+    .box .menu-light {
+      display: none; /* Oculta el menú en móviles */
+    }
+  
+    .search-container {
+      display: none; /* Oculta búsqueda en móviles */
+    }
+  }
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 250px;
+    transition: width 0.3s ease;
+}
+.collapsed {
+    width: 60px;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+.menu-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+.menu-footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.content {
+    flex-grow: 1;
+    margin-left: 250px;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+} */

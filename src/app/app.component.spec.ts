@@ -14,16 +14,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'PROYECTO-BASE' title`, () => {
+  it(`should have the 'PROYECTO-FINAL GRUPO 19' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('PROYECTO-BASE');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, PROYECTO-BASE');
+    expect(app.title).toEqual('PROYECTO-FINAL GRUPO 19');
   });
 });
