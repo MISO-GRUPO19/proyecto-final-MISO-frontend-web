@@ -28,4 +28,12 @@ export class MenuLateralComponent {
     this.router.navigate(['productos']);
   }
 
+  vendedores(){
+    this.router.navigate(['seller-registration']);
+  }
+
+  menu(){
+    this.router.navigate(['menu']);
+  }
+
 }

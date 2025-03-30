@@ -33,6 +33,7 @@
     letter-spacing: 0;
     line-height: 21px;
     white-space: nowrap;
+    cursor: pointer;
   }
   
   .box .img {
@@ -73,6 +74,7 @@
     width: 115px;
     height: 20px;
     margin-right: -2.00px;
+    cursor: pointer;
   }
   
   .box .text-wrapper-2 {
