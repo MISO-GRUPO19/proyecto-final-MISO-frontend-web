@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
 import { CommonModule} from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   standalone: true,
@@ -21,7 +22,8 @@ export class UserLoginComponent {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -30,15 +32,19 @@ export class UserLoginComponent {
   }
 
   onSubmit(): void {
-    if (this.loginForm.invalid) return;
-
+    if (this.loginForm.invalid) {
+      this.toastr.error('Por favor llena todos los campos correctamente', 'Formulario inválido');
+      return;
+    }
+  
     this.authService.login(this.loginForm.value).subscribe({
       next: () => {
-        this.router.navigate(['/bienvenida']); //Tener en cuenta realizar ruta bienvenida
+        this.router.navigate(['/menu']); // Redirige si el login es exitoso
       },
       error: (err) => {
         console.error(err);
-        this.error = 'Credenciales incorrectas';
+        // this.error = err.error?.message || 'Error de autenticación'; // Captura el mensaje del backend
+        this.toastr.error(err.error?.message || 'Error de autenticación');
       }
     });
   }

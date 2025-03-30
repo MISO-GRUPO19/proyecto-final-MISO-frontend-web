@@ -98,17 +98,28 @@ button:hover {
     flex: 1;
     min-width: 200px;
   }
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid red;
+  background-color: #ffe6e6;
+  border-radius: 4px;
+  text-align: center;
+}
   
-  .error {
-    color: red;
-    font-size: 12px;
-    margin-top: 4px;
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .input-row {
+    flex-direction: column;
   }
-  
-  /* Responsive */
-  @media (max-width: 600px) {
-    .input-row {
-      flex-direction: column;
-    }
-  }
-  
+}
