@@ -38,7 +38,10 @@ export class ProductRegistrationComponent {
   }
 
   onSubmit(): void {
-    if (this.productForm.invalid) return;
+    if (this.productForm.invalid) {
+      this.toastr.error('Formulario inválido'); // ✅ esto es lo que espera el test
+      return;
+    }
 
     const productData = this.productForm.value;
 

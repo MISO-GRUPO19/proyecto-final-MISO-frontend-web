@@ -1,28 +1,32 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { RegistrationTypeComponent } from './registration-type.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { provideToastr } from 'ngx-toastr';
 
 describe('RegistrationTypeComponent', () => {
   let component: RegistrationTypeComponent;
   let fixture: ComponentFixture<RegistrationTypeComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ RegistrationTypeComponent ]
-    })
-    .compileComponents();
-  }));
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule, RouterTestingModule, RegistrationTypeComponent],
+      declarations: [],
+      providers: [provideToastr()]
+    }).compileComponents();
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(RegistrationTypeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Debe crear el componente', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Función para mandar a registro individual definido', () => {
+    expect(component.registroInd).toBeDefined();
+  });
+
 });
