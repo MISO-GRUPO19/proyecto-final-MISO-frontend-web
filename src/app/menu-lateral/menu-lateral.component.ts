@@ -36,4 +36,8 @@ export class MenuLateralComponent {
     this.router.navigate(['menu']);
   }
 
+  suppliers(){
+    this.router.navigate(['supplier-registration']);
+  }
+
 }
