@@ -1,0 +1,80 @@
+{
+    "LOGIN": {
+      "TITULO": "Iniciar sesión",
+      "EMAIL": "Correo electrónico",
+      "CONTRASENA": "Contraseña",
+      "ERROR_EMAIL": "Ingresa un correo válido",
+      "ERROR_CONTRASENA": "Ingresa una contraseña",
+      "INGRESAR": "Ingresar"
+    },
+    "MENU": {
+      "PANEL": "Panel principal",
+      "LOGISTICA": "LOGÍSTICA",
+      "PROVEEDORES": "Proveedores",
+      "VENDEDORES": "Vendedores",
+      "RUTAS": "Rutas",
+      "VENTAS": "VENTAS",
+      "PRODUCTOS": "Productos",
+      "METAS": "Metas",
+      "REPORTES": "Reportes",
+      "AJUSTES": "Ajustes",
+      "CERRAR_SESION": "Cerrar sesión"
+    },
+    "BIENVENIDA": {
+      "TITULO": "Bienvenido al software de gestión de CCP",
+      "MENSAJE": "Se ha iniciado sesión correctamente."
+    },
+    "REGISTRO_PRODUCTOS": {
+      "TITULO": "Registro de productos",
+      "INDIVIDUAL": "Registro individual",
+      "MASIVO": "Registro masivo (Excel)",
+      "FORMULARIO_TITULO": "Registro de producto individual",
+      "NOMBRE": "Nombre producto",
+      "CODIGO": "Código",
+      "CATEGORIA": "Categoría",
+      "SELECCIONAR_CATEGORIA": "Seleccionar categoría",
+      "PROVEEDOR": "Proveedor",
+      "SELECCIONAR_PROVEEDOR": "Seleccionar proveedor",
+      "PESO": "Peso",
+      "PRECIO": "Precio",
+      "LOTE": "Lote",
+      "CANTIDAD": "Cantidad",
+      "DESCRIPCION": "Descripción",
+      "FECHA_VENCIMIENTO": "Fecha de vencimiento",
+      "REGISTRAR": "Registrar producto"
+    },
+    "REGISTRO_VENDEDORES": {
+      "TITULO": "Registro de vendedor",
+      "IDENTIFICACION": "Identificación",
+      "NOMBRE": "Nombre",
+      "APELLIDO": "Apellido",
+      "PAIS": "País",
+      "SELECCIONAR_PAIS": "Seleccionar país",
+      "DIRECCION": "Dirección",
+      "TELEFONO": "Teléfono",
+      "EMAIL": "Correo electrónico",
+      "REGISTRAR": "Registrar vendedor"
+    },
+    "REGISTRO_PROVEEDORES": {
+      "TITULO": "Registro de fabricante",
+      "NOMBRE_PROVEEDOR": "Nombre proveedor",
+      "PAIS": "País",
+      "SELECCIONAR_PAIS": "Seleccionar país",
+      "CONTACTO": "Persona de contacto",
+      "APELLIDO_CONTACTO": "Apellido",
+      "TELEFONO": "Teléfono",
+      "EMAIL": "Correo electrónico",
+      "REGISTRAR": "Registrar fabricante"
+    },
+    "AJUSTES":{
+      "TITULO": "Ajustes",
+      "PAIS": "País",
+      "IDIOMA": "Idioma",
+      "CONTRASTE": "Contraste",
+      "GUARDAR": "Guardar",
+      "ACTIVADO": "Activado",
+      "DESACTIVADO": "Desactivado",
+      "SELECCIONAR_PAIS":"Seleccionar país"
+    }
+  }
+  

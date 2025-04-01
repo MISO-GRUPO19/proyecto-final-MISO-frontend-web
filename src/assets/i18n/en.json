@@ -1,0 +1,80 @@
+{
+    "LOGIN": {
+      "TITULO": "Log in",
+      "EMAIL": "Email",
+      "CONTRASENA": "Password",
+      "ERROR_EMAIL": "Enter a valid email",
+      "ERROR_CONTRASENA": "Enter a password",
+      "INGRESAR": "Sign in"
+    },
+    "MENU": {
+      "PANEL": "Dashboard",
+      "LOGISTICA": "LOGISTICS",
+      "PROVEEDORES": "Suppliers",
+      "VENDEDORES": "Sellers",
+      "RUTAS": "Routes",
+      "VENTAS": "SALES",
+      "PRODUCTOS": "Products",
+      "METAS": "Goals",
+      "REPORTES": "Reports",
+      "AJUSTES": "Settings",
+      "CERRAR_SESION": "Log out"
+    },
+    "BIENVENIDA": {
+      "TITULO": "Welcome to the CCP management software",
+      "MENSAJE": "You have successfully logged in."
+    },
+    "REGISTRO_PRODUCTOS": {
+      "TITULO": "Product registration",
+      "INDIVIDUAL": "Individual registration",
+      "MASIVO": "Bulk registration (Excel)",
+      "FORMULARIO_TITULO": "Individual product registration",
+      "NOMBRE": "Product name",
+      "CODIGO": "Code",
+      "CATEGORIA": "Category",
+      "SELECCIONAR_CATEGORIA": "Select category",
+      "PROVEEDOR": "Supplier",
+      "SELECCIONAR_PROVEEDOR": "Select supplier",
+      "PESO": "Weight",
+      "PRECIO": "Price",
+      "LOTE": "Batch",
+      "CANTIDAD": "Quantity",
+      "DESCRIPCION": "Description",
+      "FECHA_VENCIMIENTO": "Expiration date",
+      "REGISTRAR": "Register product"
+    },
+    "REGISTRO_VENDEDORES": {
+      "TITULO": "Seller registration",
+      "IDENTIFICACION": "Identification",
+      "NOMBRE": "First name",
+      "APELLIDO": "Last name",
+      "PAIS": "Country",
+      "SELECCIONAR_PAIS": "Select country",
+      "DIRECCION": "Address",
+      "TELEFONO": "Phone",
+      "EMAIL": "Email",
+      "REGISTRAR": "Register seller"
+    },
+    "REGISTRO_PROVEEDORES": {
+      "TITULO": "Manufacturer registration",
+      "NOMBRE_PROVEEDOR": "Supplier name",
+      "PAIS": "Country",
+      "SELECCIONAR_PAIS": "Select country",
+      "CONTACTO": "Contact person",
+      "APELLIDO_CONTACTO": "Last name",
+      "TELEFONO": "Phone",
+      "EMAIL": "Email",
+      "REGISTRAR": "Register manufacturer"
+    },
+    "AJUSTES": {
+      "TITULO": "Settings",
+      "PAIS": "Country",
+      "IDIOMA": "Language",
+      "CONTRASTE": "Contrast",
+      "GUARDAR": "Save",
+      "ACTIVADO": "Enabled",
+      "DESACTIVADO": "Disabled",
+      "SELECCIONAR_PAIS": "Select country"
+    }    
+  }
+  

@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { AuthService } from '../core/services/auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nModule } from '../i18n.module';
 
 @Component({
   selector: 'app-menu-lateral',
   standalone: true,
+  imports: [TranslateModule, I18nModule],
   templateUrl: './menu-lateral.component.html',
   styleUrl: './menu-lateral.component.css'
 })

@@ -1,0 +1,41 @@
+<div class="main-container">
+  <app-barra-superior></app-barra-superior>
+  <div class="content-container">
+    <app-menu-lateral></app-menu-lateral>
+    <div class="content-area">
+      
+      <form [formGroup]="settingsForm" (ngSubmit)="guardarAjustes()">
+        <h1 class="form-title">{{ 'AJUSTES.TITULO' | translate }}</h1>
+        <div class="form-section">
+          <label>{{ 'AJUSTES.PAIS' | translate }}</label>
+          <select formControlName="pais">
+            <option value="">{{ 'AJUSTES.SELECCIONAR_PAIS' | translate }}</option>
+            <option value="col">Colombia</option>
+            <option value="mex">México</option>
+            <option value="bra">Brasil</option>
+          </select>
+        </div>
+    
+        <div class="form-section">
+          <label>{{ 'AJUSTES.IDIOMA' | translate }}</label>
+          <div class="radio-group">
+            <label><input type="radio" formControlName="idioma" value="es" /> Español</label>
+            <label><input type="radio" formControlName="idioma" value="en" /> English</label>
+            <label><input type="radio" formControlName="idioma" value="pt" /> Português</label>
+          </div>
+        </div>
+    
+        <div class="form-section">
+          <label>{{ 'AJUSTES.CONTRASTE' | translate }}</label>
+          <div class="radio-group">
+            <label><input type="radio" formControlName="contraste" value="off" /> {{ 'AJUSTES.DESACTIVADO' | translate }}</label>
+            <label><input type="radio" formControlName="contraste" value="on" /> {{ 'AJUSTES.ACTIVADO' | translate }}</label>
+          </div>
+        </div>
+    
+        <button class="guardar-btn" type="submit">{{ 'AJUSTES.GUARDAR' | translate }}</button>
+      </form>      
+
+    </div>
+  </div>
+</div>
