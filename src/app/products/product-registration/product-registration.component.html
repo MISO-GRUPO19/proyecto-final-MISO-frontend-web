@@ -3,43 +3,57 @@
   <div class="content-container">
     <app-menu-lateral></app-menu-lateral>
     <div class="content-area">
-      
 
       <form class="product-form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
-        <h1 class="form-title">Registro de producto individual</h1>
+        <h1 class="form-title">{{ 'PRODUCTO.TITULO' | translate }}</h1>
         <div class="form-grid">
-          
+
           <div class="form-group">
-            <div class="label-izq"><label for="name">Nombre producto</label></div>
-            <div><input placeholder="Nombre" id="name" class="form-input" formControlName="name"></div>
+            <div class="label-izq">
+              <label for="name">{{ 'PRODUCTO.NOMBRE' | translate }}</label>
+            </div>
+            <div>
+              <input placeholder="{{ 'PRODUCTO.NOMBRE_PLACEHOLDER' | translate }}" id="name" class="form-input" formControlName="name">
+            </div>
           </div>
-      
+
           <div class="form-group">
-            <div class="label-izq"><label for="barcode">Código</label></div>
-            <div><input placeholder="Código" id="barcode" class="form-input" formControlName="barcode"></div>
+            <div class="label-izq">
+              <label for="barcode">{{ 'PRODUCTO.CODIGO' | translate }}</label>
+            </div>
+            <div>
+              <input placeholder="{{ 'PRODUCTO.CODIGO' | translate }}" id="barcode" class="form-input" formControlName="barcode">
+            </div>
           </div>
-      
+
           <div class="form-group" style="gap: 30px;">
             <div>
-              <div><label for="category">Categoría</label></div>
+              <div>
+                <label for="category">{{ 'PRODUCTO.CATEGORIA' | translate }}</label>
+              </div>
               <div class="category-selector">
                 <select class="category-dropdown" formControlName="category">
-                  <!-- <option value="" disabled selected>Seleccionar categoría</option>
-                  <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option> -->
-                  <option value="" disabled>Seleccionar categoría</option>
-                  <option value="Electronics">Electrónica</option>
-                  <option value="Clothing">Ropa</option>
-                  <option value="Food">Comida</option>
-                </select>
+                  <option value="" disabled>{{ 'PRODUCTO.SELECCIONAR_CATEGORIA' | translate }}</option>
+                  <option value="Frutas y Verduras">{{ 'PRODUCTO.CATEGORIA_FRUTAS' | translate }}</option>
+                  <option value="Carnes y Pescados">{{ 'PRODUCTO.CATEGORIA_CARNES' | translate }}</option>
+                  <option value="Lácteos y Huevos">{{ 'PRODUCTO.CATEGORIA_LACTEOS' | translate }}</option>
+                  <option value="Panadería y Repostería">{{ 'PRODUCTO.CATEGORIA_PANADERIA' | translate }}</option>
+                  <option value="Despensa">{{ 'PRODUCTO.CATEGORIA_DESPENSA' | translate }}</option>
+                  <option value="Bebidas">{{ 'PRODUCTO.CATEGORIA_BEBIDAS' | translate }}</option>
+                  <option value="Snacks y Dulces">{{ 'PRODUCTO.CATEGORIA_SNACKS' | translate }}</option>
+                  <option value="Condimentos y Especias">{{ 'PRODUCTO.CATEGORIA_CONDIMENTOS' | translate }}</option>
+                  <option value="Productos de Limpieza">{{ 'PRODUCTO.CATEGORIA_LIMPIEZA' | translate }}</option>
+                  <option value="Productos para Bebés">{{ 'PRODUCTO.CATEGORIA_BEBES' | translate }}</option>
+                </select>                
               </div>
             </div>
             <div>
-              <div><label for="provider_id">Proveedor</label></div>
+              <div>
+                <label for="provider_id">{{ 'PRODUCTO.PROVEEDOR' | translate }}</label>
+              </div>
               <div class="category-selector">
                 <select class="category-dropdown" formControlName="provider_id">
-                  <!-- <option value="" disabled selected>Seleccionar Proveedor</option>
-                  <option *ngFor="let prov of proveedores" [value]="prov.id">{{ prov.name }}</option> -->
-                  <option value="" disabled>Seleccionar proveedor</option>
+                  <option value="" disabled>{{ 'PRODUCTO.SELECCIONAR_PROVEEDOR' | translate }}</option>
                   <option value="f2d4a5cc-503c-4207-9396-352b3beed3cd">Proveedor 1</option>
                   <option value="f2d4a5cc-503c-4207-9396-352b3beed3cd">Proveedor 2</option>
                   <option value="f2d4a5cc-503c-4207-9396-352b3beed3cd">Proveedor 3</option>
@@ -47,14 +61,14 @@
               </div>
             </div>
           </div>
-      
+
           <div class="form-group" style="margin-bottom: -20px;">
-            <label for="weight">Peso</label>
+            <label for="weight">{{ 'PRODUCTO.PESO' | translate }}</label>
           </div>
-      
+
           <div class="form-group" style="gap: 30px;">
             <div>
-              <input placeholder="Peso" id="weight" class="form-input" formControlName="weight">
+              <input placeholder="{{ 'PRODUCTO.PESO' | translate }}" id="weight" class="form-input" formControlName="weight">
             </div>
             <div class="category-selector" style="width: auto;">
               <select class="category-dropdown" style="padding-right: 40px;">
@@ -64,38 +78,65 @@
               </select>
             </div>
           </div>
-      
+
           <div class="form-group">
-            <div class="label-izq"><label for="price">Precio</label></div>
-            <div><input placeholder="Precio" id="price" class="form-input" formControlName="price"></div>
+            <div class="label-izq">
+              <label for="price">{{ 'PRODUCTO.PRECIO' | translate }}</label>
+            </div>
+            <div>
+              <input placeholder="{{ 'PRODUCTO.PRECIO' | translate }}" id="price" class="form-input" formControlName="price">
+            </div>
           </div>
-      
+
           <div class="form-group">
-            <div class="label-izq"><label for="batch">Lote</label></div>
-            <div><input placeholder="Lote" id="batch" class="form-input" formControlName="batch"></div>
+            <div class="label-izq">
+              <label for="batch">{{ 'PRODUCTO.LOTE' | translate }}</label>
+            </div>
+            <div>
+              <input placeholder="{{ 'PRODUCTO.LOTE' | translate }}" id="batch" class="form-input" formControlName="batch">
+            </div>
           </div>
-      
+
           <div class="form-group">
-            <div class="label-izq"><label for="quantity">Cantidad</label></div>
-            <div><input placeholder="Cantidad" id="quantity" class="form-input" formControlName="quantity"></div>
+            <div class="label-izq">
+              <label for="quantity">{{ 'PRODUCTO.CANTIDAD' | translate }}</label>
+            </div>
+            <div>
+              <input placeholder="{{ 'PRODUCTO.CANTIDAD' | translate }}" id="quantity" class="form-input" formControlName="quantity">
+            </div>
           </div>
-      
+
           <div class="form-group">
-            <div class="label-izq"><label for="description">Descripción</label></div>
-            <div><input placeholder="Descripción" id="description" class="form-input-2" formControlName="description"></div>
+            <div class="label-izq">
+              <label for="description">{{ 'PRODUCTO.DESCRIPCION' | translate }}</label>
+            </div>
+            <div>
+              <input placeholder="{{ 'PRODUCTO.DESCRIPCION' | translate }}" id="description" class="form-input-2" formControlName="description">
+            </div>
           </div>
-      
+
           <div style="display: flex; flex-direction: column; gap: 18px;">
-            <div><label for="best_before">Fecha de vencimiento</label></div>
-            <div><input type="date" id="best_before" class="form-input" formControlName="best_before"></div>
+            <div>
+              <label for="best_before">{{ 'PRODUCTO.FECHA_VENCIMIENTO' | translate }}</label>
+            </div>
+            <div>
+              <input type="date" id="best_before" class="form-input" formControlName="best_before">
+            </div>
           </div>
-          
+
         </div>
-      
-        <button type="submit" class="submit-button">Registrar producto</button>
+
+        <button type="submit" class="submit-button">
+          {{ 'PRODUCTO.REGISTRAR' | translate }}
+        </button>
       </form>
-      
 
     </div>
   </div>
 </div>
+
+
+
+
+                  <!-- <option value="" disabled selected>Seleccionar Proveedor</option>
+                  <option *ngFor="let prov of proveedores" [value]="prov.id">{{ prov.name }}</option> -->

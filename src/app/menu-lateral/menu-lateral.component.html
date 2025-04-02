@@ -1,85 +1,58 @@
 <div class="box">
   <div class="menu-light">
     <div class="element">
-      <div class="text-wrapper" (click)="menu()">Panel principal</div>
+      <div class="text-wrapper" (click)="menu()">{{ 'MENU.PANEL' | translate }}</div>
       <img class="img" src="assets/home.svg" />
     </div>
+
     <div class="set">
-      <div class="div">LOGÍSTICA</div>
+      <div class="div">{{ 'MENU.LOGISTICA' | translate }}</div>
+
       <div class="element-2">
-        <div class="text-wrapper-2" (click)="suppliers()">Proveedores</div>
+        <div class="text-wrapper-2" (click)="suppliers()">{{ 'MENU.PROVEEDORES' | translate }}</div>
         <img class="img" src="assets/suppliers.svg" />
       </div>
+
       <div class="element-2">
-        <div class="text-wrapper-2" (click)="vendedores()">Vendedores</div>
+        <div class="text-wrapper-2" (click)="vendedores()">{{ 'MENU.VENDEDORES' | translate }}</div>
         <img class="img" src="assets/sellers.svg" />
       </div>
+
       <div class="element-2">
-        <div class="text-wrapper-2">Rutas</div>
+        <div class="text-wrapper-2">{{ 'MENU.RUTAS' | translate }}</div>
         <img class="img" src="assets/routes.svg" />
       </div>
     </div>
+
     <div class="set-2">
-      <div class="v-ENTAS">VENTAS</div>
+      <div class="v-ENTAS">{{ 'MENU.VENTAS' | translate }}</div>
+
       <div class="element-3" (click)="productos()">
-        <div class="text-wrapper-2">Productos</div>
+        <div class="text-wrapper-2">{{ 'MENU.PRODUCTOS' | translate }}</div>
         <img class="img" src="assets/products.svg" />
       </div>
+
       <div class="element-4">
-        <div class="text-wrapper-2">Metas</div>
+        <div class="text-wrapper-2">{{ 'MENU.METAS' | translate }}</div>
         <img class="img" src="assets/goals.svg" />
       </div>
+
       <div class="element-5">
-        <div class="text-wrapper-2">Reportes</div>
+        <div class="text-wrapper-2">{{ 'MENU.REPORTES' | translate }}</div>
         <img class="img" src="assets/reports.svg" />
       </div>
     </div>
+
     <div class="set-3">
-      <div class="element-6">
-        <div class="text-wrapper-3">Ajustes</div>
+      <div class="element-6" (click)="ajustes()">
+        <div class="text-wrapper-3">{{ 'MENU.AJUSTES' | translate }}</div>
         <img class="img" src="assets/settings.svg" />
       </div>
+
       <div class="element-7" (click)="logout()">
-        <div class="text-wrapper-4">Cerrar sesión</div>
+        <div class="text-wrapper-4">{{ 'MENU.CERRAR_SESION' | translate }}</div>
         <img class="img" src="assets/logout.svg" />
       </div>
     </div>
   </div>
 </div>
-
-
-
-<!--  <div class="menu-container" id="menu">
-  <div class="logo-container">
-      <img src="assets/LOGO-CCP.png" alt="CCP Logo" width="40">
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-  </div>
-  <nav class="menu-content">
-      <ul>
-          <li><a href="#">Panel principal</a></li>
-          <li class="section-title">LOGÍSTICA</li>
-          <li><a href="#">Proveedores</a></li>
-          <li><a href="#">Vendedores</a></li>
-          <li><a href="#">Rutas</a></li>
-          <li class="section-title">VENTAS</li>
-          <li><a href="#">Productos</a></li>
-          <li><a href="#">Metas</a></li>
-          <li><a href="#">Reportes</a></li>
-      </ul>
-  </nav>
-  <div class="menu-footer">
-      <a href="#">Ajustes</a>
-      <a href="#">Cerrar sesión</a>
-  </div>
-</div>
-<div class="content">
-  <h1>Bienvenido al software de gestión de CCP</h1>
-  <p>Se ha iniciado sesión correctamente.</p>
-</div>
-<script>
-  function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('collapsed');
-      document.querySelector('.content').style.marginLeft = menu.classList.contains('collapsed') ? '60px' : '250px';
-  }
-</script> -->

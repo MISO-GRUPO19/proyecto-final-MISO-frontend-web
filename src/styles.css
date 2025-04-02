@@ -20,4 +20,45 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
   
+/* Configuración de alto contraste */
+body.alto-contraste {
+  font-weight: 600;
+  letter-spacing: 0.3px; /* mejora visibilidad sin deformar */
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1); /* sutil enfoque */
+}
 
+
+body.alto-contraste *,
+body.alto-contraste *::placeholder {
+  font-weight: 600 !important;
+  letter-spacing: 0.3px;
+}
+
+body.alto-contraste :focus {
+  outline: 6px solid rgba(7, 93, 153, 0.8);
+  outline-offset: 6px;
+}
+
+body.alto-contraste .category-dropdown:focus {
+  outline: 6px solid rgba(7, 93, 153, 0.8);
+  outline-offset: 6px;
+}
+
+body.alto-contraste input:focus,
+body.alto-contraste input[type="text"]:focus,
+body.alto-contraste input[type="email"]:focus,
+body.alto-contraste input[type="password"]:focus,
+body.alto-contraste input[type="number"]:focus,
+body.alto-contraste input[type="date"]:focus,
+body.alto-contraste textarea:focus {
+  outline: 6px solid rgba(7, 93, 153, 0.8);
+  outline-offset: 6px;
+  font-weight: 600;
+  box-shadow: 0 0 0 3px rgba(7, 93, 153, 0.3);
+  border-color: #075d99;
+}
+
+
+body.alto-contraste .category-dropdown {
+  min-width: 300px;
+}

@@ -3,58 +3,111 @@
   <div class="content-container">
     <app-menu-lateral></app-menu-lateral>
     <div class="content-area">
-      
 
       <form class="product-form" [formGroup]="sellerForm" (ngSubmit)="onSubmit()">
-        <h1 class="form-title">Registro de vendedor</h1>
+        <h1 class="form-title">{{ 'VENDEDOR.TITULO' | translate }}</h1>
         <div class="form-grid">
-          
+
           <div class="form-group">
-            <div class="label-izq"><label for="identification">Identificación</label></div>
-            <div><input placeholder="Identificación" id="identification" class="form-input" formControlName="identification"></div>
+            <div class="label-izq">
+              <label for="identification">{{ 'VENDEDOR.IDENTIFICACION' | translate }}</label>
+            </div>
+            <div>
+              <input 
+                placeholder="{{ 'VENDEDOR.IDENTIFICACION' | translate }}" 
+                id="identification" 
+                class="form-input" 
+                formControlName="identification"
+              >
+            </div>
           </div>
-      
+
           <div class="form-group">
-            <div class="label-izq"><label for="name">Nombre</label></div>
-            <div><input placeholder="Nombre" id="name" class="form-input" formControlName="name"></div>
-            <div><input placeholder="Apellido" id="lastname" class="form-input" formControlName="lastname"></div>
+            <div class="label-izq">
+              <label for="name">{{ 'VENDEDOR.NOMBRE' | translate }}</label>
+            </div>
+            <div>
+              <input 
+                placeholder="{{ 'VENDEDOR.NOMBRE_PLACEHOLDER' | translate }}" 
+                id="name" 
+                class="form-input" 
+                formControlName="name"
+              >
+            </div>
+            <div>
+              <input 
+                placeholder="{{ 'VENDEDOR.APELLIDO_PLACEHOLDER' | translate }}" 
+                id="lastname" 
+                class="form-input" 
+                formControlName="lastname"
+              >
+            </div>
           </div>
-      
+
           <div class="form-group" style="gap: 30px;">
             <div style="height: 87px;">
-              <div><label for="country">País</label></div>
+              <div>
+                <label for="country">{{ 'VENDEDOR.PAIS' | translate }}</label>
+              </div>
               <div class="category-selector">
                 <select class="category-dropdown" formControlName="country">
-                  <!-- <option value="" disabled selected>Seleccionar categoría</option>
-                  <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option> -->
-                  <option value="" disabled>Seleccionar país</option>
+                  <option value="" disabled>{{ 'VENDEDOR.SELECCIONAR_PAIS' | translate }}</option>
                   <option value="Argentina">Argentina</option>
                   <option value="Bolivia">Bolivia</option>
                   <option value="Colombia">Colombia</option>
                 </select>
               </div>
             </div>
+
             <div style="height: 87px;">
-              <div style="margin-bottom: 8px;"><label for="address">Dirección</label></div>
-              <div><input placeholder="Dirección" id="address" class="form-input" formControlName="address"></div>
+              <div style="margin-bottom: 8px;">
+                <label for="address">{{ 'VENDEDOR.DIRECCION' | translate }}</label>
+              </div>
+              <div>
+                <input 
+                  placeholder="{{ 'VENDEDOR.DIRECCION' | translate }}" 
+                  id="address" 
+                  class="form-input" 
+                  formControlName="address"
+                >
+              </div>
             </div>
           </div>
-      
+
           <div class="form-group">
-            <div class="label-izq"><label for="telephone">Teléfono</label></div>
-            <div><input placeholder="Teléfono" id="telephone" class="form-input" formControlName="telephone"></div>
+            <div class="label-izq">
+              <label for="telephone">{{ 'VENDEDOR.TELEFONO' | translate }}</label>
+            </div>
+            <div>
+              <input 
+                placeholder="{{ 'VENDEDOR.TELEFONO' | translate }}" 
+                id="telephone" 
+                class="form-input" 
+                formControlName="telephone"
+              >
+            </div>
           </div>
-      
+
           <div class="form-group">
-            <div class="label-izq"><label for="email">Correo electrónico</label></div>
-            <div><input placeholder="Correo electrónico" id="email" class="form-input" formControlName="email"></div>
+            <div class="label-izq">
+              <label for="email">{{ 'VENDEDOR.CORREO' | translate }}</label>
+            </div>
+            <div>
+              <input 
+                placeholder="{{ 'VENDEDOR.CORREO' | translate }}" 
+                id="email" 
+                class="form-input" 
+                formControlName="email"
+              >
+            </div>
           </div>
 
         </div>
-      
-        <button type="submit" class="submit-button">Registrar vendedor</button>
+
+        <button type="submit" class="submit-button">
+          {{ 'VENDEDOR.REGISTRAR' | translate }}
+        </button>
       </form>
-      
 
     </div>
   </div>
