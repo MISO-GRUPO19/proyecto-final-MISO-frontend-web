@@ -53,10 +53,10 @@
               </div>
               <div class="category-selector">
                 <select class="category-dropdown" formControlName="provider_id">
-                  <option value="" disabled>{{ 'PRODUCTO.SELECCIONAR_PROVEEDOR' | translate }}</option>
-                  <option value="f2d4a5cc-503c-4207-9396-352b3beed3cd">Proveedor 1</option>
-                  <option value="f2d4a5cc-503c-4207-9396-352b3beed3cd">Proveedor 2</option>
-                  <option value="f2d4a5cc-503c-4207-9396-352b3beed3cd">Proveedor 3</option>
+                  <option value="" disabled selected>{{ 'PRODUCTO.SELECCIONAR_PROVEEDOR' | translate }}</option>
+                  <option *ngFor="let fabricante of fabricantes" [value]="fabricante.id">
+                    {{ fabricante.name }}
+                  </option>
                 </select>
               </div>
             </div>
