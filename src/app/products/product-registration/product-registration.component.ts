@@ -8,6 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../../environments/environment';
 import { TranslateModule } from '@ngx-translate/core';
 import { I18nModule } from '../../i18n.module';
+import { ManufacturerService } from '../../core/services/manufacturer.service';
 
 @Component({
   selector: 'app-product-registration',
@@ -26,11 +27,13 @@ import { I18nModule } from '../../i18n.module';
 export class ProductRegistrationComponent {
 
   productForm: FormGroup;
+  fabricantes: any[] = [];
 
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private manufacturerService: ManufacturerService
   ) {
     this.productForm = this.fb.group({
       name: ['', Validators.required],
@@ -43,6 +46,17 @@ export class ProductRegistrationComponent {
       quantity: ['', Validators.required],
       description: ['', Validators.required],
       best_before: ['', Validators.required]
+    });
+  }
+
+  ngOnInit(): void {
+    this.manufacturerService.getManufacturers().subscribe({
+      next: (data) => {
+        this.fabricantes = data;
+      },
+      error: (err) => {
+        console.error('Error al obtener fabricantes:', err);
+      }
     });
   }
 
