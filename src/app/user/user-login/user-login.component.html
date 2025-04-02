@@ -6,43 +6,45 @@
 <!-- Formulario centrado -->
 <div class="login-container">
   <div class="login-card">
-    <h1>Iniciar sesión</h1>
+
+    <h1>{{ 'LOGIN.TITULO' | translate }}</h1>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="input-row">
+        
         <div class="input-group">
           <input
             type="email"
-            placeholder="Correo electrónico"
+            placeholder="{{ 'LOGIN.EMAIL' | translate }}"
             formControlName="email"
           />
           <div
             class="error"
             *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
           >
-            Ingresa un correo válido
+            {{ 'LOGIN.ERROR_EMAIL' | translate }}
           </div>
         </div>
 
         <div class="input-group">
           <input
             type="password"
-            placeholder="Contraseña"
+            placeholder="{{ 'LOGIN.CONTRASENA' | translate }}"
             formControlName="password"
           />
           <div
             class="error"
             *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
           >
-            Ingresa una contraseña
+            {{ 'LOGIN.ERROR_CONTRASENA' | translate }}
           </div>
         </div>
+
       </div>
 
-      <button type="submit">Ingresar</button>
+      <button type="submit">{{ 'LOGIN.INGRESAR' | translate }}</button>
     </form>
-    <!-- <div *ngIf="error" class="error-message">
-      {{ error }}
-    </div> -->
+
   </div>
 </div>
+

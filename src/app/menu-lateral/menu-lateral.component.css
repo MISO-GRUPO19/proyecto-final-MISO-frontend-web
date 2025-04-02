@@ -152,6 +152,7 @@
     height: 20px;
     top: 0;
     left: 0;
+    cursor: pointer;
   }
   
   .box .text-wrapper-3 {

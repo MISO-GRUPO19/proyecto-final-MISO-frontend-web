@@ -11,7 +11,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     HttpClientModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'es',
+      //defaultLanguage: 'es',
+      useDefaultLang: false,
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,

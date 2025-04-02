@@ -6,11 +6,20 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../../environments/environment';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nModule } from '../../i18n.module';
 
 @Component({
   selector: 'app-product-registration',
   standalone: true,
-  imports: [BarraSuperiorComponent, MenuLateralComponent, ReactiveFormsModule, CommonModule],
+  imports: [
+    BarraSuperiorComponent,
+    MenuLateralComponent,
+    ReactiveFormsModule,
+    CommonModule,
+    TranslateModule,
+    I18nModule
+  ],
   templateUrl: './product-registration.component.html',
   styleUrls: ['./product-registration.component.css']
 })

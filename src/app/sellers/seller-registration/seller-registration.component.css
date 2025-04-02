@@ -74,7 +74,6 @@
     height: 28px;
     
     &:focus {
-      outline: none;
       border-color: #3f51b5;
       box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
     }
@@ -90,7 +89,6 @@
     width: 644px;
     
     &:focus {
-      outline: none;
       border-color: #3f51b5;
       box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
     }

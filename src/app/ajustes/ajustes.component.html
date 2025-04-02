@@ -6,22 +6,39 @@
       
       <form [formGroup]="settingsForm" (ngSubmit)="guardarAjustes()">
         <h1 class="form-title">{{ 'AJUSTES.TITULO' | translate }}</h1>
-        <div class="form-section">
-          <label>{{ 'AJUSTES.PAIS' | translate }}</label>
-          <select formControlName="pais">
-            <option value="">{{ 'AJUSTES.SELECCIONAR_PAIS' | translate }}</option>
-            <option value="col">Colombia</option>
-            <option value="mex">México</option>
-            <option value="bra">Brasil</option>
-          </select>
+
+        <div class="form-grid">
+
+        <div class="form-group" style="gap: 30px;">
+          <div style="height: 87px;">
+            <div><label>{{ 'AJUSTES.PAIS' | translate }}</label></div>
+            <div class="category-selector">
+              <select class="category-dropdown" formControlName="pais">
+                <option value="" disabled>{{ 'AJUSTES.SELECCIONAR_PAIS' | translate }}</option>
+                <option value="col">Colombia</option>
+                <option value="mex">México</option>
+                <option value="bra">Brasil</option>
+              </select>
+            </div>
+          </div>
         </div>
+
     
         <div class="form-section">
           <label>{{ 'AJUSTES.IDIOMA' | translate }}</label>
           <div class="radio-group">
-            <label><input type="radio" formControlName="idioma" value="es" /> Español</label>
-            <label><input type="radio" formControlName="idioma" value="en" /> English</label>
-            <label><input type="radio" formControlName="idioma" value="pt" /> Português</label>
+            <label>
+              <input type="radio" formControlName="idioma" value="es" />
+              <span>Español</span>
+            </label>
+            <label>
+              <input type="radio" formControlName="idioma" value="en" />
+              <span>English</span>
+            </label>
+            <label>
+              <input type="radio" formControlName="idioma" value="pt" />
+              <span>Português</span>
+            </label>
           </div>
         </div>
     
@@ -33,7 +50,9 @@
           </div>
         </div>
     
-        <button class="guardar-btn" type="submit">{{ 'AJUSTES.GUARDAR' | translate }}</button>
+        <button class="submit-button" type="submit">{{ 'AJUSTES.GUARDAR' | translate }}</button>
+
+      </div>
       </form>      
 
     </div>

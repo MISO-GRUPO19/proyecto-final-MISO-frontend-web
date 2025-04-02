@@ -6,6 +6,7 @@ import { BarraSuperiorComponent } from '../barra-superior/barra-superior.compone
 import { MenuLateralComponent } from '../menu-lateral/menu-lateral.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { I18nModule } from '../i18n.module';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-ajustes',
@@ -37,7 +38,11 @@ export class AjustesComponent {
     { codigo: 'pt', label: 'Português' },
   ];
 
-  constructor(private fb: FormBuilder, private translate: TranslateService) {
+  constructor(
+    private fb: FormBuilder,
+    private translate: TranslateService,
+    private toastr: ToastrService
+  ) {
     this.settingsForm = this.fb.group({
       pais: [''],
       idioma: ['es'],
@@ -45,11 +50,35 @@ export class AjustesComponent {
     });
   }
 
+  ngOnInit(): void {
+    const idioma = localStorage.getItem('idioma') || 'es';
+    const pais = localStorage.getItem('pais') || '';
+    const contraste = localStorage.getItem('contraste') || 'off';
+
+    this.settingsForm = this.fb.group({
+      idioma: [idioma],
+      pais: [pais],
+      contraste: [contraste]
+    });
+  
+    // Aplicar contraste si ya estaba guardado
+    if (localStorage.getItem('contraste') === 'on') {
+      document.body.classList.add('alto-contraste');
+    }
+  }
+
   guardarAjustes() {
     const ajustes = this.settingsForm.value;
 
+    // Guarda el idioma en localStorage
+    localStorage.setItem('idioma', ajustes.idioma);
+
     // Cambiar idioma
     this.translate.use(ajustes.idioma);
+
+    // Guardar país y contraste
+    localStorage.setItem('pais', ajustes.pais);
+    localStorage.setItem('contraste', ajustes.contraste);
 
     // Aplicar contraste
     if (ajustes.contraste === 'on') {
@@ -58,7 +87,14 @@ export class AjustesComponent {
       document.body.classList.remove('alto-contraste');
     }
 
-    // Guardar en localStorage
-    localStorage.setItem('ajustes', JSON.stringify(ajustes));
+    console.log('Ajustes guardados:', ajustes);
+
+    this.translate.use(ajustes.idioma).subscribe(() => {
+      this.toastr.success(
+        this.translate.instant('AJUSTES.MENSAJE_GUARDADO'),
+        this.translate.instant('AJUSTES.TITULO_TOAST'),
+        { timeOut: 3000 }
+      );
+    });
   }
 }

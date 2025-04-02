@@ -7,6 +7,9 @@
       "ERROR_CONTRASENA": "Ingresa una contraseña",
       "INGRESAR": "Ingresar"
     },
+    "BARRA": {
+      "BUSCAR_PRODUCTOS": "Buscar productos"
+    },
     "MENU": {
       "PANEL": "Panel principal",
       "LOGISTICA": "LOGÍSTICA",
@@ -24,15 +27,28 @@
       "TITULO": "Bienvenido al software de gestión de CCP",
       "MENSAJE": "Se ha iniciado sesión correctamente."
     },
-    "REGISTRO_PRODUCTOS": {
+    "REGISTRO_TIPO": {
       "TITULO": "Registro de productos",
       "INDIVIDUAL": "Registro individual",
-      "MASIVO": "Registro masivo (Excel)",
-      "FORMULARIO_TITULO": "Registro de producto individual",
+      "MASIVO": "Registro masivo (Excel)"
+    },
+    "PRODUCTO": {
+      "TITULO": "Registro de producto individual",
       "NOMBRE": "Nombre producto",
+      "NOMBRE_PLACEHOLDER": "Nombre",
       "CODIGO": "Código",
       "CATEGORIA": "Categoría",
       "SELECCIONAR_CATEGORIA": "Seleccionar categoría",
+      "CATEGORIA_FRUTAS": "Frutas y Verduras",
+      "CATEGORIA_CARNES": "Carnes y Pescados",
+      "CATEGORIA_LACTEOS": "Lácteos y Huevos",
+      "CATEGORIA_PANADERIA": "Panadería y Repostería",
+      "CATEGORIA_DESPENSA": "Despensa",
+      "CATEGORIA_BEBIDAS": "Bebidas",
+      "CATEGORIA_SNACKS": "Snacks y Dulces",
+      "CATEGORIA_CONDIMENTOS": "Condimentos y Especias",
+      "CATEGORIA_LIMPIEZA": "Productos de Limpieza",
+      "CATEGORIA_BEBES": "Productos para Bebés",
       "PROVEEDOR": "Proveedor",
       "SELECCIONAR_PROVEEDOR": "Seleccionar proveedor",
       "PESO": "Peso",
@@ -43,27 +59,30 @@
       "FECHA_VENCIMIENTO": "Fecha de vencimiento",
       "REGISTRAR": "Registrar producto"
     },
-    "REGISTRO_VENDEDORES": {
+    "VENDEDOR": {
       "TITULO": "Registro de vendedor",
       "IDENTIFICACION": "Identificación",
-      "NOMBRE": "Nombre",
-      "APELLIDO": "Apellido",
+      "NOMBRE": "Nombre vendedor",
+      "NOMBRE_PLACEHOLDER": "Nombre",
+      "APELLIDO_PLACEHOLDER": "Apellido",
       "PAIS": "País",
       "SELECCIONAR_PAIS": "Seleccionar país",
       "DIRECCION": "Dirección",
       "TELEFONO": "Teléfono",
-      "EMAIL": "Correo electrónico",
+      "CORREO": "Correo electrónico",
       "REGISTRAR": "Registrar vendedor"
     },
     "REGISTRO_PROVEEDORES": {
       "TITULO": "Registro de fabricante",
-      "NOMBRE_PROVEEDOR": "Nombre proveedor",
+      "NOMBRE_LABEL": "Nombre proveedor",
+      "NOMBRE_PLACEHOLDER": "Nombre",
       "PAIS": "País",
       "SELECCIONAR_PAIS": "Seleccionar país",
       "CONTACTO": "Persona de contacto",
+      "NOMBRE_CONTACTO": "Nombre",
       "APELLIDO_CONTACTO": "Apellido",
       "TELEFONO": "Teléfono",
-      "EMAIL": "Correo electrónico",
+      "CORREO": "Correo electrónico",
       "REGISTRAR": "Registrar fabricante"
     },
     "AJUSTES":{
@@ -74,7 +93,9 @@
       "GUARDAR": "Guardar",
       "ACTIVADO": "Activado",
       "DESACTIVADO": "Desactivado",
-      "SELECCIONAR_PAIS":"Seleccionar país"
+      "SELECCIONAR_PAIS":"Seleccionar país",
+      "TITULO_TOAST": "Ajustes",
+      "MENSAJE_GUARDADO": "Ajustes guardados correctamente"
     }
   }
   

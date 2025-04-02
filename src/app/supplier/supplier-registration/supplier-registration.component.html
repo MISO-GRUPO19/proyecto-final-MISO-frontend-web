@@ -6,24 +6,35 @@
       
 
       <form class="product-form" [formGroup]="supplierForm" (ngSubmit)="onSubmit()">
-        <h1 class="form-title">Registro de fabricante</h1>
+        <h1 class="form-title">{{ 'REGISTRO_PROVEEDORES.TITULO' | translate }}</h1>
+        
         <div class="form-grid">
           
           <div class="form-group">
-            <div class="label-izq"><label for="name">Nombre proveedor</label></div>
+            <div class="label-izq">
+              <label for="name">{{ 'REGISTRO_PROVEEDORES.NOMBRE_LABEL' | translate }}</label>
+            </div>
           </div>
+      
           <div class="form-group">
-            <div><input placeholder="Nombre" id="name" class="form-input" formControlName="name"></div>
+            <div>
+              <input 
+                placeholder="{{ 'REGISTRO_PROVEEDORES.NOMBRE_PLACEHOLDER' | translate }}" 
+                id="name" 
+                class="form-input" 
+                formControlName="name"
+              >
+            </div>
           </div>
       
           <div class="form-group" style="gap: 30px;">
             <div style="height: 87px;">
-              <div><label for="country">País</label></div>
+              <div>
+                <label for="country">{{ 'REGISTRO_PROVEEDORES.PAIS' | translate }}</label>
+              </div>
               <div class="category-selector">
                 <select class="category-dropdown" formControlName="country">
-                  <!-- <option value="" disabled selected>Seleccionar categoría</option>
-                  <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option> -->
-                  <option value="" disabled>Seleccionar país</option>
+                  <option value="" disabled>{{ 'REGISTRO_PROVEEDORES.SELECCIONAR_PAIS' | translate }}</option>
                   <option value="Argentina">Argentina</option>
                   <option value="Bolivia">Bolivia</option>
                   <option value="Colombia">Colombia</option>
@@ -31,27 +42,63 @@
               </div>
             </div>
           </div>
-
+      
           <div class="form-group">
-            <div class="label-izq"><label for="contact">Persona de contacto</label></div>
-            <div><input placeholder="Nombre" id="contact" class="form-input" formControlName="contact"></div>
-            <div><input placeholder="Apellido" id="contactLastname" class="form-input" formControlName="contactLastname"></div>
+            <div class="label-izq">
+              <label for="contact">{{ 'REGISTRO_PROVEEDORES.CONTACTO' | translate }}</label>
+            </div>
+            <div>
+              <input 
+                placeholder="{{ 'REGISTRO_PROVEEDORES.NOMBRE_CONTACTO' | translate }}" 
+                id="contact" 
+                class="form-input" 
+                formControlName="contact"
+              >
+            </div>
+            <div>
+              <input 
+                placeholder="{{ 'REGISTRO_PROVEEDORES.APELLIDO_CONTACTO' | translate }}" 
+                id="contactLastname" 
+                class="form-input" 
+                formControlName="contactLastname"
+              >
+            </div>
           </div>
       
           <div class="form-group">
-            <div class="label-izq"><label for="telephone">Teléfono</label></div>
-            <div><input placeholder="Teléfono" id="telephone" class="form-input" formControlName="telephone"></div>
+            <div class="label-izq">
+              <label for="telephone">{{ 'REGISTRO_PROVEEDORES.TELEFONO' | translate }}</label>
+            </div>
+            <div>
+              <input 
+                placeholder="{{ 'REGISTRO_PROVEEDORES.TELEFONO' | translate }}" 
+                id="telephone" 
+                class="form-input" 
+                formControlName="telephone"
+              >
+            </div>
           </div>
       
           <div class="form-group">
-            <div class="label-izq"><label for="email">Correo electrónico</label></div>
-            <div><input placeholder="Correo electrónico" id="email" class="form-input" formControlName="email"></div>
+            <div class="label-izq">
+              <label for="email">{{ 'REGISTRO_PROVEEDORES.CORREO' | translate }}</label>
+            </div>
+            <div>
+              <input 
+                placeholder="{{ 'REGISTRO_PROVEEDORES.CORREO' | translate }}" 
+                id="email" 
+                class="form-input" 
+                formControlName="email"
+              >
+            </div>
           </div>
-
+      
         </div>
       
-        <button type="submit" class="submit-button">Registrar fabricante</button>
-      </form>
+        <button type="submit" class="submit-button">
+          {{ 'REGISTRO_PROVEEDORES.REGISTRAR' | translate }}
+        </button>
+      </form>      
       
 
     </div>

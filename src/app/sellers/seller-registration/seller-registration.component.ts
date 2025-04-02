@@ -6,11 +6,20 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../../environments/environment';
+import { TranslateModule } from '@ngx-translate/core';
+import { I18nModule } from '../../i18n.module';
 
 @Component({
   selector: 'app-seller-registration',
   standalone: true,
-  imports: [BarraSuperiorComponent, MenuLateralComponent, ReactiveFormsModule, CommonModule],
+  imports: [
+    BarraSuperiorComponent,
+    MenuLateralComponent,
+    ReactiveFormsModule,
+    CommonModule,
+    I18nModule,
+    TranslateModule
+  ],
   templateUrl: './seller-registration.component.html',
   styleUrls: ['./seller-registration.component.css']
 })
@@ -51,8 +60,7 @@ export class SellerRegistrationComponent {
       Authorization: `Bearer ${sessionStorage.getItem('access_token')}`
     };
   
-    this.http.post(`http://localhost:5007/sellers`, payload, { headers }).subscribe({
-    //this.http.post(`${environment.apiUrl}/users/sellers`, payload, { headers }).subscribe({
+    this.http.post(`${environment.apiUrl}/users/sellers`, payload, { headers }).subscribe({
       next: () => {
         this.toastr.success('Vendedor registrado exitosamente');
         this.sellerForm.reset();

@@ -4,13 +4,17 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { AuthService } from '../../core/services/auth.service';
 import { CommonModule} from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { I18nModule } from '../../i18n.module';
 
 @Component({
   standalone: true,
   selector: 'app-user-login',
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    I18nModule,
+    TranslateModule
   ],
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css']
@@ -23,13 +27,19 @@ export class UserLoginComponent {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private translate: TranslateService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
+
+    const idioma = localStorage.getItem('idioma') || 'es';
+    this.translate.use(idioma);
   }
+
+  
 
   onSubmit(): void {
     if (this.loginForm.invalid) {

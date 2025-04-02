@@ -11,12 +11,11 @@ import { AjustesComponent } from './ajustes/ajustes.component';
 
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'ajustes', pathMatch: 'full'  }, //component: UserLoginComponent, canActivate: [loginRedirectGuard]
-    { path: 'menu', component: BienvenidaComponent, pathMatch: 'full' },
-    { path: 'product-registration', component: ProductRegistrationComponent, pathMatch: 'full', canActivate: [adminOnlyGuard]},
-    { path: 'productos', component: RegistrationTypeComponent, pathMatch: 'full', canActivate: [adminOnlyGuard]},
-    { path: 'seller-registration', component: SellerRegistrationComponent, pathMatch: 'full', canActivate: [adminOnlyGuard]},
-    { path: 'supplier-registration', component: SupplierRegistrationComponent, pathMatch: 'full' },
-    { path: 'ajustes', component: AjustesComponent, pathMatch: 'full' },
-    { path: '**', redirectTo: 'ajustes' }
+    { path: '', component: UserLoginComponent, pathMatch: 'full',  canActivate: [loginRedirectGuard]}, //, canActivate: [loginRedirectGuard]
+    { path: 'menu', component: BienvenidaComponent, pathMatch: 'full', canActivate: [adminOnlyGuard] },
+    { path: 'product-registration', component: ProductRegistrationComponent, pathMatch: 'full', canActivate: [adminOnlyGuard] },
+    { path: 'productos', component: RegistrationTypeComponent, pathMatch: 'full', canActivate: [adminOnlyGuard] },
+    { path: 'seller-registration', component: SellerRegistrationComponent, pathMatch: 'full', canActivate: [adminOnlyGuard] },
+    { path: 'supplier-registration', component: SupplierRegistrationComponent, pathMatch: 'full', canActivate: [adminOnlyGuard] },
+    { path: 'ajustes', component: AjustesComponent, pathMatch: 'full', canActivate: [adminOnlyGuard] }
 ];
