@@ -10,6 +10,12 @@ export class ManufacturerService {
   constructor(private http: HttpClient) {}
 
   getManufacturers(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    const token = sessionStorage.getItem('access_token'); // o el nombre que uses
+  
+    const headers = {
+      Authorization: `Bearer ${token}`
+    };
+  
+    return this.http.get<any[]>(this.apiUrl, { headers });
   }
 }
