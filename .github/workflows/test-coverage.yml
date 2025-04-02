@@ -17,17 +17,26 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npm audit fix --force
 
       - name: Install Chrome
         run: |
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
-      - name: Install dependencies
-        run: npm install
+      - name: Verify Chrome installation
+        run: google-chrome --version
 
       - name: Run unit tests with coverage
-        run: npm test -- --code-coverage
+        run: |
+          export DISPLAY=:99
+          Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+          npm test -- --code-coverage --browsers=ChromeHeadlessCI
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4

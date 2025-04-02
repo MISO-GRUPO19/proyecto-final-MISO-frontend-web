@@ -10,22 +10,22 @@ module.exports = function (config) {
       ],
       client: {
         jasmine: {},
-        clearContext: false // Deja los resultados de las pruebas visibles en la consola
+        clearContext: false
       },
       coverageReporter: {
         dir: require('path').join(__dirname, './coverage'),
         subdir: '.',
         reporters: [
-          { type: 'html' }, // Reporte en formato HTML
-          { type: 'text-summary' } // Resumen en la consola
+          { type: 'html' },
+          { type: 'text-summary' }
         ]
       },
-      reporters: ['progress', 'coverage'], // Incluye el reporte de cobertura
+      reporters: ['progress', 'coverage'],
       port: 9876,
       colors: true,
       logLevel: config.LOG_INFO,
-      autoWatch: true,
-      browsers: ['ChromeHeadlessCI'], // Usa el custom launcher
+      autoWatch: false,
+      browsers: ['ChromeHeadlessCI'],
       customLaunchers: {
         ChromeHeadlessCI: {
           base: 'ChromeHeadless',
@@ -33,11 +33,13 @@ module.exports = function (config) {
             '--no-sandbox',
             '--disable-gpu',
             '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage'
+            '--disable-dev-shm-usage',
+            '--headless',
+            '--remote-debugging-port=9222'
           ]
         }
       },
-      singleRun: false,
-      restartOnFileChange: true
+      singleRun: true,
+      restartOnFileChange: false
     });
   };
