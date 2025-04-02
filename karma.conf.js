@@ -26,7 +26,7 @@ module.exports = function (config) {
         logLevel: config.LOG_INFO,
         autoWatch: false,
         customLaunchers: {
-            ChromeHeadlessCI: {
+            ChromeHeadlessNoSandbox: {
                 base: 'ChromeHeadless',
                 flags: [
                     '--no-sandbox',
@@ -37,7 +37,7 @@ module.exports = function (config) {
                 ]
             }
         },
-        browsers: ['ChromeHeadlessCI'], // Usa el navegador configurado
+        browsers: ['ChromeHeadlessNoSandbox'],
         singleRun: true,
         restartOnFileChange: false
     });
