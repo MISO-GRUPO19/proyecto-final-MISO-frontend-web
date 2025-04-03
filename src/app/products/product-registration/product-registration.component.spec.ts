@@ -1,27 +1,33 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductRegistrationComponent } from './product-registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ToastrService } from 'ngx-toastr';
 import { of, throwError } from 'rxjs';
+import { ManufacturerService } from '../../core/services/manufacturer.service';
 
 describe('ProductRegistrationComponent', () => {
   let component: ProductRegistrationComponent;
   let fixture: ComponentFixture<ProductRegistrationComponent>;
   let toastrService: jasmine.SpyObj<ToastrService>;
+  let manufacturerServiceSpy: jasmine.SpyObj<ManufacturerService>;
 
   beforeEach(async () => {
     const toastrSpy = jasmine.createSpyObj('ToastrService', ['success', 'error']);
+    const manufacturerSpy = jasmine.createSpyObj('ManufacturerService', ['getManufacturers']);
 
     await TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, HttpClientTestingModule, ProductRegistrationComponent],
-      providers: [{ provide: ToastrService, useValue: toastrSpy }]
+      providers: [
+        { provide: ToastrService, useValue: toastrSpy },
+        { provide: ManufacturerService, useValue: manufacturerSpy }
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProductRegistrationComponent);
     component = fixture.componentInstance;
     toastrService = TestBed.inject(ToastrService) as jasmine.SpyObj<ToastrService>;
-    fixture.detectChanges();
+    manufacturerServiceSpy = TestBed.inject(ManufacturerService) as jasmine.SpyObj<ManufacturerService>;
   });
 
   it('debería crear el componente', () => {
@@ -54,8 +60,6 @@ describe('ProductRegistrationComponent', () => {
   });
 
   it('debería llamar a toastr.success si el producto se registra correctamente', () => {
-    const http = TestBed.inject(HttpTestingController);
-
     spyOn(component['http'], 'post').and.returnValue(of({ message: 'Producto creado exitosamente' }));
 
     component.productForm.setValue({
@@ -72,7 +76,6 @@ describe('ProductRegistrationComponent', () => {
     });
 
     component.onSubmit();
-
     expect(toastrService.success).toHaveBeenCalledWith('Producto registrado exitosamente');
   });
 
@@ -94,5 +97,24 @@ describe('ProductRegistrationComponent', () => {
 
     component.onSubmit();
     expect(toastrService.error).toHaveBeenCalledWith('Error al registrar el producto');
+  });
+
+  it('debería cargar fabricantes en ngOnInit', () => {
+    const mockFabricantes = [{ name: 'Fabricante A', id: '123' }];
+    manufacturerServiceSpy.getManufacturers.and.returnValue(of(mockFabricantes));
+
+    component.ngOnInit();
+
+    expect(component.fabricantes).toEqual(mockFabricantes);
+    expect(manufacturerServiceSpy.getManufacturers).toHaveBeenCalled();
+  });
+
+  it('debería manejar error al cargar fabricantes en ngOnInit', () => {
+    const consoleSpy = spyOn(console, 'error');
+    manufacturerServiceSpy.getManufacturers.and.returnValue(throwError(() => new Error('Error cargando fabricantes')));
+
+    component.ngOnInit();
+
+    expect(consoleSpy).toHaveBeenCalledWith('Error al obtener fabricantes:', jasmine.any(Error));
   });
 });
