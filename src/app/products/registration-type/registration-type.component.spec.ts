@@ -1,19 +1,23 @@
-/* tslint:disable:no-unused-variable */
-import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RegistrationTypeComponent } from './registration-type.component';
+import { Router } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { provideToastr } from 'ngx-toastr';
 
 describe('RegistrationTypeComponent', () => {
   let component: RegistrationTypeComponent;
   let fixture: ComponentFixture<RegistrationTypeComponent>;
+  let routerSpy: jasmine.SpyObj<Router>;
 
   beforeEach(async () => {
+    routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule, RegistrationTypeComponent],
-      declarations: [],
-      providers: [provideToastr()]
+      imports: [HttpClientTestingModule, RegistrationTypeComponent],
+      providers: [
+        provideToastr(),
+        { provide: Router, useValue: routerSpy }
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(RegistrationTypeComponent);
@@ -25,8 +29,8 @@ describe('RegistrationTypeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Función para mandar a registro individual definido', () => {
-    expect(component.registroInd).toBeDefined();
+  it('Función registroInd debe navegar a product-registration', () => {
+    component.registroInd();
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['product-registration']);
   });
-
 });

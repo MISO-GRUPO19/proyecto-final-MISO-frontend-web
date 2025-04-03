@@ -1,4 +1,3 @@
-/* tslint:disable:no-unused-variable */
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SellerRegistrationComponent } from './seller-registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -65,20 +64,21 @@ describe('SellerRegistrationComponent', () => {
     });
 
     component.onSubmit();
-
     expect(toastrService.success).toHaveBeenCalledWith('Vendedor registrado exitosamente');
   });
 
-  it('debería mostrar error si el servicio retorna error', () => {
-    const errorMessage = 'Invalid email, it should have email structure.';
-    spyOn(component['http'], 'post').and.returnValue(throwError(() => ({ error: { error: errorMessage } })));
+  it('debería mostrar error si el servicio retorna error con error.error', () => {
+    const errorMessage = 'Nombre inválido';
+    spyOn(component['http'], 'post').and.returnValue(
+      throwError(() => ({ error: { error: errorMessage } }))
+    );
 
     component.sellerForm.setValue({
       identification: 'ABC123456',
       name: 'Juan',
       lastname: 'Pérez',
       country: 'Colombia',
-      address: 'Calle 123 #45-67',
+      address: 'Calle 123',
       telephone: '3001234567',
       email: 'juan@example.com'
     });
@@ -86,4 +86,65 @@ describe('SellerRegistrationComponent', () => {
     component.onSubmit();
     expect(toastrService.error).toHaveBeenCalledWith(errorMessage);
   });
+
+  it('debería mostrar error si err.error es string', () => {
+    const rawError = 'Error crudo';
+    spyOn(component['http'], 'post').and.returnValue(
+      throwError(() => ({ error: rawError }))
+    );
+
+    component.sellerForm.setValue({
+      identification: 'ABC123456',
+      name: 'Juan',
+      lastname: 'Pérez',
+      country: 'Colombia',
+      address: 'Calle 123',
+      telephone: '3001234567',
+      email: 'juan@example.com'
+    });
+
+    component.onSubmit();
+    expect(toastrService.error).toHaveBeenCalledWith(rawError);
+  });
+
+  it('debería mostrar error si err.error tiene msg', () => {
+    const msgError = 'Mensaje del backend';
+    spyOn(component['http'], 'post').and.returnValue(
+      throwError(() => ({ error: { msg: msgError } }))
+    );
+
+    component.sellerForm.setValue({
+      identification: 'ABC123456',
+      name: 'Juan',
+      lastname: 'Pérez',
+      country: 'Colombia',
+      address: 'Calle 123',
+      telephone: '3001234567',
+      email: 'juan@example.com'
+    });
+
+    component.onSubmit();
+    expect(toastrService.error).toHaveBeenCalledWith(msgError);
+  });
+
+  it('debería mostrar error si err tiene message', () => {
+    const genericError = 'Algo salió mal';
+    spyOn(component['http'], 'post').and.returnValue(
+      throwError(() => ({ message: genericError }))
+    );
+
+    component.sellerForm.setValue({
+      identification: 'ABC123456',
+      name: 'Juan',
+      lastname: 'Pérez',
+      country: 'Colombia',
+      address: 'Calle 123',
+      telephone: '3001234567',
+      email: 'juan@example.com'
+    });
+
+    component.onSubmit();
+    expect(toastrService.error).toHaveBeenCalledWith(genericError);
+  });
+
 });

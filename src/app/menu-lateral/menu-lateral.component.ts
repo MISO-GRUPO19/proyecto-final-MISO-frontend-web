@@ -18,11 +18,11 @@ export class MenuLateralComponent {
     private router: Router,
     private toastr: ToastrService,
     private translate: TranslateService
-  ){
-
+  ) {
+    this.inicializarIdioma();
   }
 
-  ngOnInit() {
+  public inicializarIdioma(): void {
     const lang = localStorage.getItem('idioma') || 'es';
     this.translate.use(lang);
   }
