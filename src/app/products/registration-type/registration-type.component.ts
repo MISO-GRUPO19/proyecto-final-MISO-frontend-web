@@ -8,7 +8,7 @@ import { I18nModule } from '../../i18n.module';
 @Component({
   selector: 'app-registration-type',
   standalone: true,
-  imports:[
+  imports: [
     MenuLateralComponent,
     BarraSuperiorComponent,
     TranslateModule,
@@ -23,8 +23,10 @@ export class RegistrationTypeComponent {
     private router: Router
   ) { }
 
-  registroInd(){
+  registroInd() {
     this.router.navigate(['product-registration']);
   }
-
+  registroBulk() {
+    this.router.navigate(['bulk-registration']);
+  }
 }
