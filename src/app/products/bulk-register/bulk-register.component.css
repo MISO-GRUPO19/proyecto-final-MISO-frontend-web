@@ -23,6 +23,7 @@
     margin-bottom: 15px;
     transition: background-color 0.2s;
     width: 400px;
+    text-align: center;
   }
   
   .upload-button:hover {
