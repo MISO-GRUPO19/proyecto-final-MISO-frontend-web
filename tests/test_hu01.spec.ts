@@ -1,7 +1,8 @@
+
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker'
 
-test.describe.serial("Posts E2E Scenarios", () => {
+test.describe.serial("HU01 Manufacturer Creation", () => {
     test.beforeEach(async ({ page }) =>{
         const user: string = 'admin@ccp.com';
         const password: string =  'Admin123-';
