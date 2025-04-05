@@ -156,3 +156,4 @@ test.describe.serial("HU01 Manufacturer Creation", () => {
         console.log("----------Manufacturer invalid email successfully----------");
     })
 })
+

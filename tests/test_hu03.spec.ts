@@ -1,3 +1,4 @@
+
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker'
 
@@ -17,7 +18,7 @@ test.describe.serial("HU03 Seller Creation", () => {
         console.log(`----------login successful----------`);
     })
 
-    test('Create a manufacturer successfully', async ({ page }) => {
+    test('Create a seller successfully', async ({ page }) => {
         const randomNumber: number = faker.number.int({ min: 6, max: 20 });
         const randomPhone: number = faker.number.int({ min: 7, max: 15 });
         const id: string = faker.string.numeric(randomNumber);
