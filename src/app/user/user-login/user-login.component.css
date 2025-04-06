@@ -1,0 +1,125 @@
+/* Fuente Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Barra superior con logo */
+.top-bar {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  height: 40px;
+}
+
+/* Centrado del formulario */
+.login-container {
+  height: calc(100vh - 60px); /* resto de pantalla debajo de la barra */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+/* Tarjeta del formulario */
+.login-card {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Título */
+.login-card h1 {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Inputs en una fila */
+.input-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  min-width: 200px;
+}
+
+.input-row input:focus {
+  border-color: #0066cc;
+}
+
+/* Botón */
+button {
+  padding: 12px;
+  width: 75%;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #005fa3;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #004680;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+  }
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid red;
+  background-color: #ffe6e6;
+  border-radius: 4px;
+  text-align: center;
+}
+  
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .input-row {
+    flex-direction: column;
+  }
+}

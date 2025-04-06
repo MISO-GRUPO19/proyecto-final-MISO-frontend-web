@@ -1,0 +1,101 @@
+{
+    "LOGIN": {
+      "TITULO": "Log in",
+      "EMAIL": "Email",
+      "CONTRASENA": "Password",
+      "ERROR_EMAIL": "Enter a valid email",
+      "ERROR_CONTRASENA": "Enter a password",
+      "INGRESAR": "Sign in"
+    },
+    "BARRA": {
+      "BUSCAR_PRODUCTOS": "Search products"
+    },
+    "MENU": {
+      "PANEL": "Dashboard",
+      "LOGISTICA": "LOGISTICS",
+      "PROVEEDORES": "Suppliers",
+      "VENDEDORES": "Sellers",
+      "RUTAS": "Routes",
+      "VENTAS": "SALES",
+      "PRODUCTOS": "Products",
+      "METAS": "Goals",
+      "REPORTES": "Reports",
+      "AJUSTES": "Settings",
+      "CERRAR_SESION": "Log out"
+    },
+    "BIENVENIDA": {
+      "TITULO": "Welcome to the CCP management software",
+      "MENSAJE": "You have successfully logged in."
+    },
+    "REGISTRO_TIPO": {
+      "TITULO": "Product registration",
+      "INDIVIDUAL": "Individual registration",
+      "MASIVO": "Bulk registration (Excel)"
+    },
+    "PRODUCTO": {
+      "TITULO": "Individual product registration",
+      "NOMBRE": "Product name",
+      "NOMBRE_PLACEHOLDER": "Name",
+      "CODIGO": "Code",
+      "CATEGORIA": "Category",
+      "SELECCIONAR_CATEGORIA": "Select category",
+      "CATEGORIA_FRUTAS": "Fruits and Vegetables",
+      "CATEGORIA_CARNES": "Meat and Fish",
+      "CATEGORIA_LACTEOS": "Dairy and Eggs",
+      "CATEGORIA_PANADERIA": "Bakery and Pastry",
+      "CATEGORIA_DESPENSA": "Pantry",
+      "CATEGORIA_BEBIDAS": "Beverages",
+      "CATEGORIA_SNACKS": "Snacks and Sweets",
+      "CATEGORIA_CONDIMENTOS": "Condiments and Spices",
+      "CATEGORIA_LIMPIEZA": "Cleaning Products",
+      "CATEGORIA_BEBES": "Baby Products",
+      "PROVEEDOR": "Supplier",
+      "SELECCIONAR_PROVEEDOR": "Select supplier",
+      "PESO": "Weight",
+      "PRECIO": "Price",
+      "LOTE": "Batch",
+      "CANTIDAD": "Quantity",
+      "DESCRIPCION": "Description",
+      "FECHA_VENCIMIENTO": "Expiration date",
+      "REGISTRAR": "Register product"
+    },
+    "VENDEDOR": {
+      "TITULO": "Seller Registration",
+      "IDENTIFICACION": "Identification",
+      "NOMBRE": "Seller's name",
+      "NOMBRE_PLACEHOLDER": "First Name",
+      "APELLIDO_PLACEHOLDER": "Last Name",
+      "PAIS": "Country",
+      "SELECCIONAR_PAIS": "Select country",
+      "DIRECCION": "Address",
+      "TELEFONO": "Phone",
+      "CORREO": "Email",
+      "REGISTRAR": "Register seller"
+    },
+    "REGISTRO_PROVEEDORES": {
+      "TITULO": "Manufacturer Registration",
+      "NOMBRE_LABEL": "Supplier Name",
+      "NOMBRE_PLACEHOLDER": "Name",
+      "PAIS": "Country",
+      "SELECCIONAR_PAIS": "Select country",
+      "CONTACTO": "Contact Person",
+      "NOMBRE_CONTACTO": "First Name",
+      "APELLIDO_CONTACTO": "Last Name",
+      "TELEFONO": "Phone",
+      "CORREO": "Email",
+      "REGISTRAR": "Register Manufacturer"
+    },
+    "AJUSTES": {
+      "TITULO": "Settings",
+      "PAIS": "Country",
+      "IDIOMA": "Language",
+      "CONTRASTE": "Contrast",
+      "GUARDAR": "Save",
+      "ACTIVADO": "Enabled",
+      "DESACTIVADO": "Disabled",
+      "SELECCIONAR_PAIS": "Select country",
+      "TITULO_TOAST": "Settings",
+      "MENSAJE_GUARDADO": "Settings saved successfully"
+    }    
+  }
+  

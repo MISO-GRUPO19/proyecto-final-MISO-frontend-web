@@ -1,0 +1,35 @@
+<div class="main-container">
+  <app-barra-superior></app-barra-superior>
+  <div class="content-container">
+    <app-menu-lateral></app-menu-lateral>
+    <div class="content-area">
+
+      <div class="upload-container">
+        <h1 class="upload-title">Registro de productos masivo</h1>
+
+        <!-- Botón personalizado -->
+        <label for="fileInput" class="upload-button">
+          Cargar Archivo Excel
+        </label>
+        <input id="fileInput" type="file" (change)="onFileSelected($event)" accept=".xlsx,.xls"
+          class="upload-input-hidden" />
+
+        <!-- Nombre del archivo seleccionado -->
+        <div *ngIf="selectedFile" class="upload-filename">
+          Archivo seleccionado: {{ selectedFile.name }}
+        </div>       
+
+        <div *ngIf="uploadSuccess" class="upload-success">
+          Archivo subido con éxito.
+        </div>
+        <div *ngIf="uploadError" class="upload-error">
+          {{ uploadError }}
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
