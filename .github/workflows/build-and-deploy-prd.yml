@@ -41,6 +41,5 @@ jobs:
             --cpu=1 \
             --concurrency=80 \
             --port=80 \
-            --vpc-egress=private-ranges-only \
             --min-instances=1 \
             --max-instances=3

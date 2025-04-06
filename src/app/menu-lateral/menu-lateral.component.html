@@ -1,0 +1,58 @@
+<div class="box">
+  <div class="menu-light">
+    <div class="element">
+      <div class="text-wrapper" (click)="menu()">{{ 'MENU.PANEL' | translate }}</div>
+      <img class="img" src="assets/home.svg" />
+    </div>
+
+    <div class="set">
+      <div class="div">{{ 'MENU.LOGISTICA' | translate }}</div>
+
+      <div class="element-2">
+        <div class="text-wrapper-2" (click)="suppliers()">{{ 'MENU.PROVEEDORES' | translate }}</div>
+        <img class="img" src="assets/suppliers.svg" />
+      </div>
+
+      <div class="element-2">
+        <div class="text-wrapper-2" (click)="vendedores()">{{ 'MENU.VENDEDORES' | translate }}</div>
+        <img class="img" src="assets/sellers.svg" />
+      </div>
+
+      <div class="element-2">
+        <div class="text-wrapper-2">{{ 'MENU.RUTAS' | translate }}</div>
+        <img class="img" src="assets/routes.svg" />
+      </div>
+    </div>
+
+    <div class="set-2">
+      <div class="v-ENTAS">{{ 'MENU.VENTAS' | translate }}</div>
+
+      <div class="element-3" (click)="productos()">
+        <div class="text-wrapper-2">{{ 'MENU.PRODUCTOS' | translate }}</div>
+        <img class="img" src="assets/products.svg" />
+      </div>
+
+      <div class="element-4">
+        <div class="text-wrapper-2">{{ 'MENU.METAS' | translate }}</div>
+        <img class="img" src="assets/goals.svg" />
+      </div>
+
+      <div class="element-5">
+        <div class="text-wrapper-2">{{ 'MENU.REPORTES' | translate }}</div>
+        <img class="img" src="assets/reports.svg" />
+      </div>
+    </div>
+
+    <div class="set-3">
+      <div class="element-6" (click)="ajustes()">
+        <div class="text-wrapper-3">{{ 'MENU.AJUSTES' | translate }}</div>
+        <img class="img" src="assets/settings.svg" />
+      </div>
+
+      <div class="element-7" (click)="logout()">
+        <div class="text-wrapper-4">{{ 'MENU.CERRAR_SESION' | translate }}</div>
+        <img class="img" src="assets/logout.svg" />
+      </div>
+    </div>
+  </div>
+</div>
