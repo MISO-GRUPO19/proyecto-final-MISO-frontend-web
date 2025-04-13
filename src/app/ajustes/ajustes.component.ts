@@ -28,8 +28,10 @@ export class AjustesComponent {
 
   paises = [
     { codigo: 'CO', nombre: 'Colombia' },
-    { codigo: 'MX', nombre: 'México' },
+    { codigo: 'AR', nombre: 'Argentina' },
     { codigo: 'BR', nombre: 'Brasil' },
+    { codigo: 'CL', nombre: 'Chile' },
+    { codigo: 'EC', nombre: 'Ecuador' },
   ];
 
   idiomas = [

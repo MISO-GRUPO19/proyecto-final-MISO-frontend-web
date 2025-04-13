@@ -59,6 +59,25 @@
       "FECHA_VENCIMIENTO": "Data de validade",
       "REGISTRAR": "Registrar produto"
     },
+    "BUSQUEDA_PRODUCTO": {
+    "TITULO": "Busca de Produto",
+    "NOMBRE": "Nome",
+    "ID_PRODUCTO": "ID do Produto",
+    "PESO": "Peso",
+    "PROVEEDOR": "Fornecedor",
+    "PRECIO": "Preço de Venda",
+    "CATEGORIA": "Categoria",
+    "BODEGA": "Depósito",
+    "DIRECCION": "Endereço do Depósito",
+    "UBICACION": "Localização",
+    "CANTIDAD": "Quantidade",
+    "PASILLO": "Corredor",
+    "ESTANTE": "Prateleira",
+    "NIVEL_BAJO": "Nível Inferior",
+    "NIVEL_MEDIO": "Nível Médio",
+    "NIVEL_ALTO": "Nível Superior",
+    "UNIDADES": "Unidades"
+  },
     "VENDEDOR": {
       "TITULO": "Cadastro de vendedor",
       "IDENTIFICACION": "Identificação",
