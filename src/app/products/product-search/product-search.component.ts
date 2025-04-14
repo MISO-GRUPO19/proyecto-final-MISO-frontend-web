@@ -70,6 +70,21 @@ export class ProductSearchComponent {
   
     this.http.get<any>(url, { headers }).subscribe({
       next: (response) => {
+        // Validación explícita por si el backend devuelve { error: "..." } con 200
+        if (response?.error) {
+          this.toastr.error(response.error, 'Error');
+          this.product = null;
+          return;
+        }
+
+        // Validación de estructura esperada
+        if (!response?.product_info || !response?.warehouse_info) {
+          this.toastr.warning('Producto no encontrado', 'Aviso');
+          this.product = null;
+          return;
+        }
+
+        // Si todo está bien, procesa normalmente
         this.product = {
           name: response.product_info.product_name,
           weight: response.product_info.product_weight,
@@ -88,9 +103,10 @@ export class ProductSearchComponent {
       },
       error: (err) => {
         console.error('Error al obtener producto', err);
-        this.toastr.error('No se pudo obtener la información del producto', 'Error');
+        const errorMsg = err?.error?.error || 'Ocurrió un error al buscar el producto';
+        this.toastr.error(errorMsg, 'Error');
         this.product = null;
-      }
+      }      
     });
   }  
 
