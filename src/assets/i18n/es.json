@@ -59,6 +59,25 @@
       "FECHA_VENCIMIENTO": "Fecha de vencimiento",
       "REGISTRAR": "Registrar producto"
     },
+    "BUSQUEDA_PRODUCTO":{
+      "TITULO": "Búsqueda de producto",
+      "NOMBRE": "Nombre",
+      "ID_PRODUCTO": "ID Producto",
+      "PESO": "Peso",
+      "PROVEEDOR": "Proveedor",
+      "PRECIO": "Precio venta",
+      "CATEGORIA": "Categoría",
+      "BODEGA": "Bodega",
+      "DIRECCION": "Dirección Bodega",
+      "UBICACION": "Ubicación",
+      "CANTIDAD": "Cantidad",
+      "PASILLO": "Pasillo",
+      "ESTANTE": "Estante",
+      "NIVEL_BAJO": "Nivel Bajo",
+      "NIVEL_MEDIO": "Nivel Medio",
+      "NIVEL_ALTO": "Nivel Alto",
+      "UNIDADES": "Unidades"
+    },
     "VENDEDOR": {
       "TITULO": "Registro de vendedor",
       "IDENTIFICACION": "Identificación",

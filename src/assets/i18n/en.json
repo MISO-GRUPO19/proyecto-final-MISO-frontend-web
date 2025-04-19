@@ -59,6 +59,25 @@
       "FECHA_VENCIMIENTO": "Expiration date",
       "REGISTRAR": "Register product"
     },
+    "BUSQUEDA_PRODUCTO": {
+      "TITULO": "Product Search",
+      "NOMBRE": "Name",
+      "ID_PRODUCTO": "Product ID",
+      "PESO": "Weight",
+      "PROVEEDOR": "Supplier",
+      "PRECIO": "Sale Price",
+      "CATEGORIA": "Category",
+      "BODEGA": "Warehouse",
+      "DIRECCION": "Warehouse Address",
+      "UBICACION": "Location",
+      "CANTIDAD": "Quantity",
+      "PASILLO": "Aisle",
+      "ESTANTE": "Shelf",
+      "NIVEL_BAJO": "Lower Level",
+      "NIVEL_MEDIO": "Middle Level",
+      "NIVEL_ALTO": "Upper Level",
+      "UNIDADES": "Units"
+  },
     "VENDEDOR": {
       "TITULO": "Seller Registration",
       "IDENTIFICACION": "Identification",
