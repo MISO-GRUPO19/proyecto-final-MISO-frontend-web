@@ -61,7 +61,8 @@ export class ProductSearchComponent {
   
     const token = sessionStorage.getItem('access_token');
     if (!token) {
-      this.toastr.error('No hay token de autenticación', 'Error');
+      const msg = this.translate.instant('ERRORES.NoAuth') || 'No hay token de autenticación';
+      this.toastr.error(msg, 'Error');
       return;
     }
   
@@ -73,21 +74,25 @@ export class ProductSearchComponent {
   
     this.http.get<any>(url, { headers }).subscribe({
       next: (response) => {
-        // Validación explícita por si el backend devuelve { error: "..." } con 200
+        // Validación por error con 200 OK
         if (response?.error) {
-          this.toastr.error(response.error, 'Error');
+          const backendMsg = response.error;
+          const traducido = this.translate.instant(`BUSQUEDA_PRODUCTO.ERRORES.${backendMsg}`);
+          const mensaje = traducido !== `BUSQUEDA_PRODUCTO.ERRORES.${backendMsg}` ? traducido : backendMsg;
+          this.toastr.error(mensaje, 'Error');
           this.product = null;
           return;
         }
-
+  
         // Validación de estructura esperada
         if (!response?.product_info || !response?.warehouse_info) {
-          this.toastr.warning('Producto no encontrado', 'Aviso');
+          const mensaje = this.translate.instant('BUSQUEDA_PRODUCTO.ERRORES.El producto no existe') || 'Producto no encontrado';
+          this.toastr.warning(mensaje, 'Aviso');
           this.product = null;
           return;
         }
-
-        // Si todo está bien, procesa normalmente
+  
+        // Estructura correcta → procesar
         this.product = {
           name: response.product_info.product_name,
           weight: response.product_info.product_weight,
@@ -106,10 +111,18 @@ export class ProductSearchComponent {
       },
       error: (err) => {
         console.error('Error al obtener producto', err);
-        const errorMsg = err?.error?.error || 'Ocurrió un error al buscar el producto';
-        this.toastr.error(errorMsg, 'Error');
+  
+        let mensaje = this.translate.instant('Ocurrió un error al buscar el producto');
+  
+        if (typeof err?.error?.error === 'string') {
+          const backendMsg = err.error.error;
+          const traducido = this.translate.instant(`BUSQUEDA_PRODUCTO.ERRORES.${backendMsg}`);
+          mensaje = traducido !== `BUSQUEDA_PRODUCTO.ERRORES.${backendMsg}` ? traducido : backendMsg;
+        }
+  
+        this.toastr.error(mensaje, 'Error');
         this.product = null;
-      }      
+      }
     });
   }  
 

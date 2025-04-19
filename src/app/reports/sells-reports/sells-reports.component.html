@@ -58,7 +58,7 @@
             <!-- Info del producto -->
             <tr>
               <td>{{ seller.name }}</td>
-              <td>{{ seller.country }} g</td>
+              <td>{{ seller.country }}</td>
               <td>{{ seller.phone }}</td>
               <td>{{ seller.email }}</td>
               <td>{{ seller.totalSells }}</td>
@@ -82,9 +82,9 @@
             <!-- Info bodegas -->
             <tr *ngFor="let g of seller.goals">
               <td>{{ g.month }}</td>
-              <td>{{ g.goal }}</td>
+              <td>${{ g.goal }}</td>
               <td colspan="2">{{ 'REPORTE_VENTAS.METAS_SUPERADAS' | translate: {porcentaje: g.porcentage} }}</td>
-              <td>{{ g.totalMonthSells }}</td>
+              <td>${{ g.totalMonthSells }}</td>
             </tr>
           </tbody>
         </table>

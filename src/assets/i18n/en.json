@@ -76,7 +76,10 @@
     "NIVEL_BAJO": "Lower Level",
     "NIVEL_MEDIO": "Middle Level",
     "NIVEL_ALTO": "Upper Level",
-    "UNIDADES": "Units"
+    "UNIDADES": "Units",
+    "ERRORES": {
+      "El producto no existe": "The product does not exist"
+    }
 },
   "VENDEDOR": {
     "TITULO": "Seller Registration",
@@ -117,7 +120,10 @@
     "TABLA_META": "Goal",
     "TABLA_METAS_CUMPLIDAS": "Goals Achieved",
     "TABLA_VENTAS": "Sales",
-    "METAS_SUPERADAS": "{{porcentaje}}% goals surpassed"
+    "METAS_SUPERADAS": "{{porcentaje}}% goals surpassed",
+    "ERRORES": {
+      "SellerNotFound": "Seller not found"
+    }
   },
   "AJUSTES": {
     "TITULO": "Settings",

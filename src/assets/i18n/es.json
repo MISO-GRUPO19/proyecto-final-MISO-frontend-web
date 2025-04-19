@@ -76,7 +76,10 @@
     "NIVEL_BAJO": "Nivel Bajo",
     "NIVEL_MEDIO": "Nivel Medio",
     "NIVEL_ALTO": "Nivel Alto",
-    "UNIDADES": "Unidades"
+    "UNIDADES": "Unidades",
+    "ERRORES": {
+      "El producto no existe": "El producto no existe"
+    }
   },
   "VENDEDOR": {
     "TITULO": "Registro de vendedor",
@@ -117,7 +120,10 @@
     "TABLA_META": "Meta",
     "TABLA_METAS_CUMPLIDAS": "Metas cumplidas",
     "TABLA_VENTAS": "Ventas",
-    "METAS_SUPERADAS": "{{porcentaje}}% metas superadas"
+    "METAS_SUPERADAS": "{{porcentaje}}% metas superadas",
+      "ERRORES": {
+        "SellerNotFound": "No se encontró el vendedor"
+      }
   },
   "AJUSTES":{
     "TITULO": "Ajustes",
