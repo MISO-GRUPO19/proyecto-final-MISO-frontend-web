@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BarraSuperiorComponent } from '../../barra-superior/barra-superior.component';
 import { MenuLateralComponent } from '../../menu-lateral/menu-lateral.component';
-import { FormBuilder, Validators, ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
@@ -28,6 +28,7 @@ export class ProductSearchComponent {
 
   productSearchForm: FormGroup;
   product: any;
+  public autoSearch = true;
 
   constructor(
     private fb: FormBuilder,
@@ -47,7 +48,9 @@ export class ProductSearchComponent {
   
       if (value) {
         this.productSearchForm.setValue({ value, type });
-        this.onSearch();
+        if (this.autoSearch) {
+          this.onSearch();
+        }
       }
     });
    }

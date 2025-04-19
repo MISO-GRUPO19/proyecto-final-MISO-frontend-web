@@ -33,4 +33,9 @@ describe('RegistrationTypeComponent', () => {
     component.registroInd();
     expect(routerSpy.navigate).toHaveBeenCalledWith(['product-registration']);
   });
+
+  it('Función registroBulk debe navegar a bulk-registration', () => {
+    component.registroBulk();
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['bulk-registration']);
+  });
 });
