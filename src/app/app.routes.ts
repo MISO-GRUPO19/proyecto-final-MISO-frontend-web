@@ -10,6 +10,7 @@ import { SupplierRegistrationComponent } from './supplier/supplier-registration/
 import { AjustesComponent } from './ajustes/ajustes.component';
 import { BulkRegisterComponent } from './products/bulk-register/bulk-register.component';
 import { ProductSearchComponent } from './products/product-search/product-search.component';
+import { SellsReportsComponent } from './reports/sells-reports/sells-reports.component';
 
 
 export const routes: Routes = [
@@ -21,5 +22,6 @@ export const routes: Routes = [
     { path: 'seller-registration', component: SellerRegistrationComponent, pathMatch: 'full', canActivate: [adminOnlyGuard] },
     { path: 'supplier-registration', component: SupplierRegistrationComponent, pathMatch: 'full', canActivate: [adminOnlyGuard] },
     { path: 'ajustes', component: AjustesComponent, pathMatch: 'full' },
-    { path: 'product-search', component: ProductSearchComponent, pathMatch: 'full'}
+    { path: 'product-search', component: ProductSearchComponent, pathMatch: 'full', canActivate: [adminOnlyGuard]},
+    { path: 'sellers-goals', component: SellsReportsComponent, pathMatch: 'full'}
 ];

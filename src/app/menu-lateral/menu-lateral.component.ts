@@ -53,4 +53,8 @@ export class MenuLateralComponent {
     this.router.navigate(['ajustes']);
   }
 
+  goals(){
+    this.router.navigate(['sellers-goals']);
+  }
+
 }
