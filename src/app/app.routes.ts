@@ -23,5 +23,5 @@ export const routes: Routes = [
     { path: 'supplier-registration', component: SupplierRegistrationComponent, pathMatch: 'full', canActivate: [adminOnlyGuard] },
     { path: 'ajustes', component: AjustesComponent, pathMatch: 'full' },
     { path: 'product-search', component: ProductSearchComponent, pathMatch: 'full', canActivate: [adminOnlyGuard]},
-    { path: 'sellers-goals', component: SellsReportsComponent, pathMatch: 'full'}
+    { path: 'sellers-reports', component: SellsReportsComponent, pathMatch: 'full'}
 ];
