@@ -136,6 +136,9 @@
     "SELECCIONAR_PAIS": "Selecionar país",
     "TITULO_TOAST": "Configurações",
     "MENSAJE_GUARDADO": "Configurações salvas com sucesso"
+  },
+  "ERRORES": {
+    "NoAuth": "Nenhum token de acesso disponível"
   }
 }
   

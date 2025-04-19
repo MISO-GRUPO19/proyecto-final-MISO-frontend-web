@@ -136,6 +136,9 @@
     "SELECCIONAR_PAIS":"Seleccionar país",
     "TITULO_TOAST": "Ajustes",
     "MENSAJE_GUARDADO": "Ajustes guardados correctamente"
+  },
+  "ERRORES": {
+    "NoAuth": "No hay token de autorización"
   }
 }
   
