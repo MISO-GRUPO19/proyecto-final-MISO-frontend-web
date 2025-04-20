@@ -1,7 +1,7 @@
 <div class="box">
   <div class="menu-light">
-    <div class="element">
-      <div class="text-wrapper" (click)="menu()">{{ 'MENU.PANEL' | translate }}</div>
+    <div class="element" (click)="menu()">
+      <div class="text-wrapper">{{ 'MENU.PANEL' | translate }}</div>
       <img class="img" src="assets/home.svg" />
     </div>
 
@@ -32,12 +32,12 @@
         <img class="img" src="assets/products.svg" />
       </div>
 
-      <div class="element-4">
+      <div class="element-4" (click)="goals()">
         <div class="text-wrapper-2">{{ 'MENU.METAS' | translate }}</div>
         <img class="img" src="assets/goals.svg" />
       </div>
 
-      <div class="element-5">
+      <div class="element-5" (click)="reports()">
         <div class="text-wrapper-2">{{ 'MENU.REPORTES' | translate }}</div>
         <img class="img" src="assets/reports.svg" />
       </div>

@@ -1,120 +1,144 @@
 {
-    "LOGIN": {
-      "TITULO": "Entrar",
-      "EMAIL": "Email",
-      "CONTRASENA": "Senha",
-      "ERROR_EMAIL": "Digite um email válido",
-      "ERROR_CONTRASENA": "Digite uma senha",
-      "INGRESAR": "Acessar"
-    },
-    "BARRA": {
-      "BUSCAR_PRODUCTOS": "Buscar produtos"
-    },
-    "MENU": {
-      "PANEL": "Painel principal",
-      "LOGISTICA": "LOGÍSTICA",
-      "PROVEEDORES": "Fornecedores",
-      "VENDEDORES": "Vendedores",
-      "RUTAS": "Rotas",
-      "VENTAS": "VENDAS",
-      "PRODUCTOS": "Produtos",
-      "METAS": "Metas",
-      "REPORTES": "Relatórios",
-      "AJUSTES": "Configurações",
-      "CERRAR_SESION": "Sair"
-    },
-    "BIENVENIDA": {
-      "TITULO": "Bem-vindo ao sistema de gestão do CCP",
-      "MENSAJE": "Login realizado com sucesso."
-    },
-    "REGISTRO_TIPO": {
-      "TITULO": "Cadastro de produtos",
-      "INDIVIDUAL": "Cadastro individual",
-      "MASIVO": "Cadastro em massa (Excel)"
-    },
-    "PRODUCTO": {
-      "TITULO": "Cadastro de produto individual",
-      "NOMBRE": "Nome do produto",
-      "NOMBRE_PLACEHOLDER": "Nome",
-      "CODIGO": "Código",
-      "CATEGORIA": "Categoria",
-      "SELECCIONAR_CATEGORIA": "Selecionar categoria",
-      "CATEGORIA_FRUTAS": "Frutas e Verduras",
-      "CATEGORIA_CARNES": "Carnes e Peixes",
-      "CATEGORIA_LACTEOS": "Laticínios e Ovos",
-      "CATEGORIA_PANADERIA": "Padaria e Confeitaria",
-      "CATEGORIA_DESPENSA": "Despensa",
-      "CATEGORIA_BEBIDAS": "Bebidas",
-      "CATEGORIA_SNACKS": "Snacks e Doces",
-      "CATEGORIA_CONDIMENTOS": "Condimentos e Especiarias",
-      "CATEGORIA_LIMPIEZA": "Produtos de Limpeza",
-      "CATEGORIA_BEBES": "Produtos para Bebês",
-      "PROVEEDOR": "Fornecedor",
-      "SELECCIONAR_PROVEEDOR": "Selecionar fornecedor",
-      "PESO": "Peso",
-      "PRECIO": "Preço",
-      "LOTE": "Lote",
-      "CANTIDAD": "Quantidade",
-      "DESCRIPCION": "Descrição",
-      "FECHA_VENCIMIENTO": "Data de validade",
-      "REGISTRAR": "Registrar produto"
-    },
-    "BUSQUEDA_PRODUCTO": {
-    "TITULO": "Busca de Produto",
-    "NOMBRE": "Nome",
-    "ID_PRODUCTO": "ID do Produto",
-    "PESO": "Peso",
-    "PROVEEDOR": "Fornecedor",
-    "PRECIO": "Preço de Venda",
-    "CATEGORIA": "Categoria",
-    "BODEGA": "Depósito",
-    "DIRECCION": "Endereço do Depósito",
-    "UBICACION": "Localização",
-    "CANTIDAD": "Quantidade",
-    "PASILLO": "Corredor",
-    "ESTANTE": "Prateleira",
-    "NIVEL_BAJO": "Nível Inferior",
-    "NIVEL_MEDIO": "Nível Médio",
-    "NIVEL_ALTO": "Nível Superior",
-    "UNIDADES": "Unidades"
+  "LOGIN": {
+    "TITULO": "Entrar",
+    "EMAIL": "Email",
+    "CONTRASENA": "Senha",
+    "ERROR_EMAIL": "Digite um email válido",
+    "ERROR_CONTRASENA": "Digite uma senha",
+    "INGRESAR": "Acessar"
   },
-    "VENDEDOR": {
-      "TITULO": "Cadastro de vendedor",
-      "IDENTIFICACION": "Identificação",
-      "NOMBRE": "Nome do vendedor",
-      "NOMBRE_PLACEHOLDER": "Nome",
-      "APELLIDO_PLACEHOLDER": "Sobrenome",
-      "PAIS": "País",
-      "SELECCIONAR_PAIS": "Selecionar país",
-      "DIRECCION": "Endereço",
-      "TELEFONO": "Telefone",
-      "CORREO": "E-mail",
-      "REGISTRAR": "Registrar vendedor"
-    },
-    "REGISTRO_PROVEEDORES": {
-      "TITULO": "Cadastro de fabricante",
-      "NOMBRE_LABEL": "Nome do fornecedor",
-      "NOMBRE_PLACEHOLDER": "Nome",
-      "PAIS": "País",
-      "SELECCIONAR_PAIS": "Selecionar país",
-      "CONTACTO": "Pessoa de contato",
-      "NOMBRE_CONTACTO": "Nome",
-      "APELLIDO_CONTACTO": "Sobrenome",
-      "TELEFONO": "Telefone",
-      "CORREO": "E-mail",
-      "REGISTRAR": "Registrar fabricante"
-    },
-    "AJUSTES": {
-      "TITULO": "Configurações",
-      "PAIS": "País",
-      "IDIOMA": "Idioma",
-      "CONTRASTE": "Contraste",
-      "GUARDAR": "Salvar",
-      "ACTIVADO": "Ativado",
-      "DESACTIVADO": "Desativado",
-      "SELECCIONAR_PAIS": "Selecionar país",
-      "TITULO_TOAST": "Configurações",
-      "MENSAJE_GUARDADO": "Configurações salvas com sucesso"
-    }    
+  "BARRA": {
+    "BUSCAR_PRODUCTOS": "Buscar produtos"
+  },
+  "MENU": {
+    "PANEL": "Painel principal",
+    "LOGISTICA": "LOGÍSTICA",
+    "PROVEEDORES": "Fornecedores",
+    "VENDEDORES": "Vendedores",
+    "RUTAS": "Rotas",
+    "VENTAS": "VENDAS",
+    "PRODUCTOS": "Produtos",
+    "METAS": "Metas",
+    "REPORTES": "Relatórios",
+    "AJUSTES": "Configurações",
+    "CERRAR_SESION": "Sair"
+  },
+  "BIENVENIDA": {
+    "TITULO": "Bem-vindo ao sistema de gestão do CCP",
+    "MENSAJE": "Login realizado com sucesso."
+  },
+  "REGISTRO_TIPO": {
+    "TITULO": "Cadastro de produtos",
+    "INDIVIDUAL": "Cadastro individual",
+    "MASIVO": "Cadastro em massa (Excel)"
+  },
+  "PRODUCTO": {
+    "TITULO": "Cadastro de produto individual",
+    "NOMBRE": "Nome do produto",
+    "NOMBRE_PLACEHOLDER": "Nome",
+    "CODIGO": "Código",
+    "CATEGORIA": "Categoria",
+    "SELECCIONAR_CATEGORIA": "Selecionar categoria",
+    "CATEGORIA_FRUTAS": "Frutas e Verduras",
+    "CATEGORIA_CARNES": "Carnes e Peixes",
+    "CATEGORIA_LACTEOS": "Laticínios e Ovos",
+    "CATEGORIA_PANADERIA": "Padaria e Confeitaria",
+    "CATEGORIA_DESPENSA": "Despensa",
+    "CATEGORIA_BEBIDAS": "Bebidas",
+    "CATEGORIA_SNACKS": "Snacks e Doces",
+    "CATEGORIA_CONDIMENTOS": "Condimentos e Especiarias",
+    "CATEGORIA_LIMPIEZA": "Produtos de Limpeza",
+    "CATEGORIA_BEBES": "Produtos para Bebês",
+    "PROVEEDOR": "Fornecedor",
+    "SELECCIONAR_PROVEEDOR": "Selecionar fornecedor",
+    "PESO": "Peso",
+    "PRECIO": "Preço",
+    "LOTE": "Lote",
+    "CANTIDAD": "Quantidade",
+    "DESCRIPCION": "Descrição",
+    "FECHA_VENCIMIENTO": "Data de validade",
+    "REGISTRAR": "Registrar produto"
+  },
+  "BUSQUEDA_PRODUCTO": {
+  "TITULO": "Busca de Produto",
+  "NOMBRE": "Nome",
+  "ID_PRODUCTO": "ID do Produto",
+  "PESO": "Peso",
+  "PROVEEDOR": "Fornecedor",
+  "PRECIO": "Preço de Venda",
+  "CATEGORIA": "Categoria",
+  "BODEGA": "Depósito",
+  "DIRECCION": "Endereço do Depósito",
+  "UBICACION": "Localização",
+  "CANTIDAD": "Quantidade",
+  "PASILLO": "Corredor",
+  "ESTANTE": "Prateleira",
+  "NIVEL_BAJO": "Nível Inferior",
+  "NIVEL_MEDIO": "Nível Médio",
+  "NIVEL_ALTO": "Nível Superior",
+  "UNIDADES": "Unidades",
+  "ERRORES": {
+    "El producto no existe": "O produto não existe"
   }
+},
+  "VENDEDOR": {
+    "TITULO": "Cadastro de vendedor",
+    "IDENTIFICACION": "Identificação",
+    "NOMBRE": "Nome do vendedor",
+    "NOMBRE_PLACEHOLDER": "Nome",
+    "APELLIDO_PLACEHOLDER": "Sobrenome",
+    "PAIS": "País",
+    "SELECCIONAR_PAIS": "Selecionar país",
+    "DIRECCION": "Endereço",
+    "TELEFONO": "Telefone",
+    "CORREO": "E-mail",
+    "REGISTRAR": "Registrar vendedor"
+  },
+  "REGISTRO_PROVEEDORES": {
+    "TITULO": "Cadastro de fabricante",
+    "NOMBRE_LABEL": "Nome do fornecedor",
+    "NOMBRE_PLACEHOLDER": "Nome",
+    "PAIS": "País",
+    "SELECCIONAR_PAIS": "Selecionar país",
+    "CONTACTO": "Pessoa de contato",
+    "NOMBRE_CONTACTO": "Nome",
+    "APELLIDO_CONTACTO": "Sobrenome",
+    "TELEFONO": "Telefone",
+    "CORREO": "E-mail",
+    "REGISTRAR": "Registrar fabricante"
+  },
+  "REPORTE_VENTAS": {
+    "TITULO": "Relatório de vendas",
+    "BUSCAR_POR_NOMBRE": "Nome",
+    "BUSCAR_POR_ID": "ID do Vendedor",
+    "TABLA_NOMBRE": "Nome",
+    "TABLA_PAIS": "País",
+    "TABLA_TELEFONO": "Telefone",
+    "TABLA_CORREO": "Email",
+    "TABLA_TOTAL_VENTAS": "Total de vendas",
+    "TABLA_MES": "Mês",
+    "TABLA_META": "Meta",
+    "TABLA_METAS_CUMPLIDAS": "Metas cumpridas",
+    "TABLA_VENTAS": "Vendas",
+    "METAS_SUPERADAS": "{{porcentaje}}% metas superadas",
+    "ERRORES": {
+      "SellerNotFound": "Vendedor não encontrado"
+    }
+  },
+  "AJUSTES": {
+    "TITULO": "Configurações",
+    "PAIS": "País",
+    "IDIOMA": "Idioma",
+    "CONTRASTE": "Contraste",
+    "GUARDAR": "Salvar",
+    "ACTIVADO": "Ativado",
+    "DESACTIVADO": "Desativado",
+    "SELECCIONAR_PAIS": "Selecionar país",
+    "TITULO_TOAST": "Configurações",
+    "MENSAJE_GUARDADO": "Configurações salvas com sucesso"
+  },
+  "ERRORES": {
+    "NoAuth": "Nenhum token de acesso disponível"
+  }
+}
   

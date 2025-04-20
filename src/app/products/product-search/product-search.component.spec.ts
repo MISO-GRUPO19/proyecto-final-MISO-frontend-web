@@ -44,7 +44,7 @@ describe('ProductSearchComponent', () => {
     component.productSearchForm.setValue({ value: '123', type: 'barcode' });
     component.onSearch();
 
-    expect(toastrService.error).toHaveBeenCalledWith('No hay token de autenticación', 'Error');
+    expect(toastrService.error).toHaveBeenCalledWith('ERRORES.NoAuth', 'Error');
   });
 
   it('getLabelText should return correct translation key', () => {
@@ -97,7 +97,7 @@ describe('ProductSearchComponent', () => {
     component.productSearchForm.setValue({ value: 'TestProduct', type: 'barcode' });
     component.onSearch();
 
-    expect(toastrService.warning).toHaveBeenCalledWith('Producto no encontrado', 'Aviso');
+    expect(toastrService.warning).toHaveBeenCalledWith('BUSQUEDA_PRODUCTO.ERRORES.El producto no existe', 'Aviso');
     expect(component.product).toBeNull();
   });
 
