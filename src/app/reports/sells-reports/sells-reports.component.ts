@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../../environments/environment';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { I18nModule } from '../../i18n.module';
 import { ActivatedRoute } from '@angular/router';
 
@@ -18,7 +18,6 @@ import { ActivatedRoute } from '@angular/router';
     MenuLateralComponent,
     ReactiveFormsModule,
     CommonModule,
-    TranslateModule,
     I18nModule
   ],
   templateUrl: './sells-reports.component.html',

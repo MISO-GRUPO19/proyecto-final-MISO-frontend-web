@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({ providedIn: 'root' })
 export class ManufacturerService {
@@ -10,7 +10,7 @@ export class ManufacturerService {
   constructor(private http: HttpClient) {}
 
   getManufacturers(): Observable<any[]> {
-    const token = sessionStorage.getItem('access_token'); // o el nombre que uses
+    const token = sessionStorage.getItem('access_token');
   
     const headers = {
       Authorization: `Bearer ${token}`

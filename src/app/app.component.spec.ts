@@ -1,7 +1,7 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { TranslateService } from '@ngx-translate/core';
-import { of } from 'rxjs';
+import { of } from 'rxjs/internal/observable/of';
 import { fakeAsync, tick } from '@angular/core/testing';
 
 describe('AppComponent', () => {

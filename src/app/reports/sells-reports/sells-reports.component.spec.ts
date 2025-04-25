@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
-import { of, throwError } from 'rxjs';
+import { of } from 'rxjs/internal/observable/of';
+import { throwError } from 'rxjs/internal/observable/throwError';
 
 
 describe('SellsReportsComponent (spy approach)', () => {

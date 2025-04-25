@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { BarraSuperiorComponent } from '../barra-superior/barra-superior.component';
 import { MenuLateralComponent } from '../menu-lateral/menu-lateral.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -16,7 +16,6 @@ import { ToastrService } from 'ngx-toastr';
     BarraSuperiorComponent,
     CommonModule,
     ReactiveFormsModule,
-    TranslateModule,
     I18nModule
   ],
   templateUrl: './ajustes.component.html',
