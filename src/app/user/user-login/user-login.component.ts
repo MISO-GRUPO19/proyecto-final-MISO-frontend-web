@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../core/services/auth.service';
 import { CommonModule} from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { I18nModule } from '../../i18n.module';
 
 @Component({
@@ -13,8 +13,7 @@ import { I18nModule } from '../../i18n.module';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    I18nModule,
-    TranslateModule
+    I18nModule
   ],
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css']

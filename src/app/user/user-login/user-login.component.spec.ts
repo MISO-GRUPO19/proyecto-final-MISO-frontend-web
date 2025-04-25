@@ -4,7 +4,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Router } from '@angular/router';
 import { provideToastr, ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../core/services/auth.service';
-import { of, throwError } from 'rxjs';
+import { of } from 'rxjs/internal/observable/of';
+import { throwError } from 'rxjs/internal/observable/throwError';
 import { TranslateService } from '@ngx-translate/core';
 
 describe('UserLoginComponent', () => {

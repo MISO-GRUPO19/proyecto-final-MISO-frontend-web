@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BarraSuperiorComponent } from '../../barra-superior/barra-superior.component';
 import { MenuLateralComponent } from '../../menu-lateral/menu-lateral.component';
 import { FormBuilder, Validators, ReactiveFormsModule, FormGroup } from '@angular/forms';
@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../../environments/environment';
-import { TranslateModule } from '@ngx-translate/core';
 import { I18nModule } from '../../i18n.module';
 import { ManufacturerService } from '../../core/services/manufacturer.service';
 
@@ -18,7 +17,6 @@ import { ManufacturerService } from '../../core/services/manufacturer.service';
     MenuLateralComponent,
     ReactiveFormsModule,
     CommonModule,
-    TranslateModule,
     I18nModule
   ],
   templateUrl: './product-registration.component.html',
