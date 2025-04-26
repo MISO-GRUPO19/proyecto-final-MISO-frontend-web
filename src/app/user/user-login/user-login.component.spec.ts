@@ -4,7 +4,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Router } from '@angular/router';
 import { provideToastr, ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../core/services/auth.service';
-import { of, throwError } from 'rxjs';
+import { of } from 'rxjs/internal/observable/of';
+import { throwError } from 'rxjs/internal/observable/throwError';
 import { TranslateService } from '@ngx-translate/core';
 
 describe('UserLoginComponent', () => {
@@ -94,4 +95,52 @@ describe('UserLoginComponent', () => {
 
     expect(toastrSpy.error).toHaveBeenCalledWith('Credenciales incorrectas');
   }));
+
+  it('Debe mostrar mensaje por defecto si el backend no devuelve mensaje de error', fakeAsync(() => {
+    component.loginForm.setValue({
+      email: 'admin@ccp.com',
+      password: 'wrongpass'
+    });
+  
+    authServiceSpy.login.and.returnValue(
+      throwError(() => ({ error: {} }))
+    );
+  
+    component.onSubmit();
+    tick();
+  
+    expect(toastrSpy.error).toHaveBeenCalledWith('Error de autenticación');
+  }));
+
+  it('Debe hacer login exitoso y redirigir al menú', fakeAsync(() => {
+    component.loginForm.setValue({
+      email: 'admin@ccp.com',
+      password: '123456'
+    });
+
+    authServiceSpy.login.and.returnValue(of({}));
+
+    component.onSubmit();
+    tick();
+
+    expect(authServiceSpy.login).toHaveBeenCalledWith(component.loginForm.value);
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['/menu']);
+  }));
+
+  it('No debe mostrar error si el formulario es válido', () => {
+    component.loginForm.setValue({
+      email: 'admin@ccp.com',
+      password: '123456'
+    });
+  
+    authServiceSpy.login.and.returnValue(of({}));
+  
+    component.onSubmit();
+  
+    expect(toastrSpy.error).not.toHaveBeenCalledWith(
+      'Por favor llena todos los campos correctamente',
+      'Formulario inválido'
+    );
+  });
+  
 });

@@ -32,7 +32,7 @@
                 <label for="category">{{ 'PRODUCTO.CATEGORIA' | translate }}</label>
               </div>
               <div class="category-selector">
-                <select class="category-dropdown" formControlName="category">
+                <select class="category-dropdown" formControlName="category" title="{{ 'PRODUCTO.SELECCIONAR_CATEGORIA' | translate }}">
                   <option value="" disabled>{{ 'PRODUCTO.SELECCIONAR_CATEGORIA' | translate }}</option>
                   <option value="Frutas y Verduras">{{ 'PRODUCTO.CATEGORIA_FRUTAS' | translate }}</option>
                   <option value="Carnes y Pescados">{{ 'PRODUCTO.CATEGORIA_CARNES' | translate }}</option>
@@ -52,7 +52,7 @@
                 <label for="provider_id">{{ 'PRODUCTO.PROVEEDOR' | translate }}</label>
               </div>
               <div class="category-selector">
-                <select class="category-dropdown" formControlName="provider_id">
+                <select class="category-dropdown" formControlName="provider_id" title="{{ 'PRODUCTO.SELECCIONAR_PROVEEDOR' | translate }}">
                   <option value="" disabled selected>{{ 'PRODUCTO.SELECCIONAR_PROVEEDOR' | translate }}</option>
                   <option *ngFor="let fabricante of fabricantes" [value]="fabricante.id">
                     {{ fabricante.name }}
@@ -71,7 +71,7 @@
               <input placeholder="{{ 'PRODUCTO.PESO' | translate }}" id="weight" class="form-input" formControlName="weight">
             </div>
             <div class="category-selector" style="width: auto;">
-              <select class="category-dropdown" style="padding-right: 40px;">
+              <select class="category-dropdown" style="padding-right: 40px;" title="{{ 'PRODUCTO.PESO' | translate }}">
                 <option value="kg" selected>kg</option>
                 <option value="lb">lb</option>
                 <option value="g">g</option>

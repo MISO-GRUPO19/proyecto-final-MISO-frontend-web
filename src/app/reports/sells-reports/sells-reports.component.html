@@ -1,0 +1,95 @@
+<div class="main-container">
+  <app-barra-superior></app-barra-superior>
+  <div class="content-container">
+    <app-menu-lateral></app-menu-lateral>
+    <div class="content-area">
+
+      <div clase="product-search-container">
+        <form class="product-form" [formGroup]="sellersGoalsForm" (ngSubmit)="onSearch()">
+          <h1 class="form-title">{{ 'REPORTE_VENTAS.TITULO' | translate }}</h1>
+          <div class="form-grid">
+
+            <div class="form-section">
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="type" formControlName="type" value="name" />
+                  <span>{{ 'REPORTE_VENTAS.BUSCAR_POR_NOMBRE' | translate }}</span>
+                </label>
+                <label>
+                  <input type="radio" name="type" formControlName="type" value="id" />
+                  <span>{{ 'REPORTE_VENTAS.BUSCAR_POR_ID' | translate }}</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="label-izq">
+                <label for="id_vendedor">
+                  {{ getLabelText() | translate }}
+                </label>                
+              </div>
+              <div>
+                <input
+                  [placeholder]="getLabelText() | translate"
+                  id="id_vendedor"
+                  class="form-input"
+                  formControlName="value"
+                />
+              </div>
+            </div>        
+
+          </div>
+          
+        </form>
+      </div>
+
+      <div *ngIf="seller" class="result-table">
+        <table>
+          <thead>
+            <tr>
+              <th>{{ 'REPORTE_VENTAS.TABLA_NOMBRE' | translate }}</th>
+              <th>{{ 'REPORTE_VENTAS.TABLA_PAIS' | translate }}</th>
+              <th>{{ 'REPORTE_VENTAS.TABLA_TELEFONO' | translate }}</th>
+              <th>{{ 'REPORTE_VENTAS.TABLA_CORREO' | translate }}</th>
+              <th>{{ 'REPORTE_VENTAS.TABLA_TOTAL_VENTAS' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Info del producto -->
+            <tr>
+              <td>{{ seller.name }}</td>
+              <td>{{ seller.country }}</td>
+              <td>{{ seller.phone }}</td>
+              <td>{{ seller.email }}</td>
+              <td>{{ seller.totalSells }}</td>
+            </tr>
+      
+            <!-- Línea horizontal incompleta -->
+            <tr class="divider-row">
+              <td colspan="5">
+                <div class="table-divider"></div>
+              </td>
+            </tr>
+      
+            <!-- Encabezado para bodegas -->
+            <tr>
+              <th>{{ 'REPORTE_VENTAS.TABLA_MES' | translate }}</th>
+              <th>{{ 'REPORTE_VENTAS.TABLA_META' | translate }}</th>
+              <th class="wide-address" colspan="2">{{ 'REPORTE_VENTAS.TABLA_METAS_CUMPLIDAS' | translate }}</th>
+              <th>{{ 'REPORTE_VENTAS.TABLA_VENTAS' | translate }}</th>
+            </tr>
+      
+            <!-- Info bodegas -->
+            <tr *ngFor="let g of seller.goals">
+              <td>{{ g.month }}</td>
+              <td>${{ g.goal }}</td>
+              <td colspan="2">{{ 'REPORTE_VENTAS.METAS_SUPERADAS' | translate: {porcentaje: g.porcentage} }}</td>
+              <td>${{ g.totalMonthSells }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>      
+
+    </div>
+  </div>
+</div>

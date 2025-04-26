@@ -1,0 +1,105 @@
+<div class="main-container">
+  <app-barra-superior></app-barra-superior>
+  <div class="content-container">
+    <app-menu-lateral></app-menu-lateral>
+    <div class="content-area">
+
+      <div clase="product-search-container">
+        <form class="product-form" [formGroup]="productSearchForm" (ngSubmit)="onSearch()">
+          <h1 class="form-title">{{ 'BUSQUEDA_PRODUCTO.TITULO' | translate }}</h1>
+          <div class="form-grid">
+
+            <div class="form-section">
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="type" formControlName="type" value="name" />
+                  <span>{{ 'BUSQUEDA_PRODUCTO.NOMBRE' | translate }}</span>
+                </label>
+                <label>
+                  <input type="radio" name="type" formControlName="type" value="barcode" />
+                  <span>{{ 'BUSQUEDA_PRODUCTO.ID_PRODUCTO' | translate }}</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="label-izq">
+                <label for="id_producto">
+                  {{ getLabelText() | translate }}
+                </label>                
+              </div>
+              <div>
+                <input
+                  [placeholder]="getLabelText() | translate"
+                  id="id_producto"
+                  class="form-input"
+                  formControlName="value"
+                />
+              </div>
+            </div>        
+
+          </div>
+          
+        </form>
+      </div>
+
+      <div *ngIf="product" class="result-table">
+        <table>
+          <thead>
+            <tr>
+              <th>{{ 'BUSQUEDA_PRODUCTO.NOMBRE' | translate }}</th>
+              <th>{{ 'BUSQUEDA_PRODUCTO.PESO' | translate }}</th>
+              <th>{{ 'BUSQUEDA_PRODUCTO.PROVEEDOR' | translate }}</th>
+              <th>{{ 'BUSQUEDA_PRODUCTO.PRECIO' | translate }}</th>
+              <th>{{ 'BUSQUEDA_PRODUCTO.CATEGORIA' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Info del producto -->
+            <tr>
+              <td>{{ product.name }}</td>
+              <td>{{ product.weight }} g</td>
+              <td>{{ product.provider }}</td>
+              <td>${{ product.price }}</td>
+              <td>{{ product.category }}</td>
+            </tr>
+      
+            <!-- Línea horizontal incompleta -->
+            <tr class="divider-row">
+              <td colspan="5">
+                <div class="table-divider"></div>
+              </td>
+            </tr>
+      
+            <!-- Encabezado para bodegas -->
+            <tr>
+              <th>{{ 'BUSQUEDA_PRODUCTO.BODEGA' | translate }}</th>
+              <th class="wide-address" colspan="2">{{ 'BUSQUEDA_PRODUCTO.DIRECCION' | translate }}</th>
+              <th>{{ 'BUSQUEDA_PRODUCTO.UBICACION' | translate }}</th>
+              <th>{{ 'BUSQUEDA_PRODUCTO.CANTIDAD' | translate }}</th>
+            </tr>
+      
+            <!-- Info bodegas -->
+            <tr *ngFor="let w of product.warehouses">
+              <td>{{ w.name }}</td>
+              <td colspan="2">
+                <b>{{ formatAddress(w.address).location }}</b><br /><br />
+                {{ formatAddress(w.address).street }}
+              </td>
+              <td>
+                <b>{{ 'BUSQUEDA_PRODUCTO.PASILLO' | translate }} {{ w.aisle }}</b><br /><br />
+                {{ 'BUSQUEDA_PRODUCTO.ESTANTE' | translate }} {{ w.shelf }}<br />
+                {{ getLevelLabel(w.level) }}
+              </td>
+              <td>
+                <b>{{ 'BUSQUEDA_PRODUCTO.UNIDADES' | translate }}</b><br /><br />
+                {{ w.quantity }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>      
+
+    </div>
+  </div>
+</div>
