@@ -3,7 +3,8 @@ import { SellerRegistrationComponent } from './seller-registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ToastrService } from 'ngx-toastr';
-import { of, throwError } from 'rxjs';
+import { of } from 'rxjs/internal/observable/of';
+import { throwError } from 'rxjs/internal/observable/throwError';
 
 describe('SellerRegistrationComponent', () => {
   let component: SellerRegistrationComponent;

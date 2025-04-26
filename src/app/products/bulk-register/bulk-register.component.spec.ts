@@ -3,7 +3,8 @@ import { BulkRegisterComponent } from './bulk-register.component';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { of, throwError } from 'rxjs';
+import { of } from 'rxjs/internal/observable/of';
+import { throwError } from 'rxjs/internal/observable/throwError';
 
 describe('BulkRegisterComponent', () => {
   let component: BulkRegisterComponent;

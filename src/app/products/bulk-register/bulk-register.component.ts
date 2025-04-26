@@ -1,14 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BarraSuperiorComponent } from '../../barra-superior/barra-superior.component';
 import { I18nModule } from '../../i18n.module';
 import { MenuLateralComponent } from '../../menu-lateral/menu-lateral.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../../environments/environment';
-import { ManufacturerService } from '../../core/services/manufacturer.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,7 +19,6 @@ import { Router } from '@angular/router';
     MenuLateralComponent,
     ReactiveFormsModule,
     CommonModule,
-    TranslateModule,
     I18nModule
   ],
 })

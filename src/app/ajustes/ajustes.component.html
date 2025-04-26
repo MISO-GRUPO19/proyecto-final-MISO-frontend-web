@@ -13,11 +13,13 @@
           <div style="height: 87px;">
             <div><label>{{ 'AJUSTES.PAIS' | translate }}</label></div>
             <div class="category-selector">
-              <select class="category-dropdown" formControlName="pais">
+              <select class="category-dropdown" formControlName="pais" title="{{ 'AJUSTES.SELECCIONAR_PAIS' | translate }}">
                 <option value="" disabled>{{ 'AJUSTES.SELECCIONAR_PAIS' | translate }}</option>
                 <option value="col">Colombia</option>
-                <option value="mex">México</option>
+                <option value="arg">Argentina</option>
                 <option value="bra">Brasil</option>
+                <option value="chi">Chile</option>
+                <option value="ecu">Ecuador</option>
               </select>
             </div>
           </div>

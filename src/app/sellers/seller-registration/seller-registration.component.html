@@ -50,11 +50,13 @@
                 <label for="country">{{ 'VENDEDOR.PAIS' | translate }}</label>
               </div>
               <div class="category-selector">
-                <select class="category-dropdown" formControlName="country">
+                <select class="category-dropdown" formControlName="country" title="{{ 'VENDEDOR.SELECCIONAR_PAIS' | translate }}">
                   <option value="" disabled>{{ 'VENDEDOR.SELECCIONAR_PAIS' | translate }}</option>
                   <option value="Argentina">Argentina</option>
-                  <option value="Bolivia">Bolivia</option>
+                  <option value="Brasil">Brasil</option>
+                  <option value="Chile">Chile</option>
                   <option value="Colombia">Colombia</option>
+                  <option value="Ecuador">Ecuador</option>
                 </select>
               </div>
             </div>

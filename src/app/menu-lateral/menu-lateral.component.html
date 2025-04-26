@@ -1,8 +1,8 @@
 <div class="box">
   <div class="menu-light">
-    <div class="element">
-      <div class="text-wrapper" (click)="menu()">{{ 'MENU.PANEL' | translate }}</div>
-      <img class="img" src="assets/home.svg" />
+    <div class="element" (click)="menu()">
+      <div class="text-wrapper">{{ 'MENU.PANEL' | translate }}</div>
+      <img loading="lazy" class="img" alt="{{ 'MENU.PANEL' | translate }}" src="assets/home.svg" />
     </div>
 
     <div class="set">
@@ -10,17 +10,17 @@
 
       <div class="element-2">
         <div class="text-wrapper-2" (click)="suppliers()">{{ 'MENU.PROVEEDORES' | translate }}</div>
-        <img class="img" src="assets/suppliers.svg" />
+        <img loading="lazy" class="img" alt="{{ 'MENU.PROVEEDORES' | translate }}" src="assets/suppliers.svg" />
       </div>
 
       <div class="element-2">
         <div class="text-wrapper-2" (click)="vendedores()">{{ 'MENU.VENDEDORES' | translate }}</div>
-        <img class="img" src="assets/sellers.svg" />
+        <img loading="lazy" class="img" alt="{{ 'MENU.VENDEDORES' | translate }}" src="assets/sellers.svg" />
       </div>
 
       <div class="element-2">
         <div class="text-wrapper-2">{{ 'MENU.RUTAS' | translate }}</div>
-        <img class="img" src="assets/routes.svg" />
+        <img loading="lazy" class="img" alt="{{ 'MENU.RUTAS' | translate }}" src="assets/routes.svg" />
       </div>
     </div>
 
@@ -29,29 +29,29 @@
 
       <div class="element-3" (click)="productos()">
         <div class="text-wrapper-2">{{ 'MENU.PRODUCTOS' | translate }}</div>
-        <img class="img" src="assets/products.svg" />
+        <img loading="lazy" class="img" alt="{{ 'MENU.PRODUCTOS' | translate }}" src="assets/products.svg" />
       </div>
 
-      <div class="element-4">
+      <div class="element-4" (click)="goals()">
         <div class="text-wrapper-2">{{ 'MENU.METAS' | translate }}</div>
-        <img class="img" src="assets/goals.svg" />
+        <img loading="lazy" class="img" alt="{{ 'MENU.METAS' | translate }}" src="assets/goals.svg" />
       </div>
 
-      <div class="element-5">
+      <div class="element-5" (click)="reports()">
         <div class="text-wrapper-2">{{ 'MENU.REPORTES' | translate }}</div>
-        <img class="img" src="assets/reports.svg" />
+        <img loading="lazy" class="img" alt="{{ 'MENU.REPORTES' | translate }}" src="assets/reports.svg" />
       </div>
     </div>
 
     <div class="set-3">
       <div class="element-6" (click)="ajustes()">
         <div class="text-wrapper-3">{{ 'MENU.AJUSTES' | translate }}</div>
-        <img class="img" src="assets/settings.svg" />
+        <img loading="lazy" class="img" alt="{{ 'MENU.AJUSTES' | translate }}" src="assets/settings.svg" />
       </div>
 
       <div class="element-7" (click)="logout()">
         <div class="text-wrapper-4">{{ 'MENU.CERRAR_SESION' | translate }}</div>
-        <img class="img" src="assets/logout.svg" />
+        <img loading="lazy" class="img" alt="{{ 'MENU.CERRAR_SESION' | translate }}" src="assets/logout.svg" />
       </div>
     </div>
   </div>
