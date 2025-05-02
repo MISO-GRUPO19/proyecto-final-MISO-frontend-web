@@ -125,6 +125,19 @@
         "SellerNotFound": "No se encontró el vendedor"
       }
   },
+  "METAS": {
+    "TITULO": "Crear plan de venta",
+    "VENDEDOR": "Vendedor",
+    "SELECCIONAR_VENDEDOR": "Seleccionar vendedor",
+    "PRODUCTO": "Producto",
+    "SELECCIONAR_PRODUCTO": "Seleccionar producto",
+    "CANTIDAD": "Cantidad",
+    "AGREGAR_META": "Agregar meta",
+    "CREAR_PLAN": "Crear plan",
+    "ERRORES": {
+      "ERROR_GENERAL": "Error al crear plan de venta"
+    }
+  },
   "AJUSTES":{
     "TITULO": "Ajustes",
     "PAIS": "País",

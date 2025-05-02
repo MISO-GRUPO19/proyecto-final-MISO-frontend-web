@@ -125,6 +125,19 @@
       "SellerNotFound": "Vendedor não encontrado"
     }
   },
+  "METAS": {
+    "TITULO": "Criar plano de vendas",
+    "VENDEDOR": "Vendedor",
+    "SELECCIONAR_VENDEDOR": "Selecionar vendedor",
+    "PRODUCTO": "Produto",
+    "SELECCIONAR_PRODUCTO": "Selecionar produto",
+    "CANTIDAD": "Quantidade",
+    "AGREGAR_META": "Adicionar meta",
+    "CREAR_PLAN": "Criar plano",
+    "ERRORES": {
+      "ERROR_GENERAL": "Erro ao criar plano de vendas"
+    }
+  },
   "AJUSTES": {
     "TITULO": "Configurações",
     "PAIS": "País",

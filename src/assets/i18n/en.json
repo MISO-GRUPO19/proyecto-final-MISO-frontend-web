@@ -125,6 +125,19 @@
       "SellerNotFound": "Seller not found"
     }
   },
+  "METAS": {
+    "TITULO": "Create sales plan",
+    "VENDEDOR": "Seller",
+    "SELECCIONAR_VENDEDOR": "Select seller",
+    "PRODUCTO": "Product",
+    "SELECCIONAR_PRODUCTO": "Select product",
+    "CANTIDAD": "Quantity",
+    "AGREGAR_META": "Add goal",
+    "CREAR_PLAN": "Create plan",
+    "ERRORES": {
+      "ERROR_GENERAL": "Error creating sales plan"
+    }
+  },
   "AJUSTES": {
     "TITULO": "Settings",
     "PAIS": "Country",
