@@ -135,7 +135,14 @@
     "AGREGAR_META": "Adicionar meta",
     "CREAR_PLAN": "Criar plano",
     "ERRORES": {
-      "ERROR_GENERAL": "Erro ao criar plano de vendas"
+      "ERROR_GENERAL": "Erro ao criar plano de vendas",
+      "VENDEDORES_NO_CARGADOS": "Não foi possível carregar os vendedores",
+      "PRODUCTOS_NO_CARGADOS": "Não foi possível carregar os produtos",
+      "FORMULARIO_INVALIDO": "Formulário inválido",
+      "ERROR_INESPERADO": "Ocorreu um erro inesperado. Por favor, tente novamente."
+    },
+    "EXITO": {
+      "PLAN_CREADO": "Plano de metas criado com sucesso"
     }
   },
   "AJUSTES": {

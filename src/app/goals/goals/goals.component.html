@@ -17,7 +17,7 @@
               <div class="category-selector">
                 <select class="category-dropdown" formControlName="vendedor" title="{{ 'METAS.SELECCIONAR_VENDEDOR' | translate }}">
                   <option value="" disabled>{{ 'METAS.SELECCIONAR_VENDEDOR' | translate }}</option>
-                  <option *ngFor="let v of vendedores" [value]="v.id">{{ v.nombre }}</option>                  
+                  <option *ngFor="let v of vendedores" [value]="v.identification">{{ v.name }}</option>                  
                 </select>
               </div>
             </div>
@@ -45,7 +45,7 @@
                 <div class="category-selector-2">
                   <select class="category-dropdown" formControlName="producto" title="{{ 'METAS.SELECCIONAR_PRODUCTO' | translate }}">
                     <option value="" disabled>{{ 'METAS.SELECCIONAR_PRODUCTO' | translate }}</option>
-                    <option *ngFor="let p of productos" [value]="p.id">{{ p.name }}</option>
+                    <option *ngFor="let p of productos" [value]="p.barcode">{{ p.name }}</option>
                   </select>
                 </div>
               </div>
@@ -56,6 +56,8 @@
                     class="form-input"
                     type="number"
                     formControlName="cantidad"
+                    min="1"
+                    oninput="this.value = Math.abs(this.value)"
                   >
                 </div>
               </div>
