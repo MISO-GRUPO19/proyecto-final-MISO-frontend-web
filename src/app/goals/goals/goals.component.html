@@ -17,7 +17,7 @@
               <div class="category-selector">
                 <select class="category-dropdown" formControlName="vendedor" title="{{ 'METAS.SELECCIONAR_VENDEDOR' | translate }}">
                   <option value="" disabled>{{ 'METAS.SELECCIONAR_VENDEDOR' | translate }}</option>
-                  <option *ngFor="let v of vendedores" [value]="v.identification">{{ v.name }}</option>                  
+                  <option *ngFor="let v of vendedores" [value]="v.id">{{ v.name }}</option>                  
                 </select>
               </div>
             </div>

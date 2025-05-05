@@ -73,7 +73,7 @@ export class GoalsComponent implements OnInit {
       },
       error: () => this.toastr.error(this.translate.instant('METAS.ERRORES.VENDEDORES_NO_CARGADOS'))
     });
-  }  
+  }
 
   loadProductos(): void {
     const headers = {
@@ -96,7 +96,7 @@ export class GoalsComponent implements OnInit {
     const { vendedor, metas } = this.goalsForm.value;
   
     const payload = {
-      vendedorID: vendedor,
+      vendedorUUID: vendedor,
       metas
     };
 
