@@ -68,11 +68,10 @@ export class RoutesComponent implements OnInit{
   onSubmit(): void {
     if (this.routesForm.invalid) { return; }
     const selectedDate = this.routesForm.value.date;
-
     const token = sessionStorage.getItem('access_token') || '';
 
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    const params = new HttpParams().set('date', selectedDate);
+    const params  = new HttpParams().set('date', selectedDate);
 
     this.http
       .get<{ pedidos: any[] }>(
@@ -80,8 +79,24 @@ export class RoutesComponent implements OnInit{
         { headers, params }
       )
       .subscribe({
-        next: res => this.routes = res,
+        next: res => {
+          // Si llegaron pedidos…
+          if (res.pedidos?.length) {
+            this.routes = res;
+            // Mensaje de éxito
+            this.toastr.success(
+              this.translate.instant('RUTAS.EXITO.RUTA_GENERADA')
+            );
+          } else {
+            // No hay pedidos para esa fecha
+            this.routes = null; // limpia la tabla
+            this.toastr.error(
+              this.translate.instant('RUTAS.ERRORES.SIN_RUTAS')
+            );
+          }
+        },
         error: err => {
+          // Error genérico o específico del backend
           const msg =
             err?.error?.error ||
             err?.error?.msg ||
