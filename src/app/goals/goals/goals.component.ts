@@ -3,11 +3,10 @@ import { BarraSuperiorComponent } from '../../barra-superior/barra-superior.comp
 import { MenuLateralComponent } from '../../menu-lateral/menu-lateral.component';
 import { FormBuilder, Validators, ReactiveFormsModule, FormGroup, FormArray } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
-import { environment } from '../../../environments/environment';
 import { I18nModule } from '../../i18n.module';
 import { TranslateService } from '@ngx-translate/core';
+import { GoalsService } from '../../core/services/goals.service';
 
 @Component({
   selector: 'app-goals',
@@ -28,23 +27,22 @@ export class GoalsComponent implements OnInit {
   public vendedores: any[] = [];
   public productos: any[] = [];
 
-
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient,
+    private goalsService: GoalsService,
     private toastr: ToastrService,
     private translate: TranslateService
   ) {
     this.goalsForm = this.fb.group({
       vendedor: ['', Validators.required],
-      metas: this.fb.array([]) //producto-cantidad
+      metas: this.fb.array([])
     });
   }
 
   ngOnInit(): void {
     this.loadVendedores();
     this.loadProductos();
-    this.addMeta(); // agrega una fila por defecto
+    this.addMeta();
   }
 
   get metas(): FormArray {
@@ -64,10 +62,7 @@ export class GoalsComponent implements OnInit {
   }
 
   loadVendedores(): void {
-    const headers = {
-      Authorization: `Bearer ${sessionStorage.getItem('access_token')}`
-    };
-    this.http.get<any[]>(`${environment.apiUrl}/users/sellers`, { headers }).subscribe({
+    this.goalsService.getSellers().subscribe({
       next: (data) => {
         this.vendedores = data.sort((a, b) => a.name.localeCompare(b.name));
       },
@@ -76,40 +71,34 @@ export class GoalsComponent implements OnInit {
   }
 
   loadProductos(): void {
-    const headers = {
-      Authorization: `Bearer ${sessionStorage.getItem('access_token')}`
-    };
-    this.http.get<any[]>(`${environment.apiUrl}/products`, { headers }).subscribe({
+    this.goalsService.getProducts().subscribe({
       next: (data) => {
         this.productos = data.sort((a, b) => a.name.localeCompare(b.name));
       },
       error: () => this.toastr.error(this.translate.instant('METAS.ERRORES.PRODUCTOS_NO_CARGADOS'))
     });
-  }  
+  }
 
   onSubmit(): void {
+    console.log('✅ Formulario válido:', this.goalsForm.valid);
+    console.log('📝 Datos enviados:', this.goalsForm.value);
     if (this.goalsForm.invalid) {
       this.toastr.error(this.translate.instant('METAS.ERRORES.FORMULARIO_INVALIDO'));
       return;
     }
-  
+
     const { vendedor, metas } = this.goalsForm.value;
-  
     const payload = {
       vendedorUUID: vendedor,
       metas
     };
 
-    const headers = {
-      Authorization: `Bearer ${sessionStorage.getItem('access_token')}`
-    };
-  
-    this.http.post(`${environment.apiUrl}/goals`, payload, { headers }).subscribe({
+    this.goalsService.createGoal(payload).subscribe({
       next: () => {
         this.toastr.success(this.translate.instant('METAS.EXITO.PLAN_CREADO'));
         this.goalsForm.reset();
         this.metas.clear();
-        this.addMeta(); // reiniciar con una meta vacía
+        this.addMeta();
       },
       error: (err) => {
         const msg =
@@ -119,5 +108,5 @@ export class GoalsComponent implements OnInit {
         this.toastr.error(msg);
       }
     });
-  }  
+  }
 }
