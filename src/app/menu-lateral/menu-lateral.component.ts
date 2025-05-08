@@ -58,7 +58,7 @@ export class MenuLateralComponent {
   }
 
   goals(){
-    
+    this.router.navigate(['goals']);
   }
 
 }

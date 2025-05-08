@@ -125,6 +125,26 @@
       "SellerNotFound": "Seller not found"
     }
   },
+  "METAS": {
+    "TITULO": "Create sales plan",
+    "VENDEDOR": "Seller",
+    "SELECCIONAR_VENDEDOR": "Select seller",
+    "PRODUCTO": "Product",
+    "SELECCIONAR_PRODUCTO": "Select product",
+    "CANTIDAD": "Quantity",
+    "AGREGAR_META": "Add goal",
+    "CREAR_PLAN": "Create plan",
+    "ERRORES": {
+      "ERROR_GENERAL": "Error creating sales plan",
+      "VENDEDORES_NO_CARGADOS": "Failed to load sellers",
+      "PRODUCTOS_NO_CARGADOS": "Failed to load products",
+      "FORMULARIO_INVALIDO": "Invalid form",
+      "ERROR_INESPERADO": "An unexpected error occurred. Please try again."
+    },
+    "EXITO": {
+      "PLAN_CREADO": "Sales plan created successfully"
+    }
+  },
   "AJUSTES": {
     "TITULO": "Settings",
     "PAIS": "Country",

@@ -125,6 +125,26 @@
       "SellerNotFound": "Vendedor não encontrado"
     }
   },
+  "METAS": {
+    "TITULO": "Criar plano de vendas",
+    "VENDEDOR": "Vendedor",
+    "SELECCIONAR_VENDEDOR": "Selecionar vendedor",
+    "PRODUCTO": "Produto",
+    "SELECCIONAR_PRODUCTO": "Selecionar produto",
+    "CANTIDAD": "Quantidade",
+    "AGREGAR_META": "Adicionar meta",
+    "CREAR_PLAN": "Criar plano",
+    "ERRORES": {
+      "ERROR_GENERAL": "Erro ao criar plano de vendas",
+      "VENDEDORES_NO_CARGADOS": "Não foi possível carregar os vendedores",
+      "PRODUCTOS_NO_CARGADOS": "Não foi possível carregar os produtos",
+      "FORMULARIO_INVALIDO": "Formulário inválido",
+      "ERROR_INESPERADO": "Ocorreu um erro inesperado. Por favor, tente novamente."
+    },
+    "EXITO": {
+      "PLAN_CREADO": "Plano de metas criado com sucesso"
+    }
+  },
   "AJUSTES": {
     "TITULO": "Configurações",
     "PAIS": "País",

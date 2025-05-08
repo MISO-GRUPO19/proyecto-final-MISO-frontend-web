@@ -1,0 +1,88 @@
+<div class="main-container">
+  <app-barra-superior></app-barra-superior>
+  <div class="content-container">
+    <app-menu-lateral></app-menu-lateral>
+    <div class="content-area">
+
+      <form class="product-form" [formGroup]="goalsForm" (ngSubmit)="onSubmit()">
+        <h1 class="form-title">{{ 'METAS.TITULO' | translate }}</h1>
+
+        <div class="form-grid">
+        
+          <div class="form-group" style="gap: 30px;">
+            <div style="height: 87px;">
+              <div>
+                <label for="vendedor">{{ 'METAS.VENDEDOR' | translate }}</label>
+              </div>
+              <div class="category-selector">
+                <select class="category-dropdown" formControlName="vendedor" title="{{ 'METAS.SELECCIONAR_VENDEDOR' | translate }}">
+                  <option value="" disabled>{{ 'METAS.SELECCIONAR_VENDEDOR' | translate }}</option>
+                  <option *ngFor="let v of vendedores" [value]="v.id">{{ v.name }}</option>                  
+                </select>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div class="form-group" style="gap: 0px;">
+            <div>
+              <div style="width: 250px;">
+                <label for="producto">{{ 'METAS.PRODUCTO' | translate }}</label>
+              </div>
+            </div>
+            <div>
+              <div style="margin-left: 24px;">
+                <label for="cantidad">{{ 'METAS.CANTIDAD' | translate }}</label>
+              </div>
+            </div>
+          </div>
+          
+          <div formArrayName="metas">
+
+            <div *ngFor="let meta of metas.controls; let i = index" [formGroupName]="i" class="form-group" style="display: flex; gap: 24px; margin-bottom: 24px;">
+              <div>
+                <div class="category-selector-2">
+                  <select class="category-dropdown" formControlName="producto" title="{{ 'METAS.SELECCIONAR_PRODUCTO' | translate }}">
+                    <option value="" disabled>{{ 'METAS.SELECCIONAR_PRODUCTO' | translate }}</option>
+                    <option *ngFor="let p of productos" [value]="p.barcode">{{ p.name }}</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <input 
+                    id="cantidad" 
+                    class="form-input"
+                    type="number"
+                    formControlName="cantidad"
+                    min="1"
+                    oninput="this.value = Math.abs(this.value)"
+                  >
+                </div>
+              </div>
+              <div style="width: 100%;">
+                <button type="button" class="add-button" style="padding: 10px 10px; width: auto;" (click)="removeMeta(i)" *ngIf="metas.length > 1">✕</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <button type="button" (click)="addMeta()" class="add-button">
+            <img src="assets/plus.svg" alt="Agregar" width="18" height="18" style="vertical-align: middle; margin-right: 10px;">
+            {{ 'METAS.AGREGAR_META' | translate }}
+          </button>
+        </div>
+
+        <button type="submit" class="submit-button">
+          {{ 'METAS.CREAR_PLAN' | translate }}
+        </button>
+      </form>      
+
+
+    </div>
+  </div>
+</div>
