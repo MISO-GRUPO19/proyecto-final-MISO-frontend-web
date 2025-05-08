@@ -12,6 +12,7 @@ import { BulkRegisterComponent } from './products/bulk-register/bulk-register.co
 import { ProductSearchComponent } from './products/product-search/product-search.component';
 import { SellsReportsComponent } from './reports/sells-reports/sells-reports.component';
 import { GoalsComponent } from './goals/goals/goals.component';
+import { RoutesComponent } from './routes/routes.component';
 
 
 export const routes: Routes = [
@@ -25,5 +26,6 @@ export const routes: Routes = [
     { path: 'ajustes', component: AjustesComponent, pathMatch: 'full' },
     { path: 'product-search', component: ProductSearchComponent, pathMatch: 'full', canActivate: [adminOnlyGuard]},
     { path: 'sellers-reports', component: SellsReportsComponent, pathMatch: 'full', canActivate: [adminOnlyGuard]},
-    { path: 'goals', component: GoalsComponent, pathMatch: 'full'}
+    { path: 'goals', component: GoalsComponent, pathMatch: 'full', canActivate: [adminOnlyGuard]},
+    { path: 'routes', component: RoutesComponent, pathMatch: 'full'}
 ];

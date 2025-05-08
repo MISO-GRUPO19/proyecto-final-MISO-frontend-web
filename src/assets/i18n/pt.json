@@ -145,6 +145,22 @@
       "PLAN_CREADO": "Plano de metas criado com sucesso"
     }
   },
+  "RUTAS": {
+    "TITULO": "Geração de rotas de entrega",
+    "FECHA_DE_ENTREGA": "Data de entrega",
+    "GENERAR_RUTA": "Gerar rota",
+    "ENTREGA": "Entrega",
+    "PEDIDO": "Pedido",
+    "DIRECCION": "Endereço",
+    "CLIENTE": "Cliente",
+    "ERRORES": {
+      "ERROR_GENERAL": "Erro ao gerar a rota de entrega",
+      "SIN_RUTAS": "Nenhuma rota de entrega encontrada para esta data"
+    },
+    "EXITO": {
+      "RUTA_GENERADA": "Rota gerada com sucesso"
+    }
+  },
   "AJUSTES": {
     "TITULO": "Configurações",
     "PAIS": "País",

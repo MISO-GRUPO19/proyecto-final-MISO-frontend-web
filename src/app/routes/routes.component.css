@@ -1,19 +1,19 @@
 html, body {
-  overflow-x: auto;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
-    font-family: 'Roboto', sans-serif;
+    overflow-x: auto;
   }
   
-  .content-container {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-  }
+  .main-container {
+      display: flex;
+      flex-direction: column;
+      height: 90vh;
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    .content-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
   
   .content-area {
     flex: 1;
@@ -25,25 +25,7 @@ html, body {
     flex-direction: column;
   }
 
-  .product-search-container {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    gap: 2rem;
-  }
-
-  .form-grid {
-    display:flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-bottom: 24px;
-  }
-
-  .form-group .label-izq{
-    width: 194px;
-  }
-  
-  .form-title {
+.form-title {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 20px;
@@ -51,65 +33,29 @@ html, body {
     margin: 24px 0;
   }
 
-  .form-section {
+.generate-route-container {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-  }
-
-  .form-input {
-    padding: 10px 14px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    background-color: white;
-    width: 216px;
-    
-    &:focus {
-      border-color: #3f51b5;
-      box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
-    }
+    padding-bottom: 24px;
+    gap: 2rem;
+}
+  
+  .product-form {
+    padding: 0;
+    width: 85%;
   }
   
-  .radio-group {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .radio-group label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s ease;
-    height: 36px;
-    width: 150px;
-  }
-
-  .radio-group label:has(input[type="radio"]:checked) {
-    background-color: rgba(7, 93, 153, 0.1);
-    border-color: rgba(7, 93, 153, 1);
-  }
-  
-  .radio-group input[type="radio"] {
-    accent-color: #0d6efd;
-    border-color: #075D99;
-  }
-  
-  .radio-group label:hover {
-    background-color: #f0f0f0;
-    border-color: #075D99;
+  .form-grid {
+    display:flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
   }
   
   .form-group {
     display: flex;
     flex-direction:row;
     align-items: center;
-    gap: 24px;
     
     label {
       font-family: 'Roboto', sans-serif;
@@ -121,6 +67,63 @@ html, body {
     
     &.full-width {
       grid-column: span 2;
+    }
+  }
+
+  .form-group .label-izq{
+    width: 194px;
+  }
+  
+  .form-input {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: white;
+    width: 164px;
+    
+    &:focus {
+      border-color: #3f51b5;
+      box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+    }
+  }
+
+  .form-input-2 {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: white;
+    width: 644px;
+    
+    &:focus {
+      border-color: #3f51b5;
+      box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+    }
+  }
+  
+  .submit-button {
+    background-color: #075D99;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 31%;
+    
+    &:hover {
+      background-color: #303f9f;
+    }
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.4);
     }
   }
 
@@ -168,14 +171,6 @@ html, body {
     height: 8px;
   }
   
-  /* Línea horizontal incompleta */
-  .table-divider {
-    width: 100%;
-    height: 1px;
-    background-color: #ddd;
-    margin: 0 auto;
-  }
-  
   /* Expandir columna de direcciones */
   .wide-address {
     width: 40%;
@@ -190,4 +185,3 @@ html, body {
   .result-table thead th{
     padding-top: 1rem;
   }
-  

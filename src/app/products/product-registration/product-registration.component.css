@@ -24,7 +24,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 20px;
-    color: #333;
+    color: #141414;
     margin: 24px 0;
   }
   
@@ -183,82 +183,3 @@
       box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.4);
     }
   }
-
-/*   .product-form-container {
-    font-family: 'Roboto', sans-serif;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .form-main-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  .form-section {
-    margin-bottom: 20px;
-  }
-  
-  .form-section-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 15px;
-  }
-  
-  .form-row {
-    margin-bottom: 15px;
-  }
-  
-  .form-field {
-    display: flex;
-    align-items: center;
-  }
-  
-  .form-field label {
-    width: 150px;
-    font-size: 14px;
-    font-weight: 400;
-    color: #555;
-  }
-  
-  .form-input {
-    flex: 1;
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  
-  .form-divider {
-    height: 1px;
-    background-color: #eee;
-    margin: 25px 0;
-  }
-  
-  .submit-button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: #3f51b5;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 30px;
-  }
-  
-  
-  select.form-input {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 15px;
-  } */

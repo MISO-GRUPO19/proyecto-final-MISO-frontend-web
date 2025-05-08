@@ -1,0 +1,112 @@
+<div class="main-container">
+    <app-barra-superior></app-barra-superior>
+    <div class="content-container">
+      <app-menu-lateral></app-menu-lateral>
+      <div class="content-area">
+  
+        <div class="generate-route-container">
+            <form class="product-form" [formGroup]="routesForm" (ngSubmit)="onSubmit()">
+            <h1 class="form-title">{{ 'RUTAS.TITULO' | translate }}</h1>
+            <div class="form-grid">
+
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div>
+                    <label for="date">{{ 'RUTAS.FECHA_DE_ENTREGA' | translate }}</label>
+                </div>
+                <div>
+                    <input type="date" id="date" class="form-input" formControlName="date" [min]="minDate"
+                    [max]="maxDate">
+                </div>
+                </div>
+
+            </div>
+    
+            <button type="submit" class="submit-button">
+                {{ 'RUTAS.GENERAR_RUTA' | translate }}
+            </button>
+            </form>
+        </div>
+
+        <!-- <div *ngIf="routes" class="result-table">
+            <table>
+                <thead>
+                <tr>
+                    <th>{{ 'RUTAS.ENTREGA' | translate }}</th>
+                    <th>{{ 'RUTAS.PEDIDO' | translate }}</th>
+                    <th colspan="2">{{ 'RUTAS.DIRECCION' | translate }}</th>
+                    <th>{{ 'RUTAS.CLIENTE' | translate }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let p of routes.pedidos">
+                    <td>{{ p.entrega }}</td>
+                    <td>{{ p.pedido }}</td>
+                    <td colspan="2">{{ p.direccion }}</td>
+                    <td>{{ p.cliente }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div> -->
+
+        <div class="result-table">
+            <table>
+                <thead>
+                <tr>
+                    <th>{{ 'RUTAS.ENTREGA' | translate }}</th>
+                    <th>{{ 'RUTAS.PEDIDO' | translate }}</th>
+                    <th colspan="2">{{ 'RUTAS.DIRECCION' | translate }}</th>
+                    <th>{{ 'RUTAS.CLIENTE' | translate }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Info de rutas -->
+                <tr>
+                    <td>1</td>
+                    <td>873</td>
+                    <td colspan="2">Av. Corrientes 1234, Microcentro</td>
+                    <td>Martín González</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>878</td>
+                    <td colspan="2">Av. San Juan 5678, Barrio San Telmo</td>
+                    <td>Sofía López</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>870</td>
+                    <td colspan="2">Av. Santa Fe 2345, Barrio Recoleta</td>
+                    <td>Juan Pérez</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>901</td>
+                    <td colspan="2">Av. Córdoba 3456, Barrio Palermo</td>
+                    <td>Valentina Rodríguez</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>850</td>
+                    <td colspan="2">Av. Rivadavia 4567, Barrio Caballito</td>
+                    <td>Lautaro Fernández</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>874</td>
+                    <td colspan="2">Av. Juan B. Justo 7890, Barrio Villa Crespo</td>
+                    <td>Camila Díaz</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>871</td>
+                    <td colspan="2">Av. Libertador 6789, Barrio Belgrano</td>
+                    <td>Facundo Martínez</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
