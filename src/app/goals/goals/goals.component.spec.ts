@@ -79,7 +79,7 @@ describe('GoalsComponent (formulario exitoso)', () => {
   it('debe enviar el formulario y mostrar mensaje de éxito', fakeAsync(() => {
     // Arrange
     component.goalsForm.patchValue({ vendedor: 'vendedor123' });
-    component.metas.at(0).patchValue({ producto: 'producto123', cantidad: 5 });
+    component.metas.at(0).patchValue({ product_barcode: '123456', quantity: 5 });
     component.goalsForm.markAllAsTouched();
 
     // Act
@@ -88,8 +88,8 @@ describe('GoalsComponent (formulario exitoso)', () => {
 
     // Assert
     expect(goalsServiceSpy.createGoal).toHaveBeenCalledWith({
-      vendedorUUID: 'vendedor123',
-      metas: [{ producto: 'producto123', cantidad: 5 }]
+      seller_id: 'vendedor123',
+      goals: [{ product_barcode: '123456', quantity: 5 }]
     });
     expect(toastrSpy.success).toHaveBeenCalledWith('METAS.EXITO.PLAN_CREADO');
   }));
@@ -146,8 +146,8 @@ describe('GoalsComponent (Remover meta y fallo en vendedores y productos)', () =
     // Verifica que la segunda ahora sea la que estaba en la tercera posición
     // (asumiendo que no se inicializan con valores únicos, esto verifica estructura)
     component.metas.controls.forEach(meta => {
-      expect(meta.get('producto')).toBeTruthy();
-      expect(meta.get('cantidad')).toBeTruthy();
+      expect(meta.get('product_barcode')).toBeTruthy();
+      expect(meta.get('quantity')).toBeTruthy();
     });
   });
 
@@ -254,7 +254,7 @@ describe('GoalsComponent (Orden alfabético y errores en createGoal)', () => {
   
     component.addMeta();
     component.goalsForm.patchValue({ vendedor: 'vendedor123' });
-    component.metas.at(0).patchValue({ producto: 'producto123', cantidad: 5 });
+    component.metas.at(0).patchValue({ product_barcode: '123456', quantity: 5 });
   
     component.onSubmit();
     tick();
@@ -273,7 +273,7 @@ describe('GoalsComponent (Orden alfabético y errores en createGoal)', () => {
   
     component.addMeta();
     component.goalsForm.patchValue({ vendedor: 'vendedor123' });
-    component.metas.at(0).patchValue({ producto: 'producto123', cantidad: 5 });
+    component.metas.at(0).patchValue({ product_barcode: '123456', quantity: 5 });
   
     component.onSubmit();
     tick();
@@ -290,7 +290,7 @@ describe('GoalsComponent (Orden alfabético y errores en createGoal)', () => {
   
     component.addMeta();
     component.goalsForm.patchValue({ vendedor: 'vendedor123' });
-    component.metas.at(0).patchValue({ producto: 'producto123', cantidad: 5 });
+    component.metas.at(0).patchValue({ product_barcode: '123456', quantity: 5 });
   
     component.onSubmit();
     tick();

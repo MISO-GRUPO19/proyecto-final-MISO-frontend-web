@@ -10,7 +10,7 @@ export class GoalsService {
     const headers = {
       Authorization: `Bearer ${sessionStorage.getItem('access_token')}`
     };
-    return this.http.post(`${environment.apiUrl}/goals`, data, { headers });
+    return this.http.post(`${environment.apiUrl}/orders/goals`, data, { headers });
   }
 
   getSellers() {

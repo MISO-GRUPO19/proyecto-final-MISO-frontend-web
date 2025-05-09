@@ -51,8 +51,8 @@ export class GoalsComponent implements OnInit {
 
   addMeta(): void {
     const metaGroup = this.fb.group({
-      producto: ['', Validators.required],
-      cantidad: ['', [Validators.required, Validators.min(1)]]
+      product_barcode: ['', Validators.required],
+      quantity: ['', [Validators.required, Validators.min(1)]]
     });
     this.metas.push(metaGroup);
   }
@@ -89,8 +89,8 @@ export class GoalsComponent implements OnInit {
 
     const { vendedor, metas } = this.goalsForm.value;
     const payload = {
-      vendedorUUID: vendedor,
-      metas
+      seller_id: vendedor,
+      goals: metas
     };
 
     this.goalsService.createGoal(payload).subscribe({

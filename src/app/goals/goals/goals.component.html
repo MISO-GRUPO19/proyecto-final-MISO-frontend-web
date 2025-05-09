@@ -28,12 +28,12 @@
           <div class="form-group" style="gap: 0px;">
             <div>
               <div style="width: 250px;">
-                <label for="producto">{{ 'METAS.PRODUCTO' | translate }}</label>
+                <label for="product_barcode">{{ 'METAS.PRODUCTO' | translate }}</label>
               </div>
             </div>
             <div>
               <div style="margin-left: 24px;">
-                <label for="cantidad">{{ 'METAS.CANTIDAD' | translate }}</label>
+                <label for="quantity">{{ 'METAS.CANTIDAD' | translate }}</label>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@
             <div *ngFor="let meta of metas.controls; let i = index" [formGroupName]="i" class="form-group" style="display: flex; gap: 24px; margin-bottom: 24px;">
               <div>
                 <div class="category-selector-2">
-                  <select class="category-dropdown" formControlName="producto" title="{{ 'METAS.SELECCIONAR_PRODUCTO' | translate }}">
+                  <select class="category-dropdown" formControlName="product_barcode" title="{{ 'METAS.SELECCIONAR_PRODUCTO' | translate }}">
                     <option value="" disabled>{{ 'METAS.SELECCIONAR_PRODUCTO' | translate }}</option>
                     <option *ngFor="let p of productos" [value]="p.barcode">{{ p.name }}</option>
                   </select>
@@ -52,10 +52,10 @@
               <div>
                 <div>
                   <input 
-                    id="cantidad" 
+                    id="quantity" 
                     class="form-input"
                     type="number"
-                    formControlName="cantidad"
+                    formControlName="quantity"
                     min="1"
                     oninput="this.value = Math.abs(this.value)"
                   >
