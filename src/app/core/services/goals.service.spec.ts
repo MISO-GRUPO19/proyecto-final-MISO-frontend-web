@@ -41,7 +41,7 @@ describe('GoalsService', () => {
 
     service.createGoal(mockData).subscribe();
 
-    const req = httpMock.expectOne(`${environment.apiUrl}/goals`);
+    const req = httpMock.expectOne(`${environment.apiUrl}/orders/goals`);
     expect(req.request.method).toBe('POST');
     expect(req.request.body).toEqual(mockData);
     expect(req.request.headers.get('Authorization')).toBe(`Bearer ${fakeToken}`);

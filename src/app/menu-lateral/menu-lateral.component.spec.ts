@@ -64,6 +64,21 @@ describe('MenuLateralComponent', () => {
     expect(routerSpy.navigate).toHaveBeenCalledWith(['ajustes']);
   });
 
+  it('debería navegar a reporte de ventas con reports()', () => {
+    component.reports();
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['sellers-reports']);
+  });
+
+  it('debería navegar a metas con goals()', () => {
+    component.goals();
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['goals']);
+  });
+
+  it('debería navegar a rutas con rutas()', () => {
+    component.rutas();
+    expect(routerSpy.navigate).toHaveBeenCalledWith(['routes']);
+  });
+
   it('debería cerrar sesión y mostrar toast en logout()', () => {
     component.logout();
     expect(authServiceSpy.logout).toHaveBeenCalled();

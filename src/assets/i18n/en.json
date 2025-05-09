@@ -145,6 +145,22 @@
       "PLAN_CREADO": "Sales plan created successfully"
     }
   },
+  "RUTAS": {
+    "TITULO": "Delivery Route Generation",
+    "FECHA_DE_ENTREGA": "Delivery Date",
+    "GENERAR_RUTA": "Generate Route",
+    "ENTREGA": "Delivery",
+    "PEDIDO": "Order",
+    "DIRECCION": "Address",
+    "CLIENTE": "Customer",
+    "ERRORES": {
+      "ERROR_GENERAL": "Error generating delivery route",
+      "SIN_RUTAS": "No delivery routes found for this date"
+    },
+    "EXITO": {
+      "RUTA_GENERADA": "Route generated successfully"
+    }
+  },
   "AJUSTES": {
     "TITULO": "Settings",
     "PAIS": "Country",

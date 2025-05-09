@@ -50,7 +50,7 @@ export class ProductRegistrationComponent {
   ngOnInit(): void {
     this.manufacturerService.getManufacturers().subscribe({
       next: (data) => {
-        this.fabricantes = data;
+        this.fabricantes = data.sort((a, b) => a.name.localeCompare(b.name));
       },
       error: (err) => {
         console.error('Error al obtener fabricantes:', err);
