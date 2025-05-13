@@ -53,9 +53,9 @@ export class RoutesComponent implements OnInit{
   }
 
   // Fecha y hora en UTC
-  private formatDate(d: Date): string {
+  /* private formatDate(d: Date): string {
     return d.toISOString().substring(0, 10);
-  }
+  } */
 
   // Fecha y hora local
   private formatDateLocal(d: Date): string {
@@ -65,38 +65,37 @@ export class RoutesComponent implements OnInit{
     return `${y}-${m}-${day}`;
   }
 
+  private formatDDMMYYYY(dateString: string): string {
+    const [year, month, day] = dateString.split('-');
+    return `${day}/${month}/${year}`;
+  }  
+
   onSubmit(): void {
     if (this.routesForm.invalid) { return; }
-    const selectedDate = this.routesForm.value.date;
-    const token = sessionStorage.getItem('access_token') || '';
-
+    const rawDate: string = this.routesForm.value.date; // "YYYY-MM-DD"
+    const formattedDate = this.formatDDMMYYYY(rawDate);
+  
+    const token = sessionStorage.getItem('access_token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    const params  = new HttpParams().set('date', selectedDate);
-
+    const body = { date: formattedDate };
+  
     this.http
-      .get<{ pedidos: any[] }>(
-        `${environment.apiUrl}/routes`,
-        { headers, params }
+      .post<{ pedidos: any[] }>(
+        `${environment.apiUrl}/ai/routes`,
+        body,
+        { headers }
       )
       .subscribe({
         next: res => {
-          // Si llegaron pedidos…
           if (res.pedidos?.length) {
             this.routes = res;
-            // Mensaje de éxito
-            this.toastr.success(
-              this.translate.instant('RUTAS.EXITO.RUTA_GENERADA')
-            );
+            this.toastr.success(this.translate.instant('RUTAS.EXITO.RUTA_GENERADA'));
           } else {
-            // No hay pedidos para esa fecha
-            this.routes = null; // limpia la tabla
-            this.toastr.error(
-              this.translate.instant('RUTAS.ERRORES.SIN_RUTAS')
-            );
+            this.routes = null;
+            this.toastr.error(this.translate.instant('RUTAS.ERRORES.SIN_RUTAS'));
           }
         },
         error: err => {
-          // Error genérico o específico del backend
           const msg =
             err?.error?.error ||
             err?.error?.msg ||
@@ -104,6 +103,6 @@ export class RoutesComponent implements OnInit{
           this.toastr.error(msg);
         }
       });
-  }
+  }  
 
 }
