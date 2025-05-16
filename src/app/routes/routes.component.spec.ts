@@ -47,7 +47,7 @@ describe('RoutesComponent (unit tests, no TestBed)', () => {
   });
 
   it('debe llamar a POST y mostrar toastr.success cuando hay pedidos', () => {
-    const mockRes = { pedidos: [{ id: 1 }] };
+    const mockRes = [{ id: 1 }];
     httpSpy.post.and.returnValue(of(mockRes));
 
     component.routesForm.setValue({ date: '2025-05-12' });
@@ -56,7 +56,7 @@ describe('RoutesComponent (unit tests, no TestBed)', () => {
     // Verifica URL, body y headers
     expect(httpSpy.post).toHaveBeenCalledWith(
       `${environment.apiUrl}/ai/routes`,
-      { date: '12/05/2025' },
+      { date: '12-05-2025' },
       jasmine.objectContaining({
         headers: jasmine.any(Object)
       })
