@@ -27,7 +27,7 @@
             </form>
         </div>
 
-        <!-- <div *ngIf="routes" class="result-table">
+        <div *ngIf="routes" class="result-table">
             <table>
                 <thead>
                 <tr>
@@ -38,69 +38,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let p of routes.pedidos">
-                    <td>{{ p.entrega }}</td>
-                    <td>{{ p.pedido }}</td>
-                    <td colspan="2">{{ p.direccion }}</td>
-                    <td>{{ p.cliente }}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div> -->
-
-        <div class="result-table">
-            <table>
-                <thead>
-                <tr>
-                    <th>{{ 'RUTAS.ENTREGA' | translate }}</th>
-                    <th>{{ 'RUTAS.PEDIDO' | translate }}</th>
-                    <th colspan="2">{{ 'RUTAS.DIRECCION' | translate }}</th>
-                    <th>{{ 'RUTAS.CLIENTE' | translate }}</th>
-                </tr>
-                </thead>
-                <tbody>
-                <!-- Info de rutas -->
-                <tr>
-                    <td>1</td>
-                    <td>873</td>
-                    <td colspan="2">Av. Corrientes 1234, Microcentro</td>
-                    <td>Martín González</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>878</td>
-                    <td colspan="2">Av. San Juan 5678, Barrio San Telmo</td>
-                    <td>Sofía López</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>870</td>
-                    <td colspan="2">Av. Santa Fe 2345, Barrio Recoleta</td>
-                    <td>Juan Pérez</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>901</td>
-                    <td colspan="2">Av. Córdoba 3456, Barrio Palermo</td>
-                    <td>Valentina Rodríguez</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>850</td>
-                    <td colspan="2">Av. Rivadavia 4567, Barrio Caballito</td>
-                    <td>Lautaro Fernández</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>874</td>
-                    <td colspan="2">Av. Juan B. Justo 7890, Barrio Villa Crespo</td>
-                    <td>Camila Díaz</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>871</td>
-                    <td colspan="2">Av. Libertador 6789, Barrio Belgrano</td>
-                    <td>Facundo Martínez</td>
+                <tr *ngFor="let r of routes">
+                    <td>{{ r.delivery }}</td>
+                    <td>{{ r.order_code }}</td>
+                    <td colspan="2">{{ r.address }}</td>
+                    <td>{{ r.customer_name }}</td>
                 </tr>
                 </tbody>
             </table>

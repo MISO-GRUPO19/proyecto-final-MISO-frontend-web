@@ -67,7 +67,7 @@ export class RoutesComponent implements OnInit{
 
   private formatDDMMYYYY(dateString: string): string {
     const [year, month, day] = dateString.split('-');
-    return `${day}/${month}/${year}`;
+    return `${day}-${month}-${year}`;
   }  
 
   onSubmit(): void {
@@ -80,14 +80,14 @@ export class RoutesComponent implements OnInit{
     const body = { date: formattedDate };
   
     this.http
-      .post<{ pedidos: any[] }>(
+      .post<any[]>(
         `${environment.apiUrl}/ai/routes`,
         body,
         { headers }
       )
       .subscribe({
         next: res => {
-          if (res.pedidos?.length) {
+          if (res?.length) {
             this.routes = res;
             this.toastr.success(this.translate.instant('RUTAS.EXITO.RUTA_GENERADA'));
           } else {
