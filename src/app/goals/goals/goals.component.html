@@ -77,7 +77,7 @@
           </button>
         </div>
 
-        <button type="submit" class="submit-button">
+        <button type="submit" class="submit-button" [disabled]="goalsForm.invalid">
           {{ 'METAS.CREAR_PLAN' | translate }}
         </button>
       </form>      

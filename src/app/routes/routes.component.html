@@ -38,8 +38,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let r of routes">
-                    <td>{{ r.delivery }}</td>
+                <tr *ngFor="let r of routes; let i = index">
+                    <td>{{ i + 1 }}</td>
                     <td>{{ r.order_code }}</td>
                     <td colspan="2">{{ r.address }}</td>
                     <td>{{ r.customer_name }}</td>
