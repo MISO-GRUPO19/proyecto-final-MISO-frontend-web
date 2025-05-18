@@ -24,6 +24,22 @@
                 class="form-input" 
                 formControlName="name"
               >
+              <!-- Requerido -->
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('name')?.touched && supplierForm.get('name')?.hasError('required')">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.NOMBRE_REQUERIDO' | translate }}
+              </div>
+              <!-- Longitud -->
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('name')?.touched && (supplierForm.get('name')?.hasError('minlength') 
+                    || supplierForm.get('name')?.hasError('maxlength'))">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.NOMBRE_LONGITUD' | translate:{min:3,max:100} }}
+              </div>
+              <!-- Caracteres no permitidos -->
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('name')?.touched && supplierForm.get('name')?.hasError('pattern')">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.NOMBRE_CARACTERES' | translate }}
+              </div>
             </div>
           </div>
       
@@ -35,12 +51,12 @@
               <div class="category-selector">
                 <select class="category-dropdown" formControlName="country" title="{{ 'REGISTRO_PROVEEDORES.SELECCIONAR_PAIS' | translate }}">
                   <option value="" disabled>{{ 'REGISTRO_PROVEEDORES.SELECCIONAR_PAIS' | translate }}</option>
-                  <option value="Argentina">Argentina</option>
-                  <option value="Brasil">Brasil</option>
-                  <option value="Chile">Chile</option>
-                  <option value="Colombia">Colombia</option>
-                  <option value="Ecuador">Ecuador</option>
+                  <option *ngFor="let c of countryList" [value]="c">{{ c }}</option>
                 </select>
+                <div class="error-msg"
+                    *ngIf="supplierForm.get('country')?.touched && supplierForm.get('country')?.hasError('required')">
+                  {{ 'REGISTRO_PROVEEDORES.ERRORES.PAIS_REQUERIDO' | translate }}
+                </div>
               </div>
             </div>
           </div>
@@ -56,6 +72,20 @@
                 class="form-input" 
                 formControlName="contact"
               >
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('contact')?.touched && supplierForm.get('contact')?.hasError('required')">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.CONTACTO_NOMBRE_REQUERIDO' | translate }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('contact')?.touched &&
+                          (supplierForm.get('contact')?.hasError('minlength') ||
+                          supplierForm.get('contact')?.hasError('maxlength'))">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.CONTACTO_NOMBRE_LONGITUD' | translate:{min:3,max:100} }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('contact')?.touched && supplierForm.get('contact')?.hasError('pattern')">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.CONTACTO_NOMBRE_CARACTERES' | translate }}
+              </div>
             </div>
             <div>
               <input 
@@ -64,6 +94,20 @@
                 class="form-input" 
                 formControlName="contactLastname"
               >
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('contactLastname')?.touched && supplierForm.get('contactLastname')?.hasError('required')">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.CONTACTO_APELLIDO_REQUERIDO' | translate }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('contactLastname')?.touched &&
+                          (supplierForm.get('contactLastname')?.hasError('minlength') ||
+                          supplierForm.get('contactLastname')?.hasError('maxlength'))">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.CONTACTO_APELLIDO_LONGITUD' | translate:{min:3,max:100} }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('contactLastname')?.touched && supplierForm.get('contactLastname')?.hasError('pattern')">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.CONTACTO_APELLIDO_CARACTERES' | translate }}
+              </div>
             </div>
           </div>
       
@@ -78,6 +122,10 @@
                 class="form-input" 
                 formControlName="telephone"
               >
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('telephone')?.touched && supplierForm.get('telephone')?.hasError('required')">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.TELEFONO_REQUERIDO' | translate }}
+              </div>
             </div>
           </div>
       
@@ -92,12 +140,24 @@
                 class="form-input" 
                 formControlName="email"
               >
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('email')?.touched && supplierForm.get('email')?.hasError('required')">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.CORREO_REQUERIDO' | translate }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="supplierForm.get('email')?.touched && supplierForm.get('email')?.hasError('email')">
+                {{ 'REGISTRO_PROVEEDORES.ERRORES.CORREO_INVALIDO' | translate }}
+              </div>
             </div>
           </div>
       
         </div>
       
-        <button type="submit" class="submit-button">
+        <button
+          type="submit"
+          class="submit-button"
+          [ngClass]="{ 'is-disabled': supplierForm.invalid }"
+        >
           {{ 'REGISTRO_PROVEEDORES.REGISTRAR' | translate }}
         </button>
       </form>      
