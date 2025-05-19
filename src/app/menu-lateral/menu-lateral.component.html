@@ -8,17 +8,17 @@
     <div class="set">
       <div class="div">{{ 'MENU.LOGISTICA' | translate }}</div>
 
-      <div class="element-2">
-        <div class="text-wrapper-2" (click)="suppliers()">{{ 'MENU.PROVEEDORES' | translate }}</div>
+      <div class="element-2" (click)="suppliers()">
+        <div class="text-wrapper-2">{{ 'MENU.PROVEEDORES' | translate }}</div>
         <img loading="lazy" class="img" alt="{{ 'MENU.PROVEEDORES' | translate }}" src="assets/suppliers.svg" />
       </div>
 
-      <div class="element-2">
-        <div class="text-wrapper-2" (click)="vendedores()">{{ 'MENU.VENDEDORES' | translate }}</div>
+      <div class="element-2" (click)="vendedores()">
+        <div class="text-wrapper-2">{{ 'MENU.VENDEDORES' | translate }}</div>
         <img loading="lazy" class="img" alt="{{ 'MENU.VENDEDORES' | translate }}" src="assets/sellers.svg" />
       </div>
 
-      <div class="element-2">
+      <div class="element-2" (click)="rutas()">
         <div class="text-wrapper-2">{{ 'MENU.RUTAS' | translate }}</div>
         <img loading="lazy" class="img" alt="{{ 'MENU.RUTAS' | translate }}" src="assets/routes.svg" />
       </div>

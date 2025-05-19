@@ -37,6 +37,7 @@
     "NOMBRE": "Nombre producto",
     "NOMBRE_PLACEHOLDER": "Nombre",
     "CODIGO": "Código",
+    "CODIGO_PLACEHOLDER": "Ingrese el código",
     "CATEGORIA": "Categoría",
     "SELECCIONAR_CATEGORIA": "Seleccionar categoría",
     "CATEGORIA_FRUTAS": "Frutas y Verduras",
@@ -52,12 +53,45 @@
     "PROVEEDOR": "Proveedor",
     "SELECCIONAR_PROVEEDOR": "Seleccionar proveedor",
     "PESO": "Peso",
+    "PESO_VALOR_PLACEHOLDER": "Ingrese valor del peso",
+    "PESO_UNIDAD_PLACEHOLDER": "Seleccione unidad",
     "PRECIO": "Precio",
+    "PRECIO_PLACEHOLDER": "Ingrese el precio",
     "LOTE": "Lote",
+    "LOTE_PLACEHOLDER": "Ingrese el lote",
     "CANTIDAD": "Cantidad",
+    "CANTIDAD_PLACEHOLDER": "Ingrese la cantidad",
     "DESCRIPCION": "Descripción",
+    "DESCRIPCION_PLACEHOLDER": "Ingrese la descripción",
     "FECHA_VENCIMIENTO": "Fecha de vencimiento",
-    "REGISTRAR": "Registrar producto"
+    "REGISTRAR": "Registrar producto",
+    "EXITO": {
+      "REGISTRADO": "Producto registrado exitosamente"
+    },
+    "ERRORES": {
+      "FORMULARIO_INVALIDO": "Por favor completa todos los campos requeridos.",
+      "NOMBRE_REQUERIDO": "El nombre es obligatorio.",
+      "NOMBRE_LONGITUD": "El nombre debe tener entre {{min}} y {{max}} caracteres.",
+      "NOMBRE_CARACTERES": "Solo se permiten letras, espacios, guiones (-) y puntos (.).",
+      "CODIGO_REQUERIDO": "El código de barras es obligatorio.",
+      "CATEGORIA_REQUERIDA": "La categoría es obligatoria.",
+      "PROVEEDOR_REQUERIDO": "El proveedor es obligatorio.",
+      "PESO_VALOR_REQUERIDO": "El valor de peso es obligatorio.",
+      "PESO_VALOR_LONGITUD": "El valor de peso debe tener entre {{min}} y {{max}} caracteres.",
+      "PESO_VALOR_CARACTERES": "Solo se permiten dígitos y comas.",
+      "PESO_UNIDAD_REQUERIDA": "La unidad de peso es obligatoria.",
+      "PRECIO_REQUERIDO": "El precio es obligatorio.",
+      "PRECIO_LONGITUD": "El precio debe tener entre {{min}} y {{max}} caracteres.",
+      "PRECIO_CARACTERES": "Solo se permiten dígitos y punto o coma decimal.",
+      "LOTE_REQUERIDO": "El lote es obligatorio.",
+      "CANTIDAD_REQUERIDA": "La cantidad es obligatoria.",
+      "CANTIDAD_CARACTERES": "Solo se permiten dígitos.",
+      "DESCRIPCION_REQUERIDA": "La descripción es obligatoria.",
+      "DESCRIPCION_LONGITUD": "La descripción debe tener entre {{min}} y {{max}} caracteres.",
+      "DESCRIPCION_CARACTERES": "Solo se permiten letras, números, espacios, guiones (-), puntos (.) y comas (,).",
+      "FECHA_VENCIMIENTO_REQUERIDA": "La fecha de vencimiento es obligatoria.",
+      "REGISTRO": "Error al registrar el producto."
+    }
   },
   "BUSQUEDA_PRODUCTO":{
     "TITULO": "Búsqueda de producto",
@@ -92,7 +126,28 @@
     "DIRECCION": "Dirección",
     "TELEFONO": "Teléfono",
     "CORREO": "Correo electrónico",
-    "REGISTRAR": "Registrar vendedor"
+    "REGISTRAR": "Registrar vendedor",
+    "ERRORES": {
+      "FORMULARIO_INVALIDO": "Por favor completa todos los campos requeridos correctamente.",
+      "IDENTIFICACION_REQUERIDA": "La identificación es obligatoria.",
+      "IDENTIFICACION_LONGITUD": "La identificación debe tener entre {{min}} y {{max}} caracteres.",
+      "IDENTIFICACION_CARACTERES": "La identificación sólo admite letras y números.",
+      "NOMBRE_REQUERIDO": "El nombre es obligatorio.",
+      "NOMBRE_LONGITUD": "El nombre debe tener entre {{min}} y {{max}} caracteres.",
+      "NOMBRE_CARACTERES": "El nombre sólo admite letras y espacios.",
+      "APELLIDO_REQUERIDO": "El apellido es obligatorio.",
+      "APELLIDO_LONGITUD": "El apellido debe tener entre {{min}} y {{max}} caracteres.",
+      "APELLIDO_CARACTERES": "El apellido sólo admite letras y espacios.",
+      "PAIS_REQUERIDO": "El país es obligatorio.",
+      "DIRECCION_REQUERIDA": "La dirección es obligatoria.",
+      "DIRECCION_LONGITUD": "La dirección debe tener entre {{min}} y {{max}} caracteres.",
+      "DIRECCION_CARACTERES": "La dirección contiene caracteres no permitidos.",
+      "TELEFONO_REQUERIDO": "El teléfono es obligatorio.",
+      "TELEFONO_LONGITUD": "El teléfono debe tener entre {{min}} y {{max}} dígitos.",
+      "TELEFONO_CARACTERES": "El teléfono sólo admite dígitos.",
+      "CORREO_REQUERIDO": "El correo es obligatorio.",
+      "CORREO_INVALIDO": "El correo no tiene un formato válido."
+    }
   },
   "REGISTRO_PROVEEDORES": {
     "TITULO": "Registro de fabricante",
@@ -105,7 +160,23 @@
     "APELLIDO_CONTACTO": "Apellido",
     "TELEFONO": "Teléfono",
     "CORREO": "Correo electrónico",
-    "REGISTRAR": "Registrar fabricante"
+    "REGISTRAR": "Registrar fabricante",
+    "ERRORES": {
+      "FORMULARIO_INVALIDO": "Por favor completa todos los campos requeridos correctamente.",
+      "NOMBRE_REQUERIDO": "El nombre es obligatorio.",
+      "PAIS_REQUERIDO": "El país es obligatorio.",
+      "CONTACTO_NOMBRE_REQUERIDO": "El nombre del contacto es obligatorio.",
+      "CONTACTO_APELLIDO_REQUERIDO": "El apellido del contacto es obligatorio.",
+      "TELEFONO_REQUERIDO": "El teléfono es obligatorio.",
+      "CORREO_REQUERIDO": "El correo es obligatorio.",
+      "CORREO_INVALIDO": "El correo no tiene un formato válido.",
+      "NOMBRE_LONGITUD": "El nombre debe tener entre {{min}} y {{max}} caracteres.",
+      "NOMBRE_CARACTERES": "Sólo se permiten letras, números, espacios, guiones (-) y puntos (.).",
+      "CONTACTO_NOMBRE_LONGITUD": "El nombre del contacto debe tener entre {{min}} y {{max}} caracteres.",
+      "CONTACTO_NOMBRE_CARACTERES": "Solo se permiten letras y espacios.",
+      "CONTACTO_APELLIDO_LONGITUD": "El apellido del contacto debe tener entre {{min}} y {{max}} caracteres.",
+      "CONTACTO_APELLIDO_CARACTERES": "Solo se permiten letras y espacios."
+    }
   },
   "REPORTE_VENTAS": {
     "TITULO": "Reporte de ventas",
@@ -124,6 +195,42 @@
       "ERRORES": {
         "SellerNotFound": "No se encontró el vendedor"
       }
+  },
+  "METAS": {
+    "TITULO": "Crear plan de venta",
+    "VENDEDOR": "Vendedor",
+    "SELECCIONAR_VENDEDOR": "Seleccionar vendedor",
+    "PRODUCTO": "Producto",
+    "SELECCIONAR_PRODUCTO": "Seleccionar producto",
+    "CANTIDAD": "Cantidad",
+    "AGREGAR_META": "Agregar meta",
+    "CREAR_PLAN": "Crear plan",
+    "ERRORES": {
+      "ERROR_GENERAL": "Error al crear plan de venta",
+      "VENDEDORES_NO_CARGADOS": "No se pudieron cargar los vendedores",
+      "PRODUCTOS_NO_CARGADOS": "No se pudieron cargar los productos",
+      "FORMULARIO_INVALIDO": "Formulario inválido",
+      "ERROR_INESPERADO": "Ocurrió un error inesperado. Por favor intenta de nuevo."
+    },
+    "EXITO": {
+      "PLAN_CREADO": "Plan de metas creado exitosamente"
+    }
+  },
+  "RUTAS":{
+    "TITULO": "Generación rutas de entrega",
+    "FECHA_DE_ENTREGA": "Fecha de entrega",
+    "GENERAR_RUTA": "Generar ruta",
+    "ENTREGA": "Entrega",
+    "PEDIDO": "Pedido",
+    "DIRECCION": "Dirección",
+    "CLIENTE": "Cliente",
+    "ERRORES": {
+      "ERROR_GENERAL":"Error al generar ruta de entrega",
+      "SIN_RUTAS": "No se encontraron rutas de entrega para esta fecha"
+    },
+    "EXITO": {
+      "RUTA_GENERADA": "Ruta generada exitosamente"
+    }
   },
   "AJUSTES":{
     "TITULO": "Ajustes",

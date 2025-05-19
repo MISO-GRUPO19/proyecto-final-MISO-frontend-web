@@ -7,6 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../../environments/environment';
 import { I18nModule } from '../../i18n.module';
+import { TranslateService } from '@ngx-translate/core';
+import { COUNTRIES } from '../../core/constants/countries';
 
 @Component({
   selector: 'app-supplier-registration',
@@ -23,25 +25,52 @@ import { I18nModule } from '../../i18n.module';
 })
 export class SupplierRegistrationComponent {
   public supplierForm: FormGroup;
+  public countryList = COUNTRIES;
 
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private translate: TranslateService
   ) {
     this.supplierForm = this.fb.group({
-      name: ['', Validators.required],
+      name: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(100),
+          Validators.pattern(/^[A-Za-z\u00C0-\u017F0-9 .-]+$/)
+        ]
+      ],
       country: ['', Validators.required],
-      contact: ['', Validators.required],
-      contactLastname: ['', Validators.required],
+      contact: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(100),
+          Validators.pattern(/^[A-Za-z\u00C0-\u017F ]+$/)
+        ]
+      ],
+      contactLastname: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(100),
+          Validators.pattern(/^[A-Za-z\u00C0-\u017F ]+$/)
+        ]
+      ],
       telephone: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
     });
   }
 
   public onSubmit(): void {
+    this.supplierForm.markAllAsTouched();
     if (this.supplierForm.invalid) {
-      this.toastr.error('Formulario inválido');
+      this.toastr.error(this.translate.instant('REGISTRO_PROVEEDORES.ERRORES.FORMULARIO_INVALIDO'));
       return;
     }
 
@@ -65,9 +94,16 @@ export class SupplierRegistrationComponent {
         this.supplierForm.reset();
       },
       error: (err) => {
-        console.error('Error al registrar fabricante:', err);
-        const backendMessage =
-          err?.error?.error || err?.error?.msg || 'Ocurrió un error inesperado. Por favor intenta de nuevo.';
+        let backendMessage: string;
+        if (typeof err.error === 'string') {
+          backendMessage = err.error;
+        } else if (err.error?.error) {
+          backendMessage = err.error.error;
+        } else if (err.error?.msg) {
+          backendMessage = err.error.msg;
+        } else {
+          backendMessage = 'Ocurrió un error inesperado. Por favor intenta de nuevo.';
+        }
         this.toastr.error(backendMessage);
       }
     });

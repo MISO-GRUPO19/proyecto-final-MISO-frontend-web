@@ -37,6 +37,7 @@
     "NOMBRE": "Product name",
     "NOMBRE_PLACEHOLDER": "Name",
     "CODIGO": "Code",
+    "CODIGO_PLACEHOLDER": "Enter code",
     "CATEGORIA": "Category",
     "SELECCIONAR_CATEGORIA": "Select category",
     "CATEGORIA_FRUTAS": "Fruits and Vegetables",
@@ -52,12 +53,45 @@
     "PROVEEDOR": "Supplier",
     "SELECCIONAR_PROVEEDOR": "Select supplier",
     "PESO": "Weight",
+    "PESO_VALOR_PLACEHOLDER": "Enter weight value",
+    "PESO_UNIDAD_PLACEHOLDER": "Select unit",
     "PRECIO": "Price",
+    "PRECIO_PLACEHOLDER": "Enter price",
     "LOTE": "Batch",
+    "LOTE_PLACEHOLDER": "Enter batch",
     "CANTIDAD": "Quantity",
+    "CANTIDAD_PLACEHOLDER": "Enter quantity",
     "DESCRIPCION": "Description",
+    "DESCRIPCION_PLACEHOLDER": "Enter description",
     "FECHA_VENCIMIENTO": "Expiration date",
-    "REGISTRAR": "Register product"
+    "REGISTRAR": "Register product",
+    "EXITO": {
+      "REGISTRADO": "Product registered successfully"
+    },
+    "ERRORES": {
+      "FORMULARIO_INVALIDO": "Please fill in all required fields.",
+      "NOMBRE_REQUERIDO": "Name is required.",
+      "NOMBRE_LONGITUD": "Name must be between {{min}} and {{max}} characters.",
+      "NOMBRE_CARACTERES": "Only letters, spaces, hyphens (-) and periods (.) are allowed.",
+      "CODIGO_REQUERIDO": "Barcode is required.",
+      "CATEGORIA_REQUERIDA": "Category is required.",
+      "PROVEEDOR_REQUERIDO": "Manufacturer is required.",
+      "PESO_VALOR_REQUERIDO": "Weight value is required.",
+      "PESO_VALOR_LONGITUD": "Weight value must be between {{min}} and {{max}} characters.",
+      "PESO_VALOR_CARACTERES": "Only digits and commas are allowed.",
+      "PESO_UNIDAD_REQUERIDA": "Weight unit is required.",
+      "PRECIO_REQUERIDO": "Price is required.",
+      "PRECIO_LONGITUD": "Price must be between {{min}} and {{max}} characters.",
+      "PRECIO_CARACTERES": "Only digits and a decimal comma or period are allowed.",
+      "LOTE_REQUERIDO": "Batch is required.",
+      "CANTIDAD_REQUERIDA": "Quantity is required.",
+      "CANTIDAD_CARACTERES": "Only digits are allowed.",
+      "DESCRIPCION_REQUERIDA": "Description is required.",
+      "DESCRIPCION_LONGITUD": "Description must be between {{min}} and {{max}} characters.",
+      "DESCRIPCION_CARACTERES": "Only letters, numbers, spaces, hyphens (-), periods (.) and commas (,) are allowed.",
+      "FECHA_VENCIMIENTO_REQUERIDA": "Best before date is required.",
+      "REGISTRO": "Error registering the product."
+    }
   },
   "BUSQUEDA_PRODUCTO": {
     "TITULO": "Product Search",
@@ -92,7 +126,28 @@
     "DIRECCION": "Address",
     "TELEFONO": "Phone",
     "CORREO": "Email",
-    "REGISTRAR": "Register seller"
+    "REGISTRAR": "Register seller",
+    "ERRORES": {
+      "FORMULARIO_INVALIDO": "Please fill out all required fields correctly.",
+      "IDENTIFICACION_REQUERIDA": "Identification is required.",
+      "IDENTIFICACION_LONGITUD": "Identification must be between {{min}} and {{max}} characters.",
+      "IDENTIFICACION_CARACTERES": "Identification can only contain letters and numbers.",
+      "NOMBRE_REQUERIDO": "First name is required.",
+      "NOMBRE_LONGITUD": "First name must be between {{min}} and {{max}} characters.",
+      "NOMBRE_CARACTERES": "First name can only contain letters and spaces.",
+      "APELLIDO_REQUERIDO": "Last name is required.",
+      "APELLIDO_LONGITUD": "Last name must be between {{min}} and {{max}} characters.",
+      "APELLIDO_CARACTERES": "Last name can only contain letters and spaces.",
+      "PAIS_REQUERIDO": "Country is required.",
+      "DIRECCION_REQUERIDA": "Address is required.",
+      "DIRECCION_LONGITUD": "Address must be between {{min}} and {{max}} characters.",
+      "DIRECCION_CARACTERES": "Address contains invalid characters.",
+      "TELEFONO_REQUERIDO": "Telephone is required.",
+      "TELEFONO_LONGITUD": "Telephone must be between {{min}} and {{max}} digits.",
+      "TELEFONO_CARACTERES": "Telephone can only contain digits.",
+      "CORREO_REQUERIDO": "Email is required.",
+      "CORREO_INVALIDO": "Please enter a valid email address."
+    }
   },
   "REGISTRO_PROVEEDORES": {
     "TITULO": "Manufacturer Registration",
@@ -105,7 +160,23 @@
     "APELLIDO_CONTACTO": "Last Name",
     "TELEFONO": "Phone",
     "CORREO": "Email",
-    "REGISTRAR": "Register Manufacturer"
+    "REGISTRAR": "Register Manufacturer",
+    "ERRORES": {
+      "FORMULARIO_INVALIDO": "Please fill out all required fields correctly.",
+      "NOMBRE_REQUERIDO": "Name is required.",
+      "PAIS_REQUERIDO": "Country is required.",
+      "CONTACTO_NOMBRE_REQUERIDO": "Contact first name is required.",
+      "CONTACTO_APELLIDO_REQUERIDO": "Contact last name is required.",
+      "TELEFONO_REQUERIDO": "Telephone is required.",
+      "CORREO_REQUERIDO": "Email is required.",
+      "CORREO_INVALIDO": "Please enter a valid email address.",
+      "NOMBRE_LONGITUD": "Name must be between {{min}} and {{max}} characters.",
+      "NOMBRE_CARACTERES": "Only letters, numbers, spaces, hyphens (-) and periods (.) are allowed.",
+      "CONTACTO_NOMBRE_LONGITUD": "Contact first name must be between {{min}} and {{max}} characters.",
+      "CONTACTO_NOMBRE_CARACTERES": "Only letters and spaces are allowed.",
+      "CONTACTO_APELLIDO_LONGITUD": "Contact last name must be between {{min}} and {{max}} characters.",
+      "CONTACTO_APELLIDO_CARACTERES": "Only letters and spaces are allowed."
+    }
   },
   "REPORTE_VENTAS": {
     "TITULO": "Sales Report",
@@ -123,6 +194,42 @@
     "METAS_SUPERADAS": "{{porcentaje}}% goals surpassed",
     "ERRORES": {
       "SellerNotFound": "Seller not found"
+    }
+  },
+  "METAS": {
+    "TITULO": "Create sales plan",
+    "VENDEDOR": "Seller",
+    "SELECCIONAR_VENDEDOR": "Select seller",
+    "PRODUCTO": "Product",
+    "SELECCIONAR_PRODUCTO": "Select product",
+    "CANTIDAD": "Quantity",
+    "AGREGAR_META": "Add goal",
+    "CREAR_PLAN": "Create plan",
+    "ERRORES": {
+      "ERROR_GENERAL": "Error creating sales plan",
+      "VENDEDORES_NO_CARGADOS": "Failed to load sellers",
+      "PRODUCTOS_NO_CARGADOS": "Failed to load products",
+      "FORMULARIO_INVALIDO": "Invalid form",
+      "ERROR_INESPERADO": "An unexpected error occurred. Please try again."
+    },
+    "EXITO": {
+      "PLAN_CREADO": "Sales plan created successfully"
+    }
+  },
+  "RUTAS": {
+    "TITULO": "Delivery Route Generation",
+    "FECHA_DE_ENTREGA": "Delivery Date",
+    "GENERAR_RUTA": "Generate Route",
+    "ENTREGA": "Delivery",
+    "PEDIDO": "Order",
+    "DIRECCION": "Address",
+    "CLIENTE": "Customer",
+    "ERRORES": {
+      "ERROR_GENERAL": "Error generating delivery route",
+      "SIN_RUTAS": "No delivery routes found for this date"
+    },
+    "EXITO": {
+      "RUTA_GENERADA": "Route generated successfully"
     }
   },
   "AJUSTES": {

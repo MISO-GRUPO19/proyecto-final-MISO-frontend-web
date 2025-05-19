@@ -56,7 +56,7 @@ export class SellsReportsComponent {
       return;
     }
   
-    const apiUrl = `${environment.apiUrl}/users/sellers/${encodeURIComponent(value)}/sales`;
+    const apiUrl = `${environment.apiUrl}/orders/sellers/${encodeURIComponent(value)}/sales`;
 
     const headers = {
       Authorization: `Bearer ${token}`
