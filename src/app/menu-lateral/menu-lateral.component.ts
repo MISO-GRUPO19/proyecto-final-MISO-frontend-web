@@ -58,7 +58,11 @@ export class MenuLateralComponent {
   }
 
   goals(){
-    
+    this.router.navigate(['goals']);
+  }
+
+  rutas(){
+    this.router.navigate(['routes']);
   }
 
 }

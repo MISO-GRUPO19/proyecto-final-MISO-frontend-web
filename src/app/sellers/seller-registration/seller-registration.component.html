@@ -8,105 +8,199 @@
         <h1 class="form-title">{{ 'VENDEDOR.TITULO' | translate }}</h1>
         <div class="form-grid">
 
+          <!-- IDENTIFICACIÓN -->
           <div class="form-group">
             <div class="label-izq">
               <label for="identification">{{ 'VENDEDOR.IDENTIFICACION' | translate }}</label>
             </div>
             <div>
-              <input 
-                placeholder="{{ 'VENDEDOR.IDENTIFICACION' | translate }}" 
-                id="identification" 
-                class="form-input" 
+              <input
+                id="identification"
+                class="form-input"
                 formControlName="identification"
+                placeholder="{{ 'VENDEDOR.IDENTIFICACION' | translate }}"
               >
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('identification')?.touched && sellerForm.get('identification')?.hasError('required')">
+                {{ 'VENDEDOR.ERRORES.IDENTIFICACION_REQUERIDA' | translate }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('identification')?.touched &&
+                          (sellerForm.get('identification')?.hasError('minlength') ||
+                          sellerForm.get('identification')?.hasError('maxlength'))">
+                {{ 'VENDEDOR.ERRORES.IDENTIFICACION_LONGITUD' | translate:{min:6,max:20} }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('identification')?.touched && sellerForm.get('identification')?.hasError('pattern')">
+                {{ 'VENDEDOR.ERRORES.IDENTIFICACION_CARACTERES' | translate }}
+              </div>
             </div>
           </div>
 
+          <!-- NOMBRE / APELLIDO -->
           <div class="form-group">
             <div class="label-izq">
               <label for="name">{{ 'VENDEDOR.NOMBRE' | translate }}</label>
             </div>
             <div>
-              <input 
-                placeholder="{{ 'VENDEDOR.NOMBRE_PLACEHOLDER' | translate }}" 
-                id="name" 
-                class="form-input" 
+              <input
+                id="name"
+                class="form-input"
                 formControlName="name"
+                placeholder="{{ 'VENDEDOR.NOMBRE_PLACEHOLDER' | translate }}"
               >
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('name')?.touched && sellerForm.get('name')?.hasError('required')">
+                {{ 'VENDEDOR.ERRORES.NOMBRE_REQUERIDO' | translate }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('name')?.touched &&
+                          (sellerForm.get('name')?.hasError('minlength') ||
+                          sellerForm.get('name')?.hasError('maxlength'))">
+                {{ 'VENDEDOR.ERRORES.NOMBRE_LONGITUD' | translate:{min:3,max:100} }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('name')?.touched && sellerForm.get('name')?.hasError('pattern')">
+                {{ 'VENDEDOR.ERRORES.NOMBRE_CARACTERES' | translate }}
+              </div>
             </div>
             <div>
-              <input 
-                placeholder="{{ 'VENDEDOR.APELLIDO_PLACEHOLDER' | translate }}" 
-                id="lastname" 
-                class="form-input" 
+              <input
+                id="lastname"
+                class="form-input"
                 formControlName="lastname"
+                placeholder="{{ 'VENDEDOR.APELLIDO_PLACEHOLDER' | translate }}"
               >
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('lastname')?.touched && sellerForm.get('lastname')?.hasError('required')">
+                {{ 'VENDEDOR.ERRORES.APELLIDO_REQUERIDO' | translate }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('lastname')?.touched &&
+                          (sellerForm.get('lastname')?.hasError('minlength') ||
+                          sellerForm.get('lastname')?.hasError('maxlength'))">
+                {{ 'VENDEDOR.ERRORES.APELLIDO_LONGITUD' | translate:{min:3,max:100} }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('lastname')?.touched && sellerForm.get('lastname')?.hasError('pattern')">
+                {{ 'VENDEDOR.ERRORES.APELLIDO_CARACTERES' | translate }}
+              </div>
             </div>
           </div>
 
+          <!-- PAÍS -->
           <div class="form-group" style="gap: 30px;">
             <div style="height: 87px;">
               <div>
                 <label for="country">{{ 'VENDEDOR.PAIS' | translate }}</label>
               </div>
               <div class="category-selector">
-                <select class="category-dropdown" formControlName="country" title="{{ 'VENDEDOR.SELECCIONAR_PAIS' | translate }}">
+                <select
+                  id="country"
+                  class="category-dropdown"
+                  formControlName="country"
+                  title="{{ 'VENDEDOR.SELECCIONAR_PAIS' | translate }}"
+                >
                   <option value="" disabled>{{ 'VENDEDOR.SELECCIONAR_PAIS' | translate }}</option>
-                  <option value="Argentina">Argentina</option>
-                  <option value="Brasil">Brasil</option>
-                  <option value="Chile">Chile</option>
-                  <option value="Colombia">Colombia</option>
-                  <option value="Ecuador">Ecuador</option>
+                  <option *ngFor="let c of countryList" [value]="c">{{ c }}</option>
                 </select>
+                <div class="error-msg"
+                    *ngIf="sellerForm.get('country')?.touched && sellerForm.get('country')?.hasError('required')">
+                  {{ 'VENDEDOR.ERRORES.PAIS_REQUERIDO' | translate }}
+                </div>
               </div>
             </div>
 
+            <!-- DIRECCIÓN -->
             <div style="height: 87px;">
               <div style="margin-bottom: 8px;">
                 <label for="address">{{ 'VENDEDOR.DIRECCION' | translate }}</label>
               </div>
               <div>
-                <input 
-                  placeholder="{{ 'VENDEDOR.DIRECCION' | translate }}" 
-                  id="address" 
-                  class="form-input" 
+                <input
+                  id="address"
+                  class="form-input"
                   formControlName="address"
+                  placeholder="{{ 'VENDEDOR.DIRECCION' | translate }}"
                 >
+                <div class="error-msg"
+                    *ngIf="sellerForm.get('address')?.touched && sellerForm.get('address')?.hasError('required')">
+                  {{ 'VENDEDOR.ERRORES.DIRECCION_REQUERIDA' | translate }}
+                </div>
+                <div class="error-msg"
+                    *ngIf="sellerForm.get('address')?.touched &&
+                            (sellerForm.get('address')?.hasError('minlength') ||
+                            sellerForm.get('address')?.hasError('maxlength'))">
+                  {{ 'VENDEDOR.ERRORES.DIRECCION_LONGITUD' | translate:{min:10,max:200} }}
+                </div>
+                <div class="error-msg"
+                    *ngIf="sellerForm.get('address')?.touched && sellerForm.get('address')?.hasError('pattern')">
+                  {{ 'VENDEDOR.ERRORES.DIRECCION_CARACTERES' | translate }}
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- TELÉFONO -->
           <div class="form-group">
             <div class="label-izq">
               <label for="telephone">{{ 'VENDEDOR.TELEFONO' | translate }}</label>
             </div>
             <div>
-              <input 
-                placeholder="{{ 'VENDEDOR.TELEFONO' | translate }}" 
-                id="telephone" 
-                class="form-input" 
+              <input
+                id="telephone"
+                class="form-input"
                 formControlName="telephone"
+                placeholder="{{ 'VENDEDOR.TELEFONO' | translate }}"
               >
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('telephone')?.touched && sellerForm.get('telephone')?.hasError('required')">
+                {{ 'VENDEDOR.ERRORES.TELEFONO_REQUERIDO' | translate }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('telephone')?.touched &&
+                          (sellerForm.get('telephone')?.hasError('minlength') ||
+                          sellerForm.get('telephone')?.hasError('maxlength'))">
+                {{ 'VENDEDOR.ERRORES.TELEFONO_LONGITUD' | translate:{min:7,max:15} }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('telephone')?.touched && sellerForm.get('telephone')?.hasError('pattern')">
+                {{ 'VENDEDOR.ERRORES.TELEFONO_CARACTERES' | translate }}
+              </div>
             </div>
           </div>
 
+          <!-- CORREO -->
           <div class="form-group">
             <div class="label-izq">
               <label for="email">{{ 'VENDEDOR.CORREO' | translate }}</label>
             </div>
             <div>
-              <input 
-                placeholder="{{ 'VENDEDOR.CORREO' | translate }}" 
-                id="email" 
-                class="form-input" 
+              <input
+                id="email"
+                class="form-input"
                 formControlName="email"
+                placeholder="{{ 'VENDEDOR.CORREO' | translate }}"
               >
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('email')?.touched && sellerForm.get('email')?.hasError('required')">
+                {{ 'VENDEDOR.ERRORES.CORREO_REQUERIDO' | translate }}
+              </div>
+              <div class="error-msg"
+                  *ngIf="sellerForm.get('email')?.touched && sellerForm.get('email')?.hasError('email')">
+                {{ 'VENDEDOR.ERRORES.CORREO_INVALIDO' | translate }}
+              </div>
             </div>
           </div>
 
         </div>
 
-        <button type="submit" class="submit-button">
+        <!-- 11) Botón deshabilitado si inválido -->
+        <button
+          type="submit"
+          class="submit-button"
+          [ngClass]="{ 'is-disabled': sellerForm.invalid }"
+        >
           {{ 'VENDEDOR.REGISTRAR' | translate }}
         </button>
       </form>
